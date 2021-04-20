@@ -28,6 +28,7 @@ public class Order {
     Customer customer;// - includes where to send the order since customer h
     String orderDateTime;
     String orderDeliveredDateTIme;
+    Vendor vendor;
     private static int counter=0;
     private Status status;
     private String comment;
@@ -93,6 +94,7 @@ public class Order {
     public Order(Customer customer,List<Product> prod, Vendor ven){
         //orderId=++counter;
         this(prod);
+        this.vendor=ven;
         this.customer=customer;
         this.orderDateTime=new SimpleDateFormat("MM/dd HH:mm:ss").format(new Date());
         this.status = Status.Pending;

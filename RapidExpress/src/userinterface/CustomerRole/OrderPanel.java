@@ -52,9 +52,10 @@ public class OrderPanel extends javax.swing.JPanel {
     List<Product> items = new ArrayList();
     EcoSystem system;
     private float total = 0f;
+    ArrayList<Order> orderList=new ArrayList<Order>();
     public OrderPanel(Customer customer) {
         initComponents();
-        this.customer = customer;
+        this.customer = customer;        
         refreshVendors();
         //refreshItems();
 //        refreshAverageRatings();
@@ -303,7 +304,7 @@ public class OrderPanel extends javax.swing.JPanel {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         refreshItems();
-//        items.removeAll(items);
+        items.removeAll(items);
         refreshCart();
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
@@ -358,8 +359,9 @@ public class OrderPanel extends javax.swing.JPanel {
         
         
 //uncomment start
-            Order newOrder = new Order(customer,items, items.get(0).getVendor());// getRestaurant());
-            
+            //Order newOrder = new Order(customer,items, items.get(0).getVendor());// getRestaurant());
+//            orderList.add(new Order(customer,items, items.get(0).getVendor()));
+                orderList.add(new Order(customer, new ArrayList<Product>(items),(new ArrayList<Product>(items)).get(0).getVendor()));
              //MimeMessage message =mailSender.createMimeMessage();
              
             //String s = customer.getFirstName()+" "+customer.getLastName()+"\n"+"Order details are as follows :- "+"\n"+"\n"+"\n";
@@ -377,7 +379,7 @@ public class OrderPanel extends javax.swing.JPanel {
                     htmlCode=htmlCode+"<tr align='center'>"+"<td>" + item.getProductName() + "</td>"
                                 + "<td>" + item.getProductCost() + "</td>"
                                 + "<td>" + item.getVendor().getVendorName()+"</td>"
-                                +"<td>" + newOrder.getStatus()+"</td>"
+                                +"<td>" +  orderList.get(orderList.size()-1).getStatus()+"</td>"
                             +"</tr>";
 
                 }
@@ -403,14 +405,21 @@ public class OrderPanel extends javax.swing.JPanel {
             Date date = Calendar.getInstance().getTime();  
                 DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");  
                 String strDate = dateFormat.format(date);  
-            newOrder.setOrderDateTime(strDate);
-            newOrder.setTimePlaced(strDate);
-            newOrder.setFc(fc);
-            customer.addOrder(newOrder);        
+//            newOrder.setOrderDateTime(strDate);
+            orderList.get(orderList.size()-1).setOrderDateTime(strDate);
+//            newOrder.setTimePlaced(strDate);
+            orderList.get(orderList.size()-1).setTimePlaced(strDate);
+//            newOrder.setFc(fc);
+            orderList.get(orderList.size()-1).setFc(fc);
+                    
+//            customer.addOrder(newOrder);        
+            customer.addOrder(orderList.get(orderList.size()-1));
             Vendor v = (Vendor) jComboBox1.getSelectedItem();
-            v.addOrder(newOrder);
-            newOrder.setStatus(Order.Status.SentRequestToVendor);
-            fc.addOrderToOrderList(newOrder);
+//            v.addOrder(newOrder);
+            v.addOrder(orderList.get(orderList.size()-1));
+            //newOrder.setStatus(Order.Status.SentRequestToVendor);
+            orderList.get(orderList.size()-1).setStatus(Order.Status.SentRequestToVendor);
+            fc.addOrderToOrderList(orderList.get(orderList.size()-1));
 //uncomment end        
             
             
