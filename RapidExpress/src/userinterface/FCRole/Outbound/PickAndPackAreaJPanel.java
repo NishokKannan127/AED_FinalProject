@@ -32,6 +32,8 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form PickAndPackAreaJPanel
      */
+    
+    //nishok picker and packer. need to make changes from hardcode to logic
     PickAndPack pickAndPackMan;
     FulfillmentCenter fc;
     Delivery delivery;
