@@ -7,7 +7,9 @@ package userinterface.LMDeliveryRole;
 
 import Business.EcoSystem;
 import Business.EnterpriseDelivery.Delivery;
+import Business.ExtraFeatures.Mail.Mail;
 import Business.POJO.Order;
+import Business.POJO.Product;
 import Business.POJO.Shipment;
 import Business.POJO.VendorShipment;
 import Business.Role.DeliveryMen;
@@ -17,7 +19,11 @@ import Business.Role.ManagerFMDeliveryMenAdmin;
 import Business.Role.ManagerLMDeliveryMenAdmin;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.mail.MessagingException;
 import javax.swing.table.DefaultTableModel;
+import userinterface.CustomerRole.OrderPanel;
 
 /**
  *
@@ -246,6 +252,42 @@ public class LMDeliveryManagerAreaJPanel extends javax.swing.JPanel {
         temp.setStatus(Order.Status.AssignedToLastMileDeliveryMan);
         refreshOrders();
         refreshDeliveryMen();
+        
+        
+        
+        
+        
+        
+        
+        //send email
+        String s="<p style=\"color:#001f3f\">"+temp.getCustomer().getFirstName()+" "+temp.getCustomer().getLastName()+"</p>"+"<p style=\"color:#001f3f\">Order details are as follows :</p><p></p><p></p>";
+            String htmlCode=
+         "<table width='100%' border='10' style=\"background-color:#DDDDDD\" BORDERCOLORLIGHT='#AAAAAA'  BORDERCOLORDARK='#DDDDDD' align='center'>"
+                + "<tr align='center'>"
+                + "<td style=\"color:#001f3f\"><b>Product Name<b></td>"
+                + "<td style=\"color:#001f3f\"><b>Product Cost<b></td>"
+                + "<td style=\"color:#001f3f\"><b>Vendor Name<b></td>"
+                + "<td style=\"color:#001f3f\"><b>Order Status<b></td>"    
+                + "</tr>";
+
+            for(Product item:temp.getProductListInOrder()){                
+                    htmlCode=htmlCode+"<tr align='center'>"+"<td>" + item.getProductName() + "</td>"
+                                + "<td>" + item.getProductCost() + "</td>"
+                                + "<td>" + item.getVendor().getVendorName()+"</td>"
+                                +"<td>" + temp.getStatus()+"</td>"
+                            +"</tr>";
+
+                }
+            htmlCode+="</table>";
+            String ending="";
+            
+
+        try {
+            Mail.sendMail("nishok217@gmail.com",htmlCode,"Order assigned to delivery man",s,ending);         
+        } catch (MessagingException ex) {
+            Logger.getLogger(OrderPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_AssignButtonActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
