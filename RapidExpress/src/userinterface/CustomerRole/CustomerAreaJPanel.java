@@ -49,7 +49,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1500, 1000));
 
         viewButton.setBackground(new java.awt.Color(36, 54, 101));
-        viewButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        viewButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         viewButton.setForeground(new java.awt.Color(255, 255, 255));
         viewButton.setText("View Orders");
         viewButton.setBorder(null);
@@ -60,7 +60,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         });
 
         orderButton.setBackground(new java.awt.Color(36, 54, 101));
-        orderButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        orderButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         orderButton.setForeground(new java.awt.Color(255, 255, 255));
         orderButton.setText("Order Items");
         orderButton.setBorder(null);
@@ -71,7 +71,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setBackground(new java.awt.Color(255, 102, 102));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Customer Dashboard");
@@ -81,12 +81,13 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(viewButton, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
-                    .addComponent(orderButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(orderButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(1375, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

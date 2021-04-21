@@ -74,9 +74,14 @@ public class SystemAdminWorkAreaJPanel1 extends javax.swing.JPanel {
         deleteButton = new javax.swing.JButton();
         viewButton = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 51, 102));
+        setBackground(new java.awt.Color(139, 216, 189));
+        setMaximumSize(new java.awt.Dimension(2000, 1500));
+        setMinimumSize(new java.awt.Dimension(1500, 1000));
+        setPreferredSize(new java.awt.Dimension(1500, 1000));
 
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Customer", "DeliveryMen", "DockMen", "FirstMileDeliveryMen", "FulfillmentCenterAdmins", "HubAdmins", "LastMileAdmins", "LastMileDevlieryMen", "PickAndPackMen", "RecieveMen", "StowMen", "VendorAdmins" }));
+        jComboBox1.setBorder(null);
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -84,42 +89,54 @@ public class SystemAdminWorkAreaJPanel1 extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel1.setForeground(new java.awt.Color(36, 54, 101));
         jLabel1.setText("System Admin Dashboard");
 
+        jLabel2.setBackground(new java.awt.Color(36, 54, 101));
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Manage User type");
+        jLabel2.setOpaque(true);
 
-        createButton.setBackground(new java.awt.Color(0, 0, 153));
-        createButton.setForeground(new java.awt.Color(102, 204, 0));
+        createButton.setBackground(new java.awt.Color(255, 87, 87));
+        createButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        createButton.setForeground(new java.awt.Color(255, 255, 255));
         createButton.setText("Create");
+        createButton.setBorder(null);
         createButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createButtonActionPerformed(evt);
             }
         });
 
-        updateButton.setBackground(new java.awt.Color(0, 0, 153));
-        updateButton.setForeground(new java.awt.Color(102, 204, 0));
+        updateButton.setBackground(new java.awt.Color(255, 87, 87));
+        updateButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        updateButton.setForeground(new java.awt.Color(255, 255, 255));
         updateButton.setText("Update");
+        updateButton.setBorder(null);
         updateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateButtonActionPerformed(evt);
             }
         });
 
-        deleteButton.setBackground(new java.awt.Color(0, 0, 153));
-        deleteButton.setForeground(new java.awt.Color(102, 204, 0));
+        deleteButton.setBackground(new java.awt.Color(255, 87, 87));
+        deleteButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        deleteButton.setForeground(new java.awt.Color(255, 255, 255));
         deleteButton.setText("Delete");
+        deleteButton.setBorder(null);
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteButtonActionPerformed(evt);
             }
         });
 
-        viewButton.setBackground(new java.awt.Color(0, 0, 153));
-        viewButton.setForeground(new java.awt.Color(102, 204, 0));
+        viewButton.setBackground(new java.awt.Color(255, 87, 87));
+        viewButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        viewButton.setForeground(new java.awt.Color(255, 255, 255));
         viewButton.setText("View All");
+        viewButton.setBorder(null);
         viewButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewButtonActionPerformed(evt);
@@ -133,33 +150,40 @@ public class SystemAdminWorkAreaJPanel1 extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(viewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(createButton, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addContainerGap(560, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(viewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(createButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(1208, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {createButton, deleteButton, updateButton, viewButton});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(21, 21, 21)
                 .addComponent(jLabel1)
-                .addGap(30, 30, 30)
-                .addComponent(jLabel2)
-                .addGap(6, 6, 6)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addComponent(createButton)
-                .addGap(12, 12, 12)
-                .addComponent(updateButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(createButton, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14)
-                .addComponent(deleteButton)
+                .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(viewButton)
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addComponent(viewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(728, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 //Customer, DeliveryMen, DockMen, FirstMileDeliveryMen, FulfillmentCenterAdmins, HubAdmins, LastMileAdmins, LastMileDevlieryMen, PickAndPackMen, RecieveMen, StowMen, SysAdmins, VendorAdmins
