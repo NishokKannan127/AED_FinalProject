@@ -91,6 +91,15 @@ public class EcoSystem extends Organization{
     public Network getNetwork(){
         return this.network;
     }
+    public Network searchNetwork(String net){
+        for(int i=0; i<networkList.size(); i++){
+            if(this.networkList.get(i).getName().equals(net)){
+                return this.networkList.get(i);
+            }
+        }
+        return null;
+    }
+    
     public void setFcManagerDirectory(FCManagerDirectory fcManagerDirectory) {
         this.fcManagerDirectory = fcManagerDirectory;
     }

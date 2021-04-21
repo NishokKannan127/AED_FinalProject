@@ -64,11 +64,11 @@ public abstract class Enterprise extends Organization{
         this.enterpriseType = enterpriseType;
     }
     
-    public Enterprise(String name,EnterpriseType type, Address address){
+    public Enterprise(String name, EnterpriseType type, Address address){
         super(name);
         this.enterpriseType=type;
         this.address=address;
-        organizationDirectory=new OrganizationDirectory();
+        organizationDirectory = new OrganizationDirectory();
     }
     public Enterprise(){
         
@@ -89,10 +89,5 @@ public abstract class Enterprise extends Organization{
     public void setEmail(String email) {
         this.email = email;
     }
-
-    
-    
-    
-    
     
 }

@@ -91,11 +91,7 @@ public class MainJFrame extends javax.swing.JFrame {
             ex.printStackTrace(); 
         }
         initComponents();
-        
-        //nishok
-        //this.system = ConfigureASystem.configure();
-//UNCOMMENT THIS AND COMMENT THE LAST LINE        
-this.system = dB4OUtil.retrieveSystem();
+        this.system = dB4OUtil.retrieveSystem();
         if(this.system==null){
             this.system=EcoSystem.getInstance();
         }
@@ -113,172 +109,124 @@ this.system = dB4OUtil.retrieveSystem();
 
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
-        loginJButton = new javax.swing.JButton();
-        passwordField = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        loginJLabel = new javax.swing.JLabel();
-        logoutJButton = new javax.swing.JButton();
-        userNameField = new javax.swing.JTextField();
-        CreateCustAccButton = new javax.swing.JButton();
-        container = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jSplitPane1.setDividerSize(0);
-        jSplitPane1.setMaximumSize(new java.awt.Dimension(100, 100));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 153));
-        jPanel1.setMaximumSize(new java.awt.Dimension(100, 100));
-
-        loginJButton.setBackground(new java.awt.Color(0, 0, 153));
-        loginJButton.setForeground(new java.awt.Color(102, 204, 0));
-        loginJButton.setText("Login");
-        loginJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginJButtonActionPerformed(evt);
-            }
-        });
-
-        passwordField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordFieldActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("User Name");
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Password");
-
-        logoutJButton.setBackground(new java.awt.Color(0, 0, 153));
-        logoutJButton.setForeground(new java.awt.Color(102, 204, 0));
-        logoutJButton.setText("Logout");
-        logoutJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logoutJButtonActionPerformed(evt);
-            }
-        });
-
-        CreateCustAccButton.setBackground(new java.awt.Color(0, 0, 153));
-        CreateCustAccButton.setForeground(new java.awt.Color(102, 204, 0));
-        CreateCustAccButton.setText("Customer Registration");
-        CreateCustAccButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CreateCustAccButtonActionPerformed(evt);
-            }
-        });
+        jPanel1.setBackground(new java.awt.Color(41, 54, 97));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(124, 124, 124)
-                        .addComponent(loginJLabel))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(passwordField)
-                            .addComponent(logoutJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(loginJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(userNameField)
-                            .addComponent(CreateCustAccButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 398, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1)
-                .addGap(14, 14, 14)
-                .addComponent(userNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(loginJButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(logoutJButton)
-                .addGap(28, 28, 28)
-                .addComponent(loginJLabel)
-                .addGap(100, 100, 100)
-                .addComponent(CreateCustAccButton)
-                .addContainerGap(295, Short.MAX_VALUE))
+            .addGap(0, 409, Short.MAX_VALUE)
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(255, 51, 102));
-        jPanel2.setForeground(new java.awt.Color(102, 204, 0));
-        jPanel2.setPreferredSize(new java.awt.Dimension(700, 300));
+        jPanel2.setBackground(new java.awt.Color(158, 215, 191));
+
+        jTextField1.setBackground(new java.awt.Color(158, 215, 191));
+        jTextField1.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(41, 54, 97));
+        jTextField1.setText("Username");
+        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 54, 97), 2));
+
+        jPasswordField1.setBackground(new java.awt.Color(158, 215, 191));
+        jPasswordField1.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        jPasswordField1.setForeground(new java.awt.Color(41, 54, 97));
+        jPasswordField1.setText("EnterPassword");
+        jPasswordField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 54, 97), 2));
+
+        jLabel3.setBackground(new java.awt.Color(158, 215, 191));
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(41, 54, 97));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Login");
+        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 54, 97), 2));
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel3MouseEntered(evt);
+            }
+        });
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login_icon-2.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(70, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(70, 70, 70)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                        .addComponent(jLabel2)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(70, Short.MAX_VALUE)))
         );
+
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel3, jPasswordField1, jTextField1});
+
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 647, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(276, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(94, 94, 94))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(44, 44, 44)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(171, Short.MAX_VALUE)))
         );
 
-        javax.swing.GroupLayout containerLayout = new javax.swing.GroupLayout(container);
-        container.setLayout(containerLayout);
-        containerLayout.setHorizontalGroup(
-            containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(containerLayout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        containerLayout.setVerticalGroup(
-            containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(containerLayout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 647, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel3, jPasswordField1, jTextField1});
 
-        jSplitPane1.setRightComponent(container);
+        jSplitPane1.setRightComponent(jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 853, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jSplitPane1)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
-        // TODO do authentication
-        logoutJButton.setEnabled(true);
-        UserAccount auth = system.getUserAccountDirectory().authenticateUser(userNameField.getText(), passwordField.getText());// getUserAccountList() authenticateUser(userNameJTextField,passwordField);
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        UserAccount auth = system.getUserAccountDirectory().authenticateUser(jTextField1.getText(), jPasswordField1.getText());// getUserAccountList() authenticateUser(userNameJTextField,passwordField);
         if(auth==null){
             System.out.println("Enter correct credentials");
             JOptionPane.showMessageDialog(this,"Enter correct credentials");
-            
-            //ask if you are a customer and want to create an account
-            //create account page
-            
         }
-        else if (auth.getRole()==Role.Customer){
+        else if (auth.getRole()==User.Role.Customer){
             Customer customer = (Customer)auth.getUser();
             CustomerAreaJPanel yoyo = new CustomerAreaJPanel(customer);
             jSplitPane1.setRightComponent(yoyo);
@@ -287,138 +235,100 @@ this.system = dB4OUtil.retrieveSystem();
             //SystemAdmin yoyo = new SystemAdmin();
             //jSplitPane1.setRightComponent(yoyo);
         }
-        else if(auth.getRole()==Role.Dock){
+        else if(auth.getRole()==User.Role.Dock){
             Dock dockMan = (Dock)auth.getUser();
             DockManAreaJPanel yoyo = new DockManAreaJPanel(dockMan);
             jSplitPane1.setRightComponent(yoyo);
         }
-        else if(auth.getRole()==Role.FMDelivery){
+        else if(auth.getRole()==User.Role.FMDelivery){
             FirstMileDelivery fmDelivery = (FirstMileDelivery)auth.getUser();
             Delivery del=fmDelivery.getDeliveryByID();// getDelivery();
             FMDeliveryManAreaJPanel yoyo = new FMDeliveryManAreaJPanel(fmDelivery);
             jSplitPane1.setRightComponent(yoyo);
         }
-        else if(auth.getRole()==Role.HubManager){
+        else if(auth.getRole()==User.Role.HubManager){
             HubMan hub = (HubMan)auth.getUser();
             HubAreaJPanel yoyo = new HubAreaJPanel(hub);
             jSplitPane1.setRightComponent(yoyo);
         }
-        else if(auth.getRole()==Role.LMManager){
+        else if(auth.getRole()==User.Role.LMManager){
             LastMileMan lmAdmin = (LastMileMan)auth.getUser();
             LastMileAreaJPanel yoyo = new LastMileAreaJPanel(lmAdmin);
             jSplitPane1.setRightComponent(yoyo);
-            
 //            ManagerLMDeliveryMenAdmin managerDel=(ManagerLMDeliveryMenAdmin)auth.getUser();
 //            LMDeliveryManagerAreaJPanel yoyo = new LMDeliveryManagerAreaJPanel(((ManagerLMDeliveryMenAdmin)auth.getUser()).getDelivery());
 //            jSplitPane1.setRightComponent(yoyo);
         }
-        else if(auth.getRole()==Role.LMDelivery){
+        else if(auth.getRole()==User.Role.LMDelivery){
             LastMileDelivery lmDeliveryMan = (LastMileDelivery)auth.getUser();
             LMDeliveryManAreaJPanel yoyo = new LMDeliveryManAreaJPanel(lmDeliveryMan);
             jSplitPane1.setRightComponent(yoyo);
         }
-        else if(auth.getRole()==Role.PickAndPack){
+        else if(auth.getRole()==User.Role.PickAndPack){
             PickAndPack pickAndPackMan = (PickAndPack)auth.getUser();
             PickAndPackAreaJPanel yoyo = new PickAndPackAreaJPanel(pickAndPackMan);
             jSplitPane1.setRightComponent(yoyo);
         }
-        else if(auth.getRole()==Role.Recieve){
+        else if(auth.getRole()==User.Role.Recieve){
             Recieve recieverMan = (Recieve)auth.getUser();
             RecieveAreaJPanel yoyo = new RecieveAreaJPanel(recieverMan);
             jSplitPane1.setRightComponent(yoyo);
         }
-        else if(auth.getRole()==Role.Stow){
+        else if(auth.getRole()==User.Role.Stow){
             Stow stowMan = (Stow)auth.getUser();
             StowAreaJPanel yoyo = new StowAreaJPanel(stowMan);
             jSplitPane1.setRightComponent(yoyo);
         }
-        else if(auth.getRole()==Role.SysAdmin){
+        else if(auth.getRole()==User.Role.SysAdmin){
             Sysadmin ad = (Sysadmin)auth.getUser();
             //SystemAdminWorkAreaJPanel yoyo = new SystemAdminWorkAreaJPanel1();
             SystemAdminWorkAreaJPanel yoyo = new SystemAdminWorkAreaJPanel(system);
             //SystemAdmin yoyo = new SystemAdmin();
             jSplitPane1.setRightComponent(yoyo);
         }
-        else if(auth.getRole()==Role.VendorManager){
-//            AdminWorkAreaJPanel yoyo = new AdminWorkAreaJPanel(((Manager)auth.getUser()).getRestaurant()); 
-            
+        else if(auth.getRole()==User.Role.VendorManager){
+//            AdminWorkAreaJPanel yoyo = new AdminWorkAreaJPanel(((Manager)auth.getUser()).getRestaurant());
             VendorManager vendorMan = (VendorManager)auth.getUser();
             Vendor vendor=vendorMan.getVendor();
             VendorManagerPanel yoyo = new VendorManagerPanel(vendor);
             jSplitPane1.setRightComponent(yoyo);
         }
-        else if(auth.getRole()==Role.FMDeliveryManager){
+        else if(auth.getRole()==User.Role.FMDeliveryManager){
             ManagerFMDeliveryMenAdmin managerDel=(ManagerFMDeliveryMenAdmin)auth.getUser();
             FMDeliveryManagerAreaJPanel yoyo = new FMDeliveryManagerAreaJPanel(((ManagerFMDeliveryMenAdmin)auth.getUser()).getDelivery());
             jSplitPane1.setRightComponent(yoyo);
         }
-        else if(auth.getRole()==Role.LMDeliveryManager){
+        else if(auth.getRole()==User.Role.LMDeliveryManager){
             ManagerLMDeliveryMenAdmin managerDel=(ManagerLMDeliveryMenAdmin)auth.getUser();
             LMDeliveryManagerAreaJPanel yoyo = new LMDeliveryManagerAreaJPanel(((ManagerLMDeliveryMenAdmin)auth.getUser()).getDelivery());
             jSplitPane1.setRightComponent(yoyo);
         }
-        
-        
-        
-        else if(auth.getRole()==Role.DeliveryAdmin){
+        else if(auth.getRole()==User.Role.DeliveryAdmin){
             DeliveryAdmin d = (DeliveryAdmin)auth.getUser();
             AdminWorkAreaJPanel yoyo = new AdminWorkAreaJPanel(d);
-            
             jSplitPane1.setRightComponent(yoyo);
         }
-        else if(auth.getRole()==Role.HubAndLastMileAdmin){
+        else if(auth.getRole()==User.Role.HubAndLastMileAdmin){
             HubAndLastMileAdmin d = (HubAndLastMileAdmin)auth.getUser();
             AdminWorkAreaJPanel yoyo = new AdminWorkAreaJPanel(d);
-            
             jSplitPane1.setRightComponent(yoyo);
         }
-        else if(auth.getRole()==Role.VendorAdmin){
+        else if(auth.getRole()==User.Role.VendorAdmin){
             VendorAdmin d = (VendorAdmin)auth.getUser();
-            
             AdminWorkAreaJPanel yoyo = new AdminWorkAreaJPanel(d);
-            
             jSplitPane1.setRightComponent(yoyo);
         }        
-        else if(auth.getRole()==Role.FCAdmin){
+        else if(auth.getRole()==User.Role.FCAdmin){
             FulfillmentCenterAdmin d = (FulfillmentCenterAdmin)auth.getUser();
             AdminWorkAreaJPanel yoyo = new AdminWorkAreaJPanel(d);
-            
             jSplitPane1.setRightComponent(yoyo);
         }
-      //get username, password from frame
-        //pass these values to Ecosystem.UserAccountDirectory.AuthenticateUser()
-        //If result is not null, get the user role from the returned object and
-        //direct him/her to the appropriate workflow
-    }//GEN-LAST:event_loginJButtonActionPerformed
 
-    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordFieldActionPerformed
-
-    private void logoutJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutJButtonActionPerformed
-        logoutJButton.setEnabled(false);
-        userNameField.setEnabled(true);
-        passwordField.setEnabled(true);
-        loginJButton.setEnabled(true);
-
-        userNameField.setText("");
-        passwordField.setText("");
-
-        container.removeAll();
-        JPanel blankJP = new JPanel();
-        container.add("blank", blankJP);
-        //CardLayout crdLyt = (CardLayout) container.getLayout();
-        //crdLyt.next(container);
-        //dB4OUtil.storeSystem(system);
-        jSplitPane1.setRightComponent(container);
-        //logoutJButton.setEnabled(true);
-    }//GEN-LAST:event_logoutJButtonActionPerformed
-
-    private void CreateCustAccButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateCustAccButtonActionPerformed
-        // TODO add your handling code here:
-        Create_CustomerJPanel yoyo = new Create_CustomerJPanel();
-        jSplitPane1.setRightComponent(yoyo);
-    }//GEN-LAST:event_CreateCustAccButtonActionPerformed
+    }//GEN-LAST:event_jLabel3MouseEntered
 
     /**
      * @param args the command line arguments
@@ -456,17 +366,12 @@ this.system = dB4OUtil.retrieveSystem();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CreateCustAccButton;
-    private javax.swing.JPanel container;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JButton loginJButton;
-    private javax.swing.JLabel loginJLabel;
-    private javax.swing.JButton logoutJButton;
-    private javax.swing.JPasswordField passwordField;
-    private javax.swing.JTextField userNameField;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
