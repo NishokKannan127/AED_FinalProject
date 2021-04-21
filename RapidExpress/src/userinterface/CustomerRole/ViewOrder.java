@@ -54,7 +54,9 @@ public class ViewOrder extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         FullDetailsButton = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 51, 102));
+        setBackground(new java.awt.Color(139, 216, 189));
+        setPreferredSize(new java.awt.Dimension(1500, 1000));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -84,45 +86,27 @@ public class ViewOrder extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTable1);
         jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
-        jLabel4.setBackground(new java.awt.Color(0, 0, 153));
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel4.setText("My Orders");
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 460, 146));
 
-        FullDetailsButton.setBackground(new java.awt.Color(0, 0, 153));
-        FullDetailsButton.setForeground(new java.awt.Color(102, 204, 0));
+        jLabel4.setBackground(new java.awt.Color(36, 54, 101));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("My Orders");
+        jLabel4.setOpaque(true);
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 460, 40));
+
+        FullDetailsButton.setBackground(new java.awt.Color(255, 87, 87));
+        FullDetailsButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        FullDetailsButton.setForeground(new java.awt.Color(255, 255, 255));
         FullDetailsButton.setText("Full Order Details");
+        FullDetailsButton.setBorder(null);
         FullDetailsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FullDetailsButtonActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(244, 244, 244)
-                        .addComponent(FullDetailsButton)))
-                .addContainerGap(275, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(FullDetailsButton)
-                .addContainerGap(301, Short.MAX_VALUE))
-        );
+        add(FullDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 130, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void FullDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FullDetailsButtonActionPerformed

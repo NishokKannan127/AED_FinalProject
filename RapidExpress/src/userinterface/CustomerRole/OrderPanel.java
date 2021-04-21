@@ -52,9 +52,10 @@ public class OrderPanel extends javax.swing.JPanel {
     List<Product> items = new ArrayList();
     EcoSystem system;
     private float total = 0f;
+    ArrayList<Order> orderList=new ArrayList<Order>();
     public OrderPanel(Customer customer) {
         initComponents();
-        this.customer = customer;
+        this.customer = customer;        
         refreshVendors();
         //refreshItems();
 //        refreshAverageRatings();
@@ -110,7 +111,6 @@ public class OrderPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel7 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         DeleteButton = new javax.swing.JButton();
         ConfirmButton = new javax.swing.JButton();
@@ -124,16 +124,13 @@ public class OrderPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel7.setText("Customer Dashboard");
-
-        setBackground(new java.awt.Color(255, 51, 102));
+        setBackground(new java.awt.Color(139, 216, 189));
         setForeground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1500, 1000));
 
         jComboBox1.setBackground(new java.awt.Color(0, 0, 153));
-        jComboBox1.setForeground(new java.awt.Color(102, 204, 0));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -145,49 +142,57 @@ public class OrderPanel extends javax.swing.JPanel {
             }
         });
 
-        DeleteButton.setBackground(new java.awt.Color(0, 0, 153));
-        DeleteButton.setForeground(new java.awt.Color(102, 204, 0));
+        DeleteButton.setBackground(new java.awt.Color(255, 87, 87));
+        DeleteButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        DeleteButton.setForeground(new java.awt.Color(255, 255, 255));
         DeleteButton.setText("Delete Selected Item");
+        DeleteButton.setBorder(null);
         DeleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DeleteButtonActionPerformed(evt);
             }
         });
 
-        ConfirmButton.setBackground(new java.awt.Color(0, 0, 153));
-        ConfirmButton.setForeground(new java.awt.Color(102, 204, 0));
+        ConfirmButton.setBackground(new java.awt.Color(255, 87, 87));
+        ConfirmButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        ConfirmButton.setForeground(new java.awt.Color(255, 255, 255));
         ConfirmButton.setText("Confirm Order");
+        ConfirmButton.setBorder(null);
         ConfirmButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConfirmButtonActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Select Items");
 
         jComboBox2.setBackground(new java.awt.Color(0, 0, 153));
-        jComboBox2.setForeground(new java.awt.Color(102, 204, 0));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Add Item");
 
         jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 9, 1));
 
-        AddButton.setBackground(new java.awt.Color(0, 0, 153));
-        AddButton.setForeground(new java.awt.Color(102, 204, 0));
+        AddButton.setBackground(new java.awt.Color(255, 87, 87));
+        AddButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        AddButton.setForeground(new java.awt.Color(255, 255, 255));
         AddButton.setText("Add Item");
+        AddButton.setBorder(null);
         AddButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddButtonActionPerformed(evt);
             }
         });
 
+        CartTable.setBackground(new java.awt.Color(139, 216, 189));
         CartTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -215,9 +220,12 @@ public class OrderPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(CartTable);
         CartTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Total : ");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Comments");
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -226,37 +234,50 @@ public class OrderPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel5.setBackground(new java.awt.Color(36, 54, 101));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Order ");
+        jLabel5.setOpaque(true);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jComboBox1, 0, 220, Short.MAX_VALUE)
+                                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(AddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jScrollPane2)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(DeleteButton, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                                    .addComponent(ConfirmButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(AddButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(DeleteButton)
-                        .addGap(143, 143, 143)
-                        .addComponent(ConfirmButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel3))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(496, Short.MAX_VALUE))
+                        .addGap(319, 319, 319)
+                        .addComponent(jLabel3)))
+                .addContainerGap(850, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,21 +290,31 @@ public class OrderPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AddButton))
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ConfirmButton)
-                    .addComponent(DeleteButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addContainerGap(373, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ConfirmButton, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(127, 127, 127)
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(614, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {AddButton, ConfirmButton, DeleteButton, jComboBox1, jComboBox2, jSpinner1, jTextField1});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
@@ -303,7 +334,7 @@ public class OrderPanel extends javax.swing.JPanel {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         refreshItems();
-//        items.removeAll(items);
+        items.removeAll(items);
         refreshCart();
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
@@ -358,8 +389,9 @@ public class OrderPanel extends javax.swing.JPanel {
         
         
 //uncomment start
-            Order newOrder = new Order(customer,items, items.get(0).getVendor());// getRestaurant());
-            
+            //Order newOrder = new Order(customer,items, items.get(0).getVendor());// getRestaurant());
+//            orderList.add(new Order(customer,items, items.get(0).getVendor()));
+                orderList.add(new Order(customer, new ArrayList<Product>(items),(new ArrayList<Product>(items)).get(0).getVendor()));
              //MimeMessage message =mailSender.createMimeMessage();
              
             //String s = customer.getFirstName()+" "+customer.getLastName()+"\n"+"Order details are as follows :- "+"\n"+"\n"+"\n";
@@ -377,7 +409,7 @@ public class OrderPanel extends javax.swing.JPanel {
                     htmlCode=htmlCode+"<tr align='center'>"+"<td>" + item.getProductName() + "</td>"
                                 + "<td>" + item.getProductCost() + "</td>"
                                 + "<td>" + item.getVendor().getVendorName()+"</td>"
-                                +"<td>" + newOrder.getStatus()+"</td>"
+                                +"<td>" +  orderList.get(orderList.size()-1).getStatus()+"</td>"
                             +"</tr>";
 
                 }
@@ -403,14 +435,21 @@ public class OrderPanel extends javax.swing.JPanel {
             Date date = Calendar.getInstance().getTime();  
                 DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");  
                 String strDate = dateFormat.format(date);  
-            newOrder.setOrderDateTime(strDate);
-            newOrder.setTimePlaced(strDate);
-            newOrder.setFc(fc);
-            customer.addOrder(newOrder);        
+//            newOrder.setOrderDateTime(strDate);
+            orderList.get(orderList.size()-1).setOrderDateTime(strDate);
+//            newOrder.setTimePlaced(strDate);
+            orderList.get(orderList.size()-1).setTimePlaced(strDate);
+//            newOrder.setFc(fc);
+            orderList.get(orderList.size()-1).setFc(fc);
+                    
+//            customer.addOrder(newOrder);        
+            customer.addOrder(orderList.get(orderList.size()-1));
             Vendor v = (Vendor) jComboBox1.getSelectedItem();
-            v.addOrder(newOrder);
-            newOrder.setStatus(Order.Status.SentRequestToVendor);
-            fc.addOrderToOrderList(newOrder);
+//            v.addOrder(newOrder);
+            v.addOrder(orderList.get(orderList.size()-1));
+            //newOrder.setStatus(Order.Status.SentRequestToVendor);
+            orderList.get(orderList.size()-1).setStatus(Order.Status.SentRequestToVendor);
+            fc.addOrderToOrderList(orderList.get(orderList.size()-1));
 //uncomment end        
             
             
@@ -456,7 +495,7 @@ public class OrderPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextField jTextField1;

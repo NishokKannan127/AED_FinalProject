@@ -192,6 +192,7 @@ public class VendorAreaJPanel extends javax.swing.JPanel {
    Order temp2=null;
         for(Order o : vendor.getOrders()){
             int column = 0;
+            
             int row = CartTable.getSelectedRow();
             int selectedId = (Integer)CartTable.getModel().getValueAt(row, column);
             if(o.getId()==selectedId){
@@ -269,6 +270,11 @@ public class VendorAreaJPanel extends javax.swing.JPanel {
 //        refreshOrders();
 //        refreshDeliveryMen();
         //
+        
+        
+        
+        //email with status send to customer
+        
     }//GEN-LAST:event_AddButton2ActionPerformed
     //private void refreshDeliveryMen(){
     //    List<FirstMileDelivery> deliveryMen = EcoSystem.getInstance().getFmDeliveryMenDirectory().getFMDeliveryManList();// getDeliveryManDirectory().getDeliveryManList();

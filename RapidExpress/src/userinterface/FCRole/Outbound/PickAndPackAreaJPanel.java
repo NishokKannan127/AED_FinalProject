@@ -20,6 +20,7 @@ import Business.Role.Dock;
 import Business.Role.FirstMileDelivery;
 import Business.Role.PickAndPack;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -32,15 +33,22 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form PickAndPackAreaJPanel
      */
+    
+    //nishok picker and packer. need to make changes from hardcode to logic
     PickAndPack pickAndPackMan;
     FulfillmentCenter fc;
     Delivery delivery;
     ArrayList<Order>orderList;
     Dock dock;
     private ArrayList<Product>arrivedProducts;
-    int countProductsInOrder=0;
+    int countProductsInOrder=0; 
     OutboundOrganization outOrg;
     ArrayList<Dock>dockMen;
+    //ArrayList<Product>temporaryStorage;
+    HashMap<Integer, ArrayList<Product>> orderidAndProductListForPick;
+    HashMap<Integer, ArrayList<Product>> orderidAndProductListForPack;
+    HashMap<Integer, ArrayList<Product>> orderidAndProductListForSentToDock;
+    
     public PickAndPackAreaJPanel(PickAndPack pickAndPackMan) {
         initComponents();
         this.pickAndPackMan=pickAndPackMan;
@@ -51,6 +59,11 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
         //fc = EcoSystem.getInstance().getFcDirectory().getFCById(1);
         orderList=fc.getOrderListToSend();// getOrderList();
         dockMen=new ArrayList<Dock>();
+        orderidAndProductListForPick = new HashMap<Integer,ArrayList<Product>>();
+        orderidAndProductListForPack = new HashMap<Integer,ArrayList<Product>>();
+        orderidAndProductListForSentToDock = new HashMap<Integer,ArrayList<Product>>();
+        
+        assignNewOrderEnteriesToHashMap();
         refreshOrderAndInventoryQuant();
         //HARDCODED
 //        this.fc.getOutboundOrgDirectory().getOutboundOrganizationList();// InboundOrganizationDirectory;
@@ -62,7 +75,17 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
     }
 
     
-    
+    private void assignNewOrderEnteriesToHashMap(){
+        for(Order o1:orderList){
+            orderidAndProductListForPick.put(o1.getId(), new ArrayList<Product>());
+        }
+        for(Order o2:orderList){
+            orderidAndProductListForPack.put(o2.getId(), new ArrayList<Product>());
+        }
+        for(Order o3:orderList){
+            orderidAndProductListForSentToDock.put(o3.getId(), new ArrayList<Product>());
+        }
+    }
     @SuppressWarnings("unchecked")
     private void refreshOrderAndInventoryQuant(){
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
@@ -96,10 +119,16 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
         AddButton3 = new javax.swing.JButton();
         AddButton4 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(139, 216, 189));
+        setFocusCycleRoot(true);
+        setPreferredSize(new java.awt.Dimension(1500, 1000));
+
+        jLabel1.setBackground(new java.awt.Color(36, 54, 101));
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Picker and Packer");
+        jLabel1.setOpaque(true);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -129,27 +158,33 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTable1);
         jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
-        AddButton2.setBackground(new java.awt.Color(0, 0, 153));
-        AddButton2.setForeground(new java.awt.Color(102, 204, 0));
+        AddButton2.setBackground(new java.awt.Color(255, 87, 87));
+        AddButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        AddButton2.setForeground(new java.awt.Color(255, 255, 255));
         AddButton2.setText("Pick");
+        AddButton2.setBorder(null);
         AddButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddButton2ActionPerformed(evt);
             }
         });
 
-        AddButton3.setBackground(new java.awt.Color(0, 0, 153));
-        AddButton3.setForeground(new java.awt.Color(102, 204, 0));
+        AddButton3.setBackground(new java.awt.Color(255, 87, 87));
+        AddButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        AddButton3.setForeground(new java.awt.Color(255, 255, 255));
         AddButton3.setText("Pack");
+        AddButton3.setBorder(null);
         AddButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddButton3ActionPerformed(evt);
             }
         });
 
-        AddButton4.setBackground(new java.awt.Color(0, 0, 153));
-        AddButton4.setForeground(new java.awt.Color(102, 204, 0));
+        AddButton4.setBackground(new java.awt.Color(255, 87, 87));
+        AddButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        AddButton4.setForeground(new java.awt.Color(255, 255, 255));
         AddButton4.setText("Sent To Dock");
+        AddButton4.setBorder(null);
         AddButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddButton4ActionPerformed(evt);
@@ -161,38 +196,39 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(83, 83, 83))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap(130, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(AddButton2)
-                        .addGap(120, 120, 120)
-                        .addComponent(AddButton3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(156, 156, 156)
-                        .addComponent(AddButton4)))
-                .addContainerGap(62, Short.MAX_VALUE))
+                        .addComponent(AddButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(AddButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(AddButton4))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 943, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 943, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(427, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {AddButton2, AddButton3, AddButton4});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AddButton2)
-                    .addComponent(AddButton3))
-                .addGap(18, 18, 18)
-                .addComponent(AddButton4)
-                .addContainerGap(316, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AddButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(AddButton3)
+                        .addComponent(AddButton4)))
+                .addContainerGap(640, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {AddButton2, AddButton3, AddButton4});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void AddButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButton2ActionPerformed
@@ -201,21 +237,41 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
         Product temp2=null;
         List<Product> arrivedProd=arrivedProducts;
         
-        for(Order o : orderList){
-            for(Product p: o.getProductListInOrder()){
-                int column = 1;
-                int row = jTable1.getSelectedRow();
-                int selectedId = (Integer)jTable1.getModel().getValueAt(row, column);
-                if(o.getId()==selectedId){
-                    o.setStatus(Order.Status.Picked);
-                
-                //do quantity --
-                    break;
+        int column = 1;
+        int column2 = 0;
+        int column3=2;
+        int row = jTable1.getSelectedRow();
+        int orderId=(Integer)jTable1.getModel().getValueAt(row,column2);
+        Order o=null;
+        //orderList.get(orderId)
+        for(Order opop:orderList){
+            if(opop.getId()==orderId){
+                o=opop;
             }
-            
         }
-    }
         
+        //for(Order o : orderList){
+            for(Product p: o.getProductListInOrder()){
+                
+                int selectedId = (Integer)jTable1.getModel().getValueAt(row, column);
+                Product prodd = (Product)jTable1.getModel().getValueAt(row, column3);
+                
+                if(!orderidAndProductListForPick.get(o.getId()).contains(prodd)){
+                    orderidAndProductListForPick.get(o.getId()).add(prodd);
+                    break;
+                }                
+                
+           //     if(o.getId()==selectedId){
+           //         o.setStatus(Order.Status.Picked);
+           //         break;
+           // }
+            
+        //}
+    }
+        if(orderidAndProductListForPick.get(o.getId()).size()==o.getProductListInOrder().size()){
+                    o.setStatus(Order.Status.Picked);
+                    //break;
+                }
 //        Stow st = new //(Vendor) jComboBox1.getSelectedItem();
 //            v.addOrder(newOrder);
         //refreshOrders();
@@ -247,35 +303,61 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
         Product temp2=null;
         List<Product> arrivedProd=arrivedProducts;
         
-        for(Order o : orderList){
-            for(Product p: o.getProductListInOrder()){
-                int column = 0;
-                int column2=1;
-                int row = jTable1.getSelectedRow();
-                int selectedId = (Integer)jTable1.getModel().getValueAt(row, column);
-   //             Product selectedProd = (Product)jTable1.getModel().getValueAt(row, column2);
-            
-                if(o.getId()==selectedId){
-                    o.setStatus(Order.Status.Packed);
-                //dock.addPackedOrders(o);
-                //this.fc.removeProduct(selectedProd);
-                // set getQuantityOfProduct(order.getProductListInOrder().get(i));
-                
-                //do quantity --
-                //break;
+        
+        // TODO add your handling code here:
+        int column = 1;
+        int column2 = 0;
+        int column3=2;
+        int row = jTable1.getSelectedRow();
+        int orderId=(Integer)jTable1.getModel().getValueAt(row,column2);
+        Order o=null;
+        //orderList.get(orderId)
+        for(Order opop:orderList){
+            if(opop.getId()==orderId){
+                o=opop;
             }
-            refreshOrderAndInventoryQuant();
+        }
+        
+        //nishikori start
+        //for(Order o : orderList){
+            for(Product p: o.getProductListInOrder()){
+                
+                int selectedId = (Integer)jTable1.getModel().getValueAt(row, column);
+                Product prodd = (Product)jTable1.getModel().getValueAt(row, column3);
+                
+                if(!orderidAndProductListForPack.get(o.getId()).contains(prodd)){
+                    orderidAndProductListForPack.get(o.getId()).add(prodd);
+                    break;
+                }                
+                
+           //     if(o.getId()==selectedId){
+           //         o.setStatus(Order.Status.Picked);
+           //         break;
+           // }
             
         }
-            
+    //}
+        if(orderidAndProductListForPack.get(o.getId()).size()==o.getProductListInOrder().size()){
+                    o.setStatus(Order.Status.Packed);
+                }
+        
 //        Stow st = new //(Vendor) jComboBox1.getSelectedItem();
 //            v.addOrder(newOrder);
         //refreshOrders();
         refreshOrderAndInventoryQuant();
-
-
-        }
-        // TODO add your handling code here:
+        //nishikori end
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }//GEN-LAST:event_AddButton3ActionPerformed
 
     private void AddButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButton4ActionPerformed
@@ -283,34 +365,68 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
         List<VendorShipment> shipments = delivery.getVendorShipmentList(); 
         Product temp2=null;
         List<Product> arrivedProd=arrivedProducts;
-        int column = 0;
-            int column2=1;
-            int column3=2;
-            int row = jTable1.getSelectedRow();
-        for(Order o : orderList){
+        //int column = 0;
+        //    int column2=1;
+        //    int column3=2;
+        //    int row = jTable1.getSelectedRow();
             
+            
+            
+           //start
+           int column = 1;
+        int column2 = 0;
+        int column3=2;
+        int row = jTable1.getSelectedRow();
+        int orderId=(Integer)jTable1.getModel().getValueAt(row,column2);
+        Order o=null;
+        //orderList.get(orderId)
+        for(Order opop:orderList){
+            if(opop.getId()==orderId){
+                o=opop;
+            }
+        }
+           //stop
+            //nishikori start
             for(Product p: o.getProductListInOrder()){
                 
-            int selectedId = (Integer)jTable1.getModel().getValueAt(row, column2);
-            Product selectedProd = (Product)jTable1.getModel().getValueAt(row, column3);
-            
-            //if(o.getId()==selectedId){                
-            if(p.getProductId()==selectedId){                
-                this.fc.removeProduct(selectedProd);
+                int selectedId = (Integer)jTable1.getModel().getValueAt(row, column);
+                Product prodd = (Product)jTable1.getModel().getValueAt(row, column3);
+                
+                
+                if(p.getProductId()==selectedId){                
+                this.fc.removeProduct(prodd);
                 countProductsInOrder+=1;
                 // set getQuantityOfProduct(order.getProductListInOrder().get(i));
                 
                 //do quantity --
                 //break;
                 
-            }            
-            }
-            refreshOrderAndInventoryQuant();
-            if(countProductsInOrder==o.getProductListInOrder().size()){
-                o.setStatus(Order.Status.SentToDock);
-                //dock.addPackedOrders(o);
-            }
+            }else{
+                    continue;
+                }
+                if(!orderidAndProductListForSentToDock.get(o.getId()).contains(prodd)){
+                    orderidAndProductListForSentToDock.get(o.getId()).add(prodd);
+                    
+                    break;
+                }                
+                
+           //     if(o.getId()==selectedId){
+           //         o.setStatus(Order.Status.Picked);
+           //         break;
+           // }
+            
         }
+    //}
+        if(orderidAndProductListForSentToDock.get(o.getId()).size()==o.getProductListInOrder().size()){
+                    o.setStatus(Order.Status.SentToDock);
+                }
+            //nishikori stop
+            
+            
+        //for(Order o : orderList){
+//HashMap            
+            
+        
         //if(dock.getPackedOrderList().size()>0){
         //    dock.setIsAvailable(false);
        // }
