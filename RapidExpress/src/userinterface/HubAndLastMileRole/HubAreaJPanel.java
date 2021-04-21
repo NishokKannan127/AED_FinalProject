@@ -246,7 +246,7 @@ public class HubAreaJPanel extends javax.swing.JPanel {
         for(int i=0; i<shipmentList.size();i++){
             for(int j=0;j<ordersForArea.size();j++){
                 for(int k=0;k<ordersForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i). getOrgAddress().getArea()).size();k++){
-                   model.addRow(new Object[]{shipmentList.get(i).getShipmentId(), ordersForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).get(j).getStatus(),orderForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).getId(),orderForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).getLMLinked().getLmOrgId()});
+                   model.addRow(new Object[]{shipmentList.get(i).getShipmentId(), ordersForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).get(j).getStatus(),ordersForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).get(j).getId(),ordersForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).get(j).getLMLinked().getLmOrgId()});
                 }
                 }
             }
