@@ -90,10 +90,9 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
         jScrollPane1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
 
-        networkJTable.setBackground(new java.awt.Color(0, 0, 0));
-        networkJTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 255, 204)));
-        networkJTable.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        networkJTable.setForeground(new java.awt.Color(255, 255, 255));
+        networkJTable.setBackground(new java.awt.Color(255,255, 255));
+        networkJTable.setFont(new java.awt.Font("Tahoma", 0, 12));
+        networkJTable.setForeground(new java.awt.Color(0, 0, 0));
         networkJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -111,11 +110,11 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             }
         });
         networkJTable.setFocusable(false);
-        networkJTable.setGridColor(new java.awt.Color(255, 255, 255));
+        networkJTable.setGridColor(new java.awt.Color(0, 0, 0));
         networkJTable.setIntercellSpacing(new java.awt.Dimension(0, 0));
         networkJTable.setRowHeight(30);
         networkJTable.setSelectionForeground(new java.awt.Color(204, 255, 204));
-        networkJTable.setShowVerticalLines(false);
+        networkJTable.setShowGrid(true);
         jScrollPane1.setViewportView(networkJTable);
         if (networkJTable.getColumnModel().getColumnCount() > 0) {
             networkJTable.getColumnModel().getColumn(0).setResizable(false);
@@ -123,7 +122,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             networkJTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, 490, 200));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, 490, 200));
 
         jPanel2.setBackground(new java.awt.Color(255, 87, 87));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
@@ -143,7 +142,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
 
         txtNetWorkName.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        txtNetWorkName.setForeground(new java.awt.Color(255, 255, 255));
         txtNetWorkName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNetWorkNameActionPerformed(evt);
@@ -152,7 +150,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         jPanel2.add(txtNetWorkName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 174, 20));
 
         txtState.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        txtState.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 174, 20));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -161,7 +158,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         txtCountry.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        txtCountry.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.add(txtCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 174, 20));
 
         btnCreateNetwork.setBackground(new java.awt.Color(36, 54, 101));
@@ -184,7 +180,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         jLabel4.setOpaque(true);
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 50));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 380, 440));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 380, 440));
 
         jPanel3.setBackground(new java.awt.Color(36, 54, 101));
         jPanel3.setPreferredSize(new java.awt.Dimension(926, 70));
@@ -201,8 +197,8 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 1476, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 896, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(594, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

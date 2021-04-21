@@ -138,40 +138,16 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1500, 1000));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        enterpriseJTable.setBackground(new java.awt.Color(0, 0, 0));
-        enterpriseJTable.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        enterpriseJTable.setForeground(new java.awt.Color(255, 255, 255));
-        enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Enterprise Name", "Enterprise Type", "Network", "Contact", "Zipcode", "Email"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        enterpriseJTable.setBackground(new java.awt.Color(255, 255,255 ));
+        enterpriseJTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        enterpriseJTable.setForeground(new java.awt.Color(0, 0, 0));
         enterpriseJTable.setGridColor(new java.awt.Color(0, 0, 0));
         enterpriseJTable.setIntercellSpacing(new java.awt.Dimension(0, 0));
         enterpriseJTable.setRowHeight(30);
         enterpriseJTable.setShowVerticalLines(false);
         jScrollPane1.setViewportView(enterpriseJTable);
-        if (enterpriseJTable.getColumnModel().getColumnCount() > 0) {
-            enterpriseJTable.getColumnModel().getColumn(0).setResizable(false);
-            enterpriseJTable.getColumnModel().getColumn(1).setResizable(false);
-            enterpriseJTable.getColumnModel().getColumn(2).setResizable(false);
-            enterpriseJTable.getColumnModel().getColumn(3).setResizable(false);
-            enterpriseJTable.getColumnModel().getColumn(4).setResizable(false);
-            enterpriseJTable.getColumnModel().getColumn(5).setResizable(false);
-        }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 650, 490));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, -1, 490));
 
         jPanel2.setBackground(new java.awt.Color(255, 87, 87));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
@@ -187,7 +163,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Create Enterprise");
         jLabel7.setOpaque(true);
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, 420, 50));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 420, 50));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -311,7 +287,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(txtArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 174, 20));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 400, 490));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 360, 490));
 
         jPanel3.setBackground(new java.awt.Color(36, 54, 101));
         jPanel3.setPreferredSize(new java.awt.Dimension(926, 70));
@@ -329,8 +305,8 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 1546, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 1020, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(540, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
