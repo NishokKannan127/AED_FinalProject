@@ -379,7 +379,10 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
                 int selectedId = (Integer)jTable1.getModel().getValueAt(row, column);
                 Product prodd = (Product)jTable1.getModel().getValueAt(row, column3);
                 
-                if(p.getProductId()==selectedId){                
+                
+                if(!orderidAndProductListForSentToDock.get(o.getId()).contains(prodd)){
+                    orderidAndProductListForSentToDock.get(o.getId()).add(prodd);
+                    if(p.getProductId()==selectedId){                
                 this.fc.removeProduct(prodd);
                 countProductsInOrder+=1;
                 // set getQuantityOfProduct(order.getProductListInOrder().get(i));
@@ -388,8 +391,6 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
                 //break;
                 
             }
-                if(!orderidAndProductListForSentToDock.get(o.getId()).contains(prodd)){
-                    orderidAndProductListForSentToDock.get(o.getId()).add(prodd);
                     break;
                 }                
                 
@@ -400,7 +401,7 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
             
         }
     //}
-        if(orderidAndProductListForPack.get(o.getId()).size()==o.getProductListInOrder().size()){
+        if(orderidAndProductListForSentToDock.get(o.getId()).size()==o.getProductListInOrder().size()){
                     o.setStatus(Order.Status.SentToDock);
                 }
             //nishikori stop
