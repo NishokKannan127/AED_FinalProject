@@ -17,7 +17,11 @@ import Business.POJO.VendorShipment;
 import Business.Role.LastMileMan;
 import userinterface.FCRole.Outbound.*;
 import Business.Role.PickAndPack;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -73,14 +77,14 @@ public class LastMileAreaJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Order ID", "Product", "CustomerID", "Order Date", "Status", "Deliver by Date", "Stock Quantity"
+                "Order ID", "Product", "CustomerID", "Order Date", "Status", "Stock Quantity"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, true
+                false, false, false, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -138,9 +142,13 @@ public class LastMileAreaJPanel extends javax.swing.JPanel {
         //ArrayList<Order> orders = del.getOrderList();// getVendorShipmentList();// getShipmentList();// getOrders();
         DefaultTableModel model = (DefaultTableModel) CartTable.getModel();        
         model.setRowCount(0);
+        Date date = Calendar.getInstance().getTime();  
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");  
+        String strDate = dateFormat.format(date);  
+        
         for(Order o :orderList){
             for(Product p:o.getProductListInOrder()){
-                model.addRow(new Object[]{o.getOrderId(),p.getProductId(),o.getCustomer().getId(),"date", o.getStatus(),"deliver","quantity"});
+                model.addRow(new Object[]{o.getOrderId(),p.getProductId(),o.getCustomer().getId(),strDate, o.getStatus(),"quantity"});
             
             }
            //if(o.getStatus()==Order.Status.Pending)jComboBox1.addItem(o);
@@ -149,9 +157,12 @@ public class LastMileAreaJPanel extends javax.swing.JPanel {
     public void refreshPageFinally(){
         DefaultTableModel model = (DefaultTableModel) CartTable.getModel();        
         model.setRowCount(0);
+        Date date = Calendar.getInstance().getTime();  
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");  
+        String strDate = dateFormat.format(date);  
         for(Order o :orderList){
             for(Product p:o.getProductListInOrder()){
-                model.addRow(new Object[]{o.getOrderId(),p.getProductId(),o.getCustomer().getId(),"date", o.getStatus(),"deliver","quantity"});
+                model.addRow(new Object[]{o.getOrderId(),p.getProductId(),o.getCustomer().getId(),strDate, o.getStatus(),"quantity"});
             
             }
            //if(o.getStatus()==Order.Status.Pending)jComboBox1.addItem(o);
