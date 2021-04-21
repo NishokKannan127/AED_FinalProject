@@ -65,10 +65,15 @@ public class FulfillmentCenter extends Enterprise{
     }
     public void removeProduct(Product prod){
         if(productsAndQuantity.containsKey(prod)){
-            productsAndQuantity.put(prod,productsAndQuantity.get(prod)-1);
+            if(productsAndQuantity.get(prod)>0){
+                productsAndQuantity.put(prod,productsAndQuantity.get(prod)-1);
+            }
+            else{
+                System.out.println("Quantity less than 0");
+            }
         }
         else{
-            
+            System.out.println("Product not present in FC");
         }
     }
     public void setProductsAndQuantity(HashMap<Product, Integer> productsAndQuantity) {

@@ -369,9 +369,8 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
         //    int column2=1;
         //    int column3=2;
         //    int row = jTable1.getSelectedRow();
-            
-            
-            
+
+
            //start
            int column = 1;
         int column2 = 0;
