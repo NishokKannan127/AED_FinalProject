@@ -380,9 +380,7 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
                 Product prodd = (Product)jTable1.getModel().getValueAt(row, column3);
                 
                 
-                if(!orderidAndProductListForSentToDock.get(o.getId()).contains(prodd)){
-                    orderidAndProductListForSentToDock.get(o.getId()).add(prodd);
-                    if(p.getProductId()==selectedId){                
+                if(p.getProductId()==selectedId){                
                 this.fc.removeProduct(prodd);
                 countProductsInOrder+=1;
                 // set getQuantityOfProduct(order.getProductListInOrder().get(i));
@@ -390,7 +388,12 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
                 //do quantity --
                 //break;
                 
-            }
+            }else{
+                    break;
+                }
+                if(!orderidAndProductListForSentToDock.get(o.getId()).contains(prodd)){
+                    orderidAndProductListForSentToDock.get(o.getId()).add(prodd);
+                    
                     break;
                 }                
                 
