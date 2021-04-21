@@ -213,6 +213,9 @@ public class FMDeliveryManagerAreaJPanel extends javax.swing.JPanel {
         temp.setStatus(Shipment.Status.Assigned);
         refreshShipments();
         refreshDeliveryMen();
+        
+        
+        
     }//GEN-LAST:event_AssignButtonActionPerformed
 
     private void DeliveryMenListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeliveryMenListActionPerformed
