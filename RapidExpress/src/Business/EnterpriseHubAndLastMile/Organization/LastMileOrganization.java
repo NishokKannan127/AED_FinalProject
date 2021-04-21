@@ -58,8 +58,12 @@ public class LastMileOrganization extends Organization{
     public void addLMMen(LastMileMan lmMan){
         this.lmMenList.add(lmMan);
     }
-    public void addOrdersToLM(Order order){        
+    public void addOrderToLM(Order order){        
         if(this.getOrgAddress().getArea()==order.getCustomer().getAddress().getArea())
             this.lmOrders.add(order);
+    }
+    public void addOrdersToLM(ArrayList<Order> orders){
+        if(this.getOrgAddress().getArea()==orders.get(0).getCustomer().getAddress().getArea())
+            this.lmOrders=orders;
     }
 }

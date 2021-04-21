@@ -194,6 +194,11 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         networkJComboBox.setBackground(new java.awt.Color(0, 0, 0));
         networkJComboBox.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         networkJComboBox.setForeground(new java.awt.Color(255, 255, 255));
+        networkJComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                networkJComboBoxActionPerformed(evt);
+            }
+        });
         jPanel2.add(networkJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 163, -1));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -486,6 +491,10 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     private void txtAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAreaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAreaActionPerformed
+
+    private void networkJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkJComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_networkJComboBoxActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreateEnterprise;

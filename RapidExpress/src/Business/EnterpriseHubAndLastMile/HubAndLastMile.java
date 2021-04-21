@@ -37,8 +37,11 @@ public class HubAndLastMile extends Enterprise{
         return fc;
     }
     ArrayList<Order> ordersToSendToLMStation;
-    public void addOrdersToLM(Order order){
+    public void addOrderToLM(Order order){
         this.ordersToSendToLMStation.add(order);
+    }
+    public void addOrdersToLM(ArrayList<Order> orders){
+        this.ordersToSendToLMStation=orders;
     }
     public ArrayList<Order> returnOrdersToSendToLM(){
         return this.ordersToSendToLMStation;
