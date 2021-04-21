@@ -244,11 +244,11 @@ public class HubAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();        
         model.setRowCount(0);
         for(int i=0; i<shipmentList.size();i++){
-            for(int j=0;j<ordersForArea.size();j++){
+            //for(int j=0;j<ordersForArea.size();j++){
                 for(int k=0;k<ordersForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i). getOrgAddress().getArea()).size();k++){
-                   model.addRow(new Object[]{shipmentList.get(i).getShipmentId(), ordersForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).get(j).getStatus(),ordersForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).get(j).getId(),ordersForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).get(j).getLMLinked().getLmOrgId()});
+                   model.addRow(new Object[]{shipmentList.get(i).getShipmentId(), ordersForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).get(k).getStatus(),ordersForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).get(k).getId(),ordersForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).get(k).getLMLinked().getLmOrgId()});
                 }
-                }
+                
             }
         }
     
