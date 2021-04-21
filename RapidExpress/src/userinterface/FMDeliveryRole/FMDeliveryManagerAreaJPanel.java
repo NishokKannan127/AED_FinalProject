@@ -206,6 +206,7 @@ public class FMDeliveryManagerAreaJPanel extends javax.swing.JPanel {
         fmDelivery = (FirstMileDelivery) (DeliveryMen) DeliveryMenList.getSelectedItem();
         if (fmDelivery==null) return;
         temp.setFMDeliveryMan(fmDelivery);// setDeliveryMan(fmDelivery);
+        fmDelivery.setIsAvailable(false);
         temp.setStatus(Shipment.Status.Assigned);
         refreshShipments();
         refreshDeliveryMen();

@@ -247,6 +247,7 @@ public class LMDeliveryManagerAreaJPanel extends javax.swing.JPanel {
         lmDelivery = (LastMileDelivery) (DeliveryMen) DeliveryMenList.getSelectedItem();
         if (lmDelivery==null) return;
         temp.setLMDeliveryMan(lmDelivery);// setDeliveryMan(fmDelivery);
+        lmDelivery.setIsAvailable(false);
         temp.setStatus(Order.Status.AssignedToLastMileDeliveryMan);
         refreshOrders();
         refreshDeliveryMen();
