@@ -76,7 +76,7 @@ public class OrderDetailsPopup extends javax.swing.JPanel {
         jTextField9 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 51, 102));
+        setBackground(new java.awt.Color(139, 216, 189));
         setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -100,8 +100,8 @@ public class OrderDetailsPopup extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel7.setText("Comments : ");
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(36, 54, 101));
         jLabel8.setText("Order Details");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -111,20 +111,28 @@ public class OrderDetailsPopup extends javax.swing.JPanel {
         jLabel10.setText("Items :");
 
         jTextField1.setEditable(false);
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
 
         jTextField2.setEditable(false);
+        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
 
         jTextField3.setEditable(false);
+        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
 
         jTextField4.setEditable(false);
+        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
 
         jTextField5.setEditable(false);
+        jTextField5.setBackground(new java.awt.Color(255, 255, 255));
 
         jTextField6.setEditable(false);
+        jTextField6.setBackground(new java.awt.Color(255, 255, 255));
 
         jTextField7.setEditable(false);
+        jTextField7.setBackground(new java.awt.Color(255, 255, 255));
 
         jTextField8.setEditable(false);
+        jTextField8.setBackground(new java.awt.Color(255, 255, 255));
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(10);
@@ -135,6 +143,7 @@ public class OrderDetailsPopup extends javax.swing.JPanel {
         jLabel11.setText("Address :");
 
         jTextField9.setEditable(false);
+        jTextField9.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel12.setText("Restaurant - ");
 

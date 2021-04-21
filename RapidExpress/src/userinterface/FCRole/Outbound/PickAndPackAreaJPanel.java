@@ -119,10 +119,16 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
         AddButton3 = new javax.swing.JButton();
         AddButton4 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(139, 216, 189));
+        setFocusCycleRoot(true);
+        setPreferredSize(new java.awt.Dimension(1500, 1000));
+
+        jLabel1.setBackground(new java.awt.Color(36, 54, 101));
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Picker and Packer");
+        jLabel1.setOpaque(true);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -152,27 +158,33 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTable1);
         jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
-        AddButton2.setBackground(new java.awt.Color(0, 0, 153));
-        AddButton2.setForeground(new java.awt.Color(102, 204, 0));
+        AddButton2.setBackground(new java.awt.Color(255, 87, 87));
+        AddButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        AddButton2.setForeground(new java.awt.Color(255, 255, 255));
         AddButton2.setText("Pick");
+        AddButton2.setBorder(null);
         AddButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddButton2ActionPerformed(evt);
             }
         });
 
-        AddButton3.setBackground(new java.awt.Color(0, 0, 153));
-        AddButton3.setForeground(new java.awt.Color(102, 204, 0));
+        AddButton3.setBackground(new java.awt.Color(255, 87, 87));
+        AddButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        AddButton3.setForeground(new java.awt.Color(255, 255, 255));
         AddButton3.setText("Pack");
+        AddButton3.setBorder(null);
         AddButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddButton3ActionPerformed(evt);
             }
         });
 
-        AddButton4.setBackground(new java.awt.Color(0, 0, 153));
-        AddButton4.setForeground(new java.awt.Color(102, 204, 0));
+        AddButton4.setBackground(new java.awt.Color(255, 87, 87));
+        AddButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        AddButton4.setForeground(new java.awt.Color(255, 255, 255));
         AddButton4.setText("Sent To Dock");
+        AddButton4.setBorder(null);
         AddButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddButton4ActionPerformed(evt);
@@ -184,38 +196,39 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(83, 83, 83))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap(130, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(AddButton2)
-                        .addGap(120, 120, 120)
-                        .addComponent(AddButton3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(156, 156, 156)
-                        .addComponent(AddButton4)))
-                .addContainerGap(62, Short.MAX_VALUE))
+                        .addComponent(AddButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(AddButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(AddButton4))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 943, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 943, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(427, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {AddButton2, AddButton3, AddButton4});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AddButton2)
-                    .addComponent(AddButton3))
-                .addGap(18, 18, 18)
-                .addComponent(AddButton4)
-                .addContainerGap(316, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AddButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(AddButton3)
+                        .addComponent(AddButton4)))
+                .addContainerGap(640, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {AddButton2, AddButton3, AddButton4});
+
     }// </editor-fold>//GEN-END:initComponents
 
     private void AddButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButton2ActionPerformed
@@ -356,9 +369,8 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
         //    int column2=1;
         //    int column3=2;
         //    int row = jTable1.getSelectedRow();
-            
-            
-            
+
+
            //start
            int column = 1;
         int column2 = 0;
