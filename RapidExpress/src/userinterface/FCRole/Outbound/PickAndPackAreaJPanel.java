@@ -389,7 +389,7 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
                 //break;
                 
             }else{
-                    break;
+                    continue;
                 }
                 if(!orderidAndProductListForSentToDock.get(o.getId()).contains(prodd)){
                     orderidAndProductListForSentToDock.get(o.getId()).add(prodd);
