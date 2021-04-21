@@ -35,6 +35,7 @@ public class HubAreaJPanel extends javax.swing.JPanel {
     ArrayList<FCShipment> shipmentList;
     ArrayList<Order>outputOrders;
     HashMap<String,Order> orderForArea;
+    HashMap<String,ArrayList<Order>> ordersForArea;
     ArrayList<LastMile> lmList;
     HubMan hubMan;
     ArrayList<HubOrganization> hubOrg;
@@ -53,21 +54,36 @@ public class HubAreaJPanel extends javax.swing.JPanel {
         //hubOrg=hAndLM.getHubList();
         //lmOrg=hAndLM.getLmOrgList();
         orderForArea=new HashMap<String,Order>();
+        ordersForArea=new HashMap<String,ArrayList<Order>>();
         //this.lmList=hAndLM.get
             //hAndLM=EcoSystem.getInstance().gethAndLmDir().getHubAndLastMileList().get(0);// getHubList();
         //hubOrg=hAndLM.getHubList();
         //lmOrg=hAndLM.getLmOrgList();
-        
+        initializeOrdersFromShipment();
         refreshPage();
     }
-
+    public void initializeOrdersFromShipment(){
+        for(int i=0;i<shipmentList.size();i++){
+            for(int j=0;j<shipmentList.get(i).getOrderListInShipment().size();j++){
+                if(!ordersForArea.containsKey(shipmentList.get(i).getOrderListInShipment().get(j).getCustomer().getAddress().getArea())){
+                    ordersForArea.put(shipmentList.get(i).getOrderListInShipment().get(j).getCustomer().getAddress().getArea(), new ArrayList<Order>());
+                }
+//                else{                   
+//               }
+            }
+        }
+    }
     public void breakShipmentIntoOrders(){
         
         for(int i=0;i<shipmentList.size();i++){
             for(int j=0;j<shipmentList.get(i).getOrderListInShipment().size();j++){
-                if(!orderForArea.containsKey(shipmentList.get(i).getOrderListInShipment().get(j).getCustomer().getAddress().getArea())){
-                    orderForArea.put(shipmentList.get(i).getOrderListInShipment().get(j).getCustomer().getAddress().getArea(), shipmentList.get(i).getOrderListInShipment().get(j));
-                }
+//                if(!orderForArea.containsKey(shipmentList.get(i).getOrderListInShipment().get(j).getCustomer().getAddress().getArea())){
+//                    orderForArea.put(shipmentList.get(i).getOrderListInShipment().get(j).getCustomer().getAddress().getArea(), shipmentList.get(i).getOrderListInShipment().get(j));
+//                }
+//                else{
+//                    
+//                }
+                ordersForArea.get(shipmentList.get(i).getOrderListInShipment().get(j).getCustomer().getAddress().getArea()).add( shipmentList.get(i).getOrderListInShipment().get(j));
             }
         }
         refreshShipmentsToOrders();
@@ -190,15 +206,15 @@ public class HubAreaJPanel extends javax.swing.JPanel {
 
     private void AddButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButton3ActionPerformed
         // TODO add your handling code here:
-        assignOrdersToLastMile();
+        assignOrdersToLastMileNew();
         refreshPageFinally();
     }//GEN-LAST:event_AddButton3ActionPerformed
     public void assignOrdersToLastMile(){
         for(int i=0;i<hAndLM.getHubOrgDir().getHubOrganizationList().size();i++){
             for(int j=0;j<orderForArea.size();j++){
                 if(orderForArea.containsKey(hAndLM.getHubOrgDir().getHubOrganizationList().get(i). getOrgAddress().getCity())){
-                    hAndLM.getLmOrgDir().getLMOrganizationList().get(i).addOrdersToLM(orderForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()));// getHubOrgDir().getHubOrganizationList().get(i). getOrgAddress().getCity()))));//  getFmDeliveryOrganizationList() HubOrgDir().getHubOrganizationList().get(i).addShipmentToHub(orderForArea.get(hAndLM.getHubOrgDir().getHubOrganizationList().get(i). getOrgAddress().getCity()));
-                    hAndLM.addOrdersToLM(orderForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()));
+                    hAndLM.getLmOrgDir().getLMOrganizationList().get(i).addOrderToLM(orderForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()));// getHubOrgDir().getHubOrganizationList().get(i). getOrgAddress().getCity()))));//  getFmDeliveryOrganizationList() HubOrgDir().getHubOrganizationList().get(i).addShipmentToHub(orderForArea.get(hAndLM.getHubOrgDir().getHubOrganizationList().get(i). getOrgAddress().getCity()));
+                    hAndLM.addOrderToLM(orderForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()));
                     orderForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i). getOrgAddress().getArea()).setStatus(Order.Status.SentToLastMile);
                     orderForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).setLMLinked(hAndLM.getLmOrgDir().getLMOrganizationList().get(i));
                 //shipmentForLocation.setHubAndLastMile(hAndLM.get(i));
@@ -207,15 +223,35 @@ public class HubAreaJPanel extends javax.swing.JPanel {
         }
         refreshPageFinally();
     }
+    
+    public void assignOrdersToLastMileNew(){
+        for(int i=0;i<hAndLM.getHubOrgDir().getHubOrganizationList().size();i++){
+             for(int j=0;j<ordersForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i). getOrgAddress().getArea()).size();j++){
+                if(ordersForArea.containsKey(hAndLM.getHubOrgDir().getHubOrganizationList().get(i). getOrgAddress().getArea())){
+                    hAndLM.getLmOrgDir().getLMOrganizationList().get(i).addOrderToLM(ordersForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i). getOrgAddress().getArea()).get(j));// getHubOrgDir().getHubOrganizationList().get(i). getOrgAddress().getCity()))));//  getFmDeliveryOrganizationList() HubOrgDir().getHubOrganizationList().get(i).addShipmentToHub(orderForArea.get(hAndLM.getHubOrgDir().getHubOrganizationList().get(i). getOrgAddress().getCity()));
+                    hAndLM.addOrderToLM(ordersForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).get(j));
+                    
+                        ordersForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i). getOrgAddress().getArea()).get(j).setStatus(Order.Status.SentToLastMile);
+                        ordersForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).get(j).setLMLinked(hAndLM.getLmOrgDir().getLMOrganizationList().get(i));
+                    }
+                //shipmentForLocation.setHubAndLastMile(hAndLM.get(i));
+            }
+ //           }
+        }
+        refreshPageFinally();
+    }
     public void refreshPageFinally(){
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();        
         model.setRowCount(0);
         for(int i=0; i<shipmentList.size();i++){
-            for(int j=0;j<orderForArea.size();j++){
-                model.addRow(new Object[]{shipmentList.get(i).getShipmentId(), orderForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).getStatus(),orderForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).getId(),orderForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).getLMLinked().getLmOrgId()});
+            for(int j=0;j<ordersForArea.size();j++){
+                for(int k=0;k<ordersForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i). getOrgAddress().getArea()).size();k++){
+                   model.addRow(new Object[]{shipmentList.get(i).getShipmentId(), ordersForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).get(j).getStatus(),orderForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).getId(),orderForArea.get(hAndLM.getLmOrgDir().getLMOrganizationList().get(i).getOrgAddress().getArea()).getLMLinked().getLmOrgId()});
+                }
+                }
             }
         }
-    }
+    
     
     private void AddButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButton2ActionPerformed
         breakShipmentIntoOrders();
