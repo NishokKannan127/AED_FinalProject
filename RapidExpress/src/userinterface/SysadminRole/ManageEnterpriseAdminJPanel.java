@@ -53,7 +53,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         this.system = system;
         this.system=EcoSystem.getInstance();
         enterpriseJTable.getTableHeader().setDefaultRenderer(new TableFormat());
-        tblAdminUserName.getTableHeader().setDefaultRenderer(new TableFormat());
+        //tblAdminUserName.getTableHeader().setDefaultRenderer(new TableFormat());
         
         populateTable();
        
@@ -113,29 +113,35 @@ private boolean checkUserIdExists(String userName) {
         }
     }
 
-        private void populateAdminTable(Enterprise enterprise1) {
+//        private void populateAdminTable(Enterprise enterprise1) {
      
-            DefaultTableModel model = (DefaultTableModel) tblAdminUserName.getModel();
+//            DefaultTableModel model = (DefaultTableModel) tblAdminUserName.getModel();
 
-            model.setRowCount(0);
+//            model.setRowCount(0);
+            
+            
+//            int row2 = enterpriseJTable.getSelectedRow();
+//        Enterprise enterprise2 = (Enterprise) enterpriseJTable.getValueAt(row2, 0);
+//        EnterpriseType x=enterprise2.getEnterpriseType();
        
             //for (UserAccount user : enterprise1.getUserAccountDirectory().getUserAccountList()) {
-            for(UserAccount user: system.getUserAccountDirectory().getUserAccountList()){
+//            for(UserAccount user: system.getUserAccountDirectory().getUserAccountList()){
+                //if(user.){
                // if(enterprise1.getEnterpriseType()==EnterpriseType.FulfillmentCenter){
                  //   if(()enterprise.)
                 
 
 //                enterprise1.
-                Object[] row = new Object[3];
-                row[0] = enterprise;
+//                Object[] row = new Object[3];
+//                row[0] = enterprise;
  //               row[1] = user.getEmployee().getName();
-                row[2] = user.getUsername();
-                model.addRow(row);
+//                row[2] = user.getUsername();
+//                model.addRow(row);
                 
                 
-                
-            }
-        }
+                //}
+//            }
+//        }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -150,8 +156,6 @@ private boolean checkUserIdExists(String userName) {
         jTable1 = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tblAdminUserName = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -209,38 +213,6 @@ private boolean checkUserIdExists(String userName) {
         );
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1520, -1));
-
-        tblAdminUserName.setBackground(new java.awt.Color(0, 0, 0));
-        tblAdminUserName.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 255, 204)));
-        tblAdminUserName.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        tblAdminUserName.setForeground(new java.awt.Color(255, 255, 255));
-        tblAdminUserName.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Enterprise Name", "Admin Name", "UserName"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblAdminUserName.setGridColor(new java.awt.Color(0, 0, 0));
-        tblAdminUserName.setRowHeight(30);
-        tblAdminUserName.setShowVerticalLines(false);
-        jScrollPane3.setViewportView(tblAdminUserName);
-        if (tblAdminUserName.getColumnModel().getColumnCount() > 0) {
-            tblAdminUserName.getColumnModel().getColumn(0).setResizable(false);
-            tblAdminUserName.getColumnModel().getColumn(1).setResizable(false);
-            tblAdminUserName.getColumnModel().getColumn(2).setResizable(false);
-        }
-
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, 520, 250));
 
         jPanel2.setBackground(new java.awt.Color(208, 93, 2));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
@@ -521,7 +493,7 @@ private boolean checkUserIdExists(String userName) {
 //        temp.setDelivery(del);
         
         
-        populateAdminTable(enterprise);
+        //populateAdminTable(enterprise);
         
         //populateAdminTable(enterprise);
           
@@ -560,7 +532,7 @@ private boolean checkUserIdExists(String userName) {
        txtUserName.setEnabled(true);
        txtPassword.setEnabled(true);
        
-       populateAdminTable(enterprise2);
+       //populateAdminTable(enterprise2);
         
     }//GEN-LAST:event_enterpriseJTableMouseClicked
 
@@ -581,9 +553,7 @@ private boolean checkUserIdExists(String userName) {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable tblAdminUserName;
     private javax.swing.JTextField txtAdminName;
     private javax.swing.JTextField txtName;
     private javax.swing.JPasswordField txtPassword;
