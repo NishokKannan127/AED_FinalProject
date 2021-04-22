@@ -93,7 +93,7 @@ public class Delete_HubManJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel9))
                 .addGap(10, 10, 10)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(332, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
