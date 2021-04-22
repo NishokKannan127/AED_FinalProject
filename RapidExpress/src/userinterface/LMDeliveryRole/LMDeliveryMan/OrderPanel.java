@@ -90,56 +90,68 @@ public class OrderPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        setBackground(new java.awt.Color(255, 51, 102));
-        setMinimumSize(new java.awt.Dimension(394, 281));
+        setBackground(new java.awt.Color(139, 216, 189));
+        setMinimumSize(new java.awt.Dimension(1594, 1081));
+        setPreferredSize(new java.awt.Dimension(1520, 1000));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        FullDetailsButton.setBackground(new java.awt.Color(0, 0, 153));
-        FullDetailsButton.setForeground(new java.awt.Color(102, 204, 0));
+        FullDetailsButton.setBackground(new java.awt.Color(255, 87, 87));
+        FullDetailsButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        FullDetailsButton.setForeground(new java.awt.Color(255, 255, 255));
         FullDetailsButton.setText("Full Order Details");
+        FullDetailsButton.setBorder(null);
         FullDetailsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FullDetailsButtonActionPerformed(evt);
             }
         });
-        add(FullDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 140, -1));
+        add(FullDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, 140, 30));
 
+        jLabel4.setBackground(new java.awt.Color(36, 54, 101));
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("My Orders");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, -1, 570, 40));
+        jLabel4.setOpaque(true);
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 350, 50));
 
-        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 69, -1));
+        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 69, 30));
 
-        add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 68, -1));
+        add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 68, 30));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Deliver Order ID");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Activate Order ID");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 120, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 153));
-        jButton1.setForeground(new java.awt.Color(102, 204, 0));
+        jButton1.setBackground(new java.awt.Color(255, 87, 87));
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Deliver");
+        jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 120, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 120, 30));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 153));
-        jButton2.setForeground(new java.awt.Color(102, 204, 0));
+        jButton2.setBackground(new java.awt.Color(255, 87, 87));
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Activate");
+        jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 120, -1));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 120, 30));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -174,7 +186,7 @@ public class OrderPanel extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 44, 350, 120));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 350, 120));
     }// </editor-fold>//GEN-END:initComponents
 
     private void refreshOrders(){
