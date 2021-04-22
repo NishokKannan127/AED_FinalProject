@@ -54,6 +54,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         this.system=EcoSystem.getInstance();
         enterpriseJTable.getTableHeader().setDefaultRenderer(new TableFormat());
         tblAdminUserName.getTableHeader().setDefaultRenderer(new TableFormat());
+        
         populateTable();
        
     }
@@ -62,7 +63,7 @@ private boolean checkUserIdExists(String userName) {
             if (system.getUserAccountDirectory().checkIfUsernameIsUnique(userName)) {
                 for (Network network : system.getNetworkList()) {
                     for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
-                        if (enterprise.getUserAccountDirectory().checkIfUsernameIsUnique(userName)) {
+                        if(this.system.getUserAccountDirectory().checkIfUsernameIsUnique(userName)){//if (enterprise.getUserAccountDirectory().checkIfUsernameIsUnique(userName)) {
                             if (enterprise.getOrganizationDirectory().getOrganizationList().size() > 0) {
                                 for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
                                     if (organization.getUserAccountDirectory().checkIfUsernameIsUnique(userName)) {
@@ -76,10 +77,11 @@ private boolean checkUserIdExists(String userName) {
                             } else {
                                 return true;
                             }
-                        } else {
-                            return false;
-
                         }
+                       else {
+                           return false;
+
+                      }
                     }
                 }
             } else {
@@ -102,7 +104,7 @@ private boolean checkUserIdExists(String userName) {
                 row[1] = enterprise.getEnterpriseType().getValue();
                 row[2] = network.getName();
                 row[5] = enterprise.getEmail();
-                row[3] = enterprise.getContact();
+  //              row[3] = enterprise.getContact();
                 //row[4] = enterprise.getZipcode();
              
                 model.addRow(row);
@@ -117,12 +119,21 @@ private boolean checkUserIdExists(String userName) {
 
             model.setRowCount(0);
        
-            for (UserAccount user : enterprise1.getUserAccountDirectory().getUserAccountList()) {
+            //for (UserAccount user : enterprise1.getUserAccountDirectory().getUserAccountList()) {
+            for(UserAccount user: system.getUserAccountDirectory().getUserAccountList()){
+               // if(enterprise1.getEnterpriseType()==EnterpriseType.FulfillmentCenter){
+                 //   if(()enterprise.)
+                
+
+//                enterprise1.
                 Object[] row = new Object[3];
                 row[0] = enterprise;
  //               row[1] = user.getEmployee().getName();
                 row[2] = user.getUsername();
                 model.addRow(row);
+                
+                
+                
             }
         }
     
@@ -361,11 +372,11 @@ private boolean checkUserIdExists(String userName) {
 
             },
             new String [] {
-                "Enterprise Name", "Enterprise Type", "Network", "Contact", "Zipcode", "Email"
+                "Enterprise Name", "Enterprise Type", "Network", "Zipcode", "Email"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -456,23 +467,23 @@ private boolean checkUserIdExists(String userName) {
 //        FulfillmentCenter("FulfillmentCenter"),
 //        HubAndLastMile("HubAndLastMile"),
 //        Vendor("Vendor");
-        UserAccount account;
+        UserAccount account=null;
         if(x==EnterpriseType.Vendor){
             //account = enterprise.getUserAccountDirectory().createUserAccount(username,username,username, password, User.Role.Vendor);
-            system.getUserAccountDirectory().createUserAccount(username, username,username, password,User.Role.VendorAdmin, enterprise2);
+            account=system.getUserAccountDirectory().createUserAccount(username, username,username, password,User.Role.VendorAdmin, enterprise2);
             
         }
         else if(x==EnterpriseType.Delivery){
             //account = enterprise.getUserAccountDirectory().createUserAccount(username,username,username, password, DeliveryManager);
-            system.getUserAccountDirectory().createUserAccount(username, username,username, password,User.Role.DeliveryAdmin,enterprise2);
+            account=system.getUserAccountDirectory().createUserAccount(username, username,username, password,User.Role.DeliveryAdmin,enterprise2);
         }
         else if(x==EnterpriseType.FulfillmentCenter){
             //account = enterprise.getUserAccountDirectory().createUserAccount(username,username,username, password, FCAdmin);
-            system.getUserAccountDirectory().createUserAccount(username, username,username, password,User.Role.FCAdmin,enterprise2);
+            account=system.getUserAccountDirectory().createUserAccount(username, username,username, password,User.Role.FCAdmin,enterprise2);
         }
         else if(x==EnterpriseType.HubAndLastMile){
             //account = enterprise.getUserAccountDirectory().createUserAccount(username,username,username, password, HubAndLastMileAdmin);
-            system.getUserAccountDirectory().createUserAccount(username, username,username, password,User.Role.HubAndLastMileAdmin,enterprise2);
+            account=system.getUserAccountDirectory().createUserAccount(username, username,username, password,User.Role.HubAndLastMileAdmin,enterprise2);
         }
         
         //Customer("Customer"),
@@ -512,15 +523,15 @@ private boolean checkUserIdExists(String userName) {
         
         populateAdminTable(enterprise);
         
-        populateAdminTable(enterprise);
+        //populateAdminTable(enterprise);
           
         JOptionPane.showMessageDialog(null, new JLabel("<html><h2>New Admin<font color='green'><I> credentials</I></font> created!</h2></html>"));
         
         dB4OUtil.storeSystem(system);
         
           txtAdminName.setText("");
-          txtUserName.setText("");
-          txtPassword.setText("");
+          txtUserName.setText(account.getUsername());
+          txtPassword.setText(account.getPassword());
           txtName.setText("");  
           txtAdminName.setEnabled(false);
           txtUserName.setEnabled(false);

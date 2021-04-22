@@ -16,6 +16,7 @@ import Business.EnterpriseFulfillmentCenter.FulfillmentCenterDirectory;
 import Business.EnterpriseHubAndLastMile.HubAndLastMileDirectory;
 import Business.Network.Network;
 import Business.People.DeliveryAdminDirectory;
+import Business.People.DirectDeliveryMenDirectory;
 import Business.People.FCManagerDirectory;
 import Business.People.HubAdminDirectory;
 import Business.People.HubAndLastMileAdminDirectory;
@@ -23,6 +24,7 @@ import Business.People.HubManDirectory;
 import Business.People.LastMileAdminDirectory;
 import Business.People.LastMileDeliveryMenDirectory;
 import Business.People.LastMileManDirectory;
+import Business.People.ManagerDirDeliveryMenDirectory;
 import Business.People.ManagerFMDeliveryMenDirectory;
 import Business.People.ManagerLMDeliveryMenDirectory;
 import Business.People.PickAndPackDirectory;
@@ -50,6 +52,15 @@ public class EcoSystem extends Organization{
     private DockMenDirectory dockPeopleDirectory;
     private FulfillmentCenterAdminDirectory fcAdminDirectory;
     private HubAndLastMileDirectory hAndLmDir;    
+    private HubAndLastMileAdminDirectory hAndLMAdminDir;
+
+    public HubAndLastMileAdminDirectory gethAndLMAdminDir() {
+        return hAndLMAdminDir;
+    }
+
+    public void sethAndLMAdminDir(HubAndLastMileAdminDirectory hAndLMAdminDir) {
+        this.hAndLMAdminDir = hAndLMAdminDir;
+    }
     private HubAdminDirectory hubAdminDirectory;
     private LastMileAdminDirectory lmAdminDirectory;
     private PickAndPackDirectory pickAndPackDirectory;
@@ -60,6 +71,15 @@ public class EcoSystem extends Organization{
     private VendorDirectory vendorDirectory;
     private DeliveryDirectory deliveryDirectory;
     private ManagerFMDeliveryMenDirectory managerFMDeliveryMenDirectory;
+    private ManagerDirDeliveryMenDirectory managerDirDeliveryMenDirectory;
+
+    public ManagerDirDeliveryMenDirectory getManagerDirDeliveryMenDirectory() {
+        return managerDirDeliveryMenDirectory;
+    }
+
+    public void setManagerDirDeliveryMenDirectory(ManagerDirDeliveryMenDirectory managerDirDeliveryMenDirectory) {
+        this.managerDirDeliveryMenDirectory = managerDirDeliveryMenDirectory;
+    }
     private ManagerLMDeliveryMenDirectory managerLMDeliveryMenDirectory;
     private ArrayList<Network> networkList;
     private HubAndLastMileAdminDirectory hubAndLMAdminDirectory;
@@ -71,7 +91,15 @@ public class EcoSystem extends Organization{
     public HubManDirectory getHubManDir() {
         return hubManDir;
     }
+    public DirectDeliveryMenDirectory dirManDir;
 
+    public DirectDeliveryMenDirectory getDirManDir() {
+        return dirManDir;
+    }
+
+    public void setDirManDir(DirectDeliveryMenDirectory dirManDir) {
+        this.dirManDir = dirManDir;
+    }
     public void setHubManDir(HubManDirectory hubManDir) {
         this.hubManDir = hubManDir;
     }
@@ -98,13 +126,13 @@ public class EcoSystem extends Organization{
         return fcManagerDirectory;
     }
 
-    public HubAndLastMileAdminDirectory getHubAndLMAdminDirectory() {
-        return hubAndLMAdminDirectory;
-    }
+   // public HubAndLastMileAdminDirectory getHubAndLMAdminDirectory() {
+   //     return hubAndLMAdminDirectory;
+   // }
 
-    public void setHubAndLMAdminDirectory(HubAndLastMileAdminDirectory hubAndLMAdminDirectory) {
-        this.hubAndLMAdminDirectory = hubAndLMAdminDirectory;
-    }
+    //public void setHubAndLMAdminDirectory(HubAndLastMileAdminDirectory hubAndLMAdminDirectory) {
+    //    this.hubAndLMAdminDirectory = hubAndLMAdminDirectory;
+   // }
 
     public DeliveryAdminDirectory getDelAdminDirectory() {
         return delAdminDirectory;
@@ -305,10 +333,10 @@ public class EcoSystem extends Organization{
         networkList = new ArrayList<Network>();
     }
     
-    public boolean checkIfUserIsUnique(String userName){
+    //public boolean checkIfUserIsUnique(String userName){
        //
-       return false;
-    }
+    //   return false;
+    //}
 
    
 

@@ -41,7 +41,8 @@ public class UserAccount {
         //if(role==Role.HubAndLastMileManager)this.user = EcoSystem.getInstance().getHubAndLastMileManagerDirectory().createFulfillmentCenterAdmin(accountId);// createFcAdmin(accountId);//  //getManagerDirectory().createManager(accountId);
         if(role==Role.FMDeliveryManager)this.user = EcoSystem.getInstance().getFMManagerDeliveryMenDirectory().createManager(accountId);//getSysAdminDirectory().createAdmin(accountId);// getAdminDirectory().createAdmin(accountId);
         if(role==Role.LMDeliveryManager)this.user = EcoSystem.getInstance().getLMManagerDeliveryMenDirectory().createManager(accountId);//getSysAdminDirectory().createAdmin(accountId);// getAdminDirectory().createAdmin(accountId);
-        
+        if(role==Role.DirectDelivery)this.user=EcoSystem.getInstance().getDirManDir().createDirectDeliveryMan(accountId);
+            if(role==Role.DirectDeliveryManager)this.user=EcoSystem.getInstance().getManagerDirDeliveryMenDirectory().createManager(accountId);
         if(role==Role.Customer)this.user = EcoSystem.getInstance().getCustomerDirectory().createCustomer(accountId);
         if(role==Role.Dock)this.user = EcoSystem.getInstance().getDockPeopleDirectory().createDockMen(accountId);// getDeliveryManDirectory().createDeliveryMan(accountId);        
         if(role==Role.FMDelivery)this.user = EcoSystem.getInstance().getFmDeliveryMenDirectory().createFMDeliveryMan(accountId);// createFmDeliveryMan(accountId);//getManagerDirectory().createManager(accountId);
@@ -69,7 +70,7 @@ public class UserAccount {
         //Enterprise admins
         if(role==Role.FCAdmin)this.user = EcoSystem.getInstance().getFcAdminDirectory().createFulfillmentCenterAdmin(accountId, enterprise);// createFcAdmin(accountId);//  //getManagerDirectory().createManager(accountId);
         if(role==Role.VendorAdmin)this.user = EcoSystem.getInstance().getVendorAdminDirectory().createVendorAdmin(accountId, enterprise);// createFcAdmin(accountId);//  //getManagerDirectory().createManager(accountId);
-        if(role==Role.HubAndLastMileAdmin)this.user = EcoSystem.getInstance().getHubAndLastMileAdminDirectory().createHubAndLastMileAdmin(accountId, enterprise);// createFulfillmentCenterAdmin(accountId);// createFcAdmin(accountId);//  //getManagerDirectory().createManager(accountId);
+        if(role==Role.HubAndLastMileAdmin)this.user = EcoSystem.getInstance().gethAndLMAdminDir().createHubAndLastMileAdmin(accountId, enterprise);// createFulfillmentCenterAdmin(accountId);// createFcAdmin(accountId);//  //getManagerDirectory().createManager(accountId);
         if(role==Role.DeliveryAdmin)this.user = EcoSystem.getInstance().getDeliveryAdminDirectory().createDelAdmin(accountId, enterprise);// createFulfillmentCenterAdmin(accountId);// createFcAdmin(accountId);//  //getManagerDirectory().createManager(accountId);
         
         if(role==Role.FCManager)this.user = EcoSystem.getInstance().getFcManagerDirectory().createFCManager(accountId);// createFulfillmentCenterAdmin(accountId);// createFcAdmin(accountId);//  //getManagerDirectory().createManager(accountId);

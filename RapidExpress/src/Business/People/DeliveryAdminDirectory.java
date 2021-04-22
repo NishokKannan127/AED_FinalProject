@@ -9,6 +9,7 @@ import Business.Enterprise.Enterprise;
 import Business.EnterpriseDelivery.Delivery;
 import Business.Role.DeliveryAdmin;
 import Business.Role.Dock;
+import Business.Role.HubAndLastMileAdmin;
 import Business.Role.VendorAdmin;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,9 @@ public class DeliveryAdminDirectory {
     ArrayList<DeliveryAdmin> delAdminList;
     Delivery del;
     public List<DeliveryAdmin> getDeliveryAdminList(){
+        return this.delAdminList;
+    }
+    public ArrayList<DeliveryAdmin> returnAllDeliverydmins(){
         return this.delAdminList;
     }
     public DeliveryAdminDirectory(){

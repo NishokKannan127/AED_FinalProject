@@ -26,6 +26,14 @@ public class LastMileDeliveryOrganization extends Organization{
     LastMileDeliveryMenDirectory lastMileDeliveryDirectory;
     Delivery del;
     String nameLastMileDelieryOrganization;
+
+    public String getNameLastMileDelieryOrganization() {
+        return nameLastMileDelieryOrganization;
+    }
+
+    public void setNameLastMileDelieryOrganization(String nameLastMileDelieryOrganization) {
+        this.nameLastMileDelieryOrganization = nameLastMileDelieryOrganization;
+    }
     private static int ctr = 0;
     int lmDelOrgId;
     ArrayList<DeliveryMen> deliveryMenList;

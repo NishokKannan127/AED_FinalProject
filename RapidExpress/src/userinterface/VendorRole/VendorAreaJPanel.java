@@ -82,6 +82,7 @@ public class VendorAreaJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         CartTable = new javax.swing.JTable();
         AddButton2 = new javax.swing.JButton();
+        AddButton3 = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 153));
@@ -135,10 +136,19 @@ public class VendorAreaJPanel extends javax.swing.JPanel {
 
         AddButton2.setBackground(new java.awt.Color(0, 0, 153));
         AddButton2.setForeground(new java.awt.Color(102, 204, 0));
-        AddButton2.setText("Send Orders To Shipment");
+        AddButton2.setText("Send Orders To Shipment via FC");
         AddButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddButton2ActionPerformed(evt);
+            }
+        });
+
+        AddButton3.setBackground(new java.awt.Color(0, 0, 153));
+        AddButton3.setForeground(new java.awt.Color(102, 204, 0));
+        AddButton3.setText("Send Orders To Shipment via Direct Delivery");
+        AddButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddButton3ActionPerformed(evt);
             }
         });
 
@@ -161,7 +171,9 @@ public class VendorAreaJPanel extends javax.swing.JPanel {
                                     .addComponent(AddButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(AddButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(AddButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(18, 18, 18)
+                                .addComponent(AddButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(162, 162, 162)))
                         .addGap(10, 10, 10))))
         );
         layout.setVerticalGroup(
@@ -171,7 +183,9 @@ public class VendorAreaJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53)
-                .addComponent(AddButton2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddButton2)
+                    .addComponent(AddButton3))
                 .addGap(53, 53, 53)
                 .addComponent(AddButton)
                 .addGap(41, 41, 41)
@@ -276,6 +290,34 @@ public class VendorAreaJPanel extends javax.swing.JPanel {
         //email with status send to customer
         
     }//GEN-LAST:event_AddButton2ActionPerformed
+
+    private void AddButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButton3ActionPerformed
+        // TODO add your handling code here:
+        ArrayList<Order> orders = (ArrayList<Order>) vendor.getOrders();
+        for(int i=0;i<orders.size();i++){
+            orders.get(i).setStatus(Status.OrderSentToDirectShipmentFromVendor);
+        }
+   //     ship = new VendorShipment(orders,vendor.getEntAddress(), orders.get(0).getFc().getEntAddress(), orders.get(0).getTimePlaced(),orders.get(0).getTimePlaced());
+   //     ship.setFc(orders.get(0).getFc());
+   //     ship.setStatus(Shipment.Status.Pending);
+        
+        //
+        
+        Delivery deli =new Delivery();//, address);//= EcoSystem.getInstance().getFcDirectory().getFCById(1);
+        DeliveryDirectory deliDir = EcoSystem.getInstance().getDeliveryDirectory();
+            for(int i=0; i<deliDir.getDeliveryList().size();i++){
+                if(deliDir.getDeliveryList().get(i).getEntAddress().getState()==orders.get(0).getFc().getEntAddress().getState()){
+                    deli=deliDir.getDeliveryList().get(i);
+                }
+            }
+        for(int i=0;i<orders.size();i++){
+            //orders.get(i).setStatus(Status.OrderSentToShipmentFromVendor);
+            deli.addDirectDeliveryOrdersToDelivery(orders.get(i));
+        }
+//        Delivery del = EcoSystem.getInstance().getDeliveryDirect-ory().getDeliveryById(1);
+//        deli.addDirectDelShipmentsToDelivery(ship);
+        refreshOrders();
+    }//GEN-LAST:event_AddButton3ActionPerformed
     //private void refreshDeliveryMen(){
     //    List<FirstMileDelivery> deliveryMen = EcoSystem.getInstance().getFmDeliveryMenDirectory().getFMDeliveryManList();// getDeliveryManDirectory().getDeliveryManList();
     //    DeliveryMenList.removeAllItems();
@@ -288,6 +330,7 @@ public class VendorAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton AddButton;
     private javax.swing.JButton AddButton1;
     private javax.swing.JButton AddButton2;
+    private javax.swing.JButton AddButton3;
     private javax.swing.JTable CartTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;

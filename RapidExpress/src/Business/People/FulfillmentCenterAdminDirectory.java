@@ -32,6 +32,9 @@ public class FulfillmentCenterAdminDirectory {
         fcAdminList.add(temp);
         return temp;
     }
+    public ArrayList<FulfillmentCenterAdmin> returnAllFCAdmins(){
+        return this.fcAdminList;
+    }
     public int updateFulfillmentCenterAdmin(String firstName, String lastName, int id, Enterprise ent){
         FulfillmentCenterAdmin temp=new FulfillmentCenterAdmin(id, ent);
         int checkIfFulfillmentCenterAdminFound=0;

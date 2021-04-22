@@ -8,6 +8,7 @@ package Business.People;
 import Business.Enterprise.Enterprise;
 import Business.EnterpriseHubAndLastMile.HubAndLastMile;
 import Business.Role.Dock;
+import Business.Role.FulfillmentCenterAdmin;
 import Business.Role.HubAndLastMileAdmin;
 import Business.Role.VendorAdmin;
 import java.util.ArrayList;
@@ -21,6 +22,9 @@ public class HubAndLastMileAdminDirectory {
     ArrayList<HubAndLastMileAdmin> hubAndLMAdminList=new ArrayList<HubAndLastMileAdmin>();
     HubAndLastMile hubAndLM;
     public List<HubAndLastMileAdmin> getHubAndLMAdminList(){
+        return this.hubAndLMAdminList;
+    }
+    public ArrayList<HubAndLastMileAdmin> returnAllHAndLMAdmins(){
         return this.hubAndLMAdminList;
     }
     public HubAndLastMileAdminDirectory(){

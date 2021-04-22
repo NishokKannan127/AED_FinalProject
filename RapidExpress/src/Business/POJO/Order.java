@@ -10,6 +10,7 @@ import Business.EnterpriseHubAndLastMile.Organization.HubOrganization;
 import Business.EnterpriseHubAndLastMile.Organization.LastMileOrganization;
 import Business.EnterpriseVendor.Vendor;
 import Business.Role.Customer;
+import Business.Role.DirectDelivery;
 import Business.Role.Dock;
 import Business.Role.FirstMileDelivery;
 import Business.Role.LastMileDelivery;
@@ -38,6 +39,15 @@ public class Order {
     private FulfillmentCenter fc;
     FirstMileDelivery fmDeliveryMan;
     LastMileDelivery lmDeliveryMan;
+    DirectDelivery directDeliveryMan;
+
+    public DirectDelivery getDirectDeliveryMan() {
+        return directDeliveryMan;
+    }
+
+    public void setDirectDeliveryMan(DirectDelivery directDeliveryMan) {
+        this.directDeliveryMan = directDeliveryMan;
+    }
     LastMileOrganization lmLinked;
     Dock dockMan;
     public Dock getDockMan(){
@@ -152,6 +162,7 @@ public class Order {
     public FirstMileDelivery getFMDeliveryMan() {
         return fmDeliveryMan;
     }
+    
 
     public void setFMDeliveryMan(FirstMileDelivery deliveryMan) {
         this.fmDeliveryMan = deliveryMan;
@@ -230,6 +241,9 @@ public class Order {
         SentToLastMileDelivery("SentToLastMileDelivery"),
         AssignedToLastMileDeliveryMan("AssignedToLastMileDeliveryMan"),
         OrderSentToShipmentFromVendor("OrderSentToShipmentFromVendor"),
+        SentToDirectDelivery("SentToDirectDelivery"),
+        OrderSentToDirectShipmentFromVendor("OrderSentToDirectShipmentFromVendor"),
+        AssignedToDirectDeliveryMan("AssignedToDirectDeliveryMan"),
         SentToDock("SentToDock");
         
         private String value;

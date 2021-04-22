@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -7,6 +7,18 @@ package userinterface.SysadminRole;
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.EnterpriseDelivery.Delivery;
+import Business.EnterpriseDelivery.Organization.DirectDeliveryOrganization;
+import Business.EnterpriseDelivery.Organization.FirstMileDeliveryOrganization;
+import Business.EnterpriseDelivery.Organization.LastMileDeliveryOrganization;
+import Business.EnterpriseFulfillmentCenter.FulfillmentCenter;
+import Business.EnterpriseFulfillmentCenter.Organization.InboundOrganization;
+import Business.EnterpriseFulfillmentCenter.Organization.OutboundOrganization;
+import Business.EnterpriseHubAndLastMile.HubAndLastMile;
+import Business.EnterpriseHubAndLastMile.Organization.HubOrganization;
+import Business.EnterpriseHubAndLastMile.Organization.LastMileOrganization;
+import Business.EnterpriseVendor.Organization.SupplyChainOrganization;
+import Business.EnterpriseVendor.Vendor;
 import Business.Network.Network;
 import Business.POJO.Address;
 import java.awt.CardLayout;
@@ -460,10 +472,54 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             String state=network.getState();//network.getCountry();
             Address add = new Address(state,city,area,location);
             Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type,add, contact);
-            enterprise.setContact((int) (Double.parseDouble(txtContact.getText())));
+            enterprise.setContact( (Long.parseLong(txtContact.getText())));
             //enterprise.setZipcode(Integer.parseInt(txtZipCode.getText()));
             enterprise.setEmail(txtLocation.getText());
 
+            
+            if(type==Enterprise.EnterpriseType.Delivery){
+                Delivery del = system.getDeliveryDirectory().createDelivery(name, add);       
+                network.addEnterpriseToNetwork(del);
+                        
+                FirstMileDeliveryOrganization fmDelOrg;
+                LastMileDeliveryOrganization lmDelOrg;
+                DirectDeliveryOrganization dirDelOrg;
+                fmDelOrg=del.addFMDeliveryOrgToDir(name+ " FM Delivery Org", del);
+                lmDelOrg=del.addLMDeliveryOrgToDir(name+" LM Delivery Org", del);
+                dirDelOrg=del.addDirDeliveryOrgToDir(name+" Direct Delivery Org",del);
+            }
+            else if(type==Enterprise.EnterpriseType.FulfillmentCenter){
+                FulfillmentCenter fc=system.getFcDirectory().createFulfillmentCenter(name,add);
+                network.addEnterpriseToNetwork(fc);
+                
+    //            fc.setDeliveryCompenyAssociatedToFC(del);
+    //            del.setFulfillmentCenterToCaterTo(fc);
+    //            fc.setHubAndLMEnterpriseConnectedTo(hubAndLastMile);
+    //            hubAndLastMile.setFc(fc);
+                        
+                InboundOrganization inbOrg;
+                OutboundOrganization outOrg;
+                inbOrg=fc.addInboundOrgToDir(name+" inbound", fc);
+                outOrg=fc.addOutboundOrgToDir(name+" outbound", fc);
+            }
+            else if(type==Enterprise.EnterpriseType.HubAndLastMile){
+                HubAndLastMile hubAndLastMile=system.gethAndLmDir().createHubAndLastMile(name,add);
+                network.addEnterpriseToNetwork(hubAndLastMile);
+                
+                HubOrganization hubOrg;
+                LastMileOrganization lmOrg;
+                hubOrg=hubAndLastMile.addHubOrgToDir(name+" Hub org", hubAndLastMile);
+                hubOrg.setOrgAddress(add);
+                lmOrg=hubAndLastMile.addLastMileOrgToDir(name+" LastMile Org", hubAndLastMile);
+                lmOrg.setOrgAddress(add);
+            }
+            else if(type==Enterprise.EnterpriseType.Vendor){                
+                Vendor v1 = system.getVendorDirectory().createVendor(name, add, contact);
+                network.addEnterpriseToNetwork(v1);
+                
+                SupplyChainOrganization suppChainOrg1;
+                suppChainOrg1=v1.addSupplyChainOrgToDir(name+" - Supply Chain Org", v1);                
+            }
             populateTable();
         
             JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>New Enterprise</I><font color='green'> created </font><I>successfully!/I<></h2></html>"));

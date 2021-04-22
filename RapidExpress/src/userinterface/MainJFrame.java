@@ -18,6 +18,7 @@ import Business.EnterpriseVendor.Vendor;
 import Business.Organization;
 import Business.Role.Customer;
 import Business.Role.DeliveryAdmin;
+import Business.Role.DirectDelivery;
 import Business.Role.Dock;
 import Business.Role.FirstMileDelivery;
 import Business.Role.FulfillmentCenterAdmin;
@@ -27,6 +28,7 @@ import Business.Role.HubMan;
 import Business.Role.LastMileAdmin;
 import Business.Role.LastMileDelivery;
 import Business.Role.LastMileMan;
+import Business.Role.ManagerDirectDeliveryMenAdmin;
 import Business.Role.ManagerFMDeliveryMenAdmin;
 import Business.Role.ManagerLMDeliveryMenAdmin;
 import Business.Role.PickAndPack;
@@ -38,6 +40,8 @@ import Business.Role.VendorManager;
 import Business.UserAccount.User;
 import Business.UserAccount.User.Role;
 import static Business.UserAccount.User.Role.DeliveryAdmin;
+import static Business.UserAccount.User.Role.DirectDelivery;
+import static Business.UserAccount.User.Role.DirectDeliveryManager;
 import static Business.UserAccount.User.Role.HubAndLastMileAdmin;
 import static Business.UserAccount.User.Role.VendorManager;
 //import static Business.UserAccount.User.Role.Vendor;
@@ -53,6 +57,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import userinterface.CustomerRole.CustomerAreaJPanel;
+import userinterface.DirectDelivery.DirectDeliveryMan.DirectDeliveryManAreaJPanel;
+import userinterface.DirectDeliveryN.DirectDeliveryManagerAreaJPanel;
 import userinterface.FCRole.Outbound.DockManAreaJPanel;
 import userinterface.FMDeliveryRole.FMDeliveryManagerAreaJPanel;
 import userinterface.FMDeliveryRole.FMDeliveryMan.FMDeliveryManAreaJPanel;
@@ -99,9 +105,9 @@ public class MainJFrame extends javax.swing.JFrame {
         initComponents();
         
         //nishok
-        //this.system = ConfigureASystem.configure();
+        this.system = ConfigureASystem.configure();
 //UNCOMMENT THIS AND COMMENT THE LAST LINE        
-this.system = dB4OUtil.retrieveSystem();
+//this.system = dB4OUtil.retrieveSystem();
         if(this.system==null){
             this.system=EcoSystem.getInstance();
         }
@@ -498,6 +504,18 @@ this.system = dB4OUtil.retrieveSystem();
             FMDeliveryManAreaJPanel yoyo = new FMDeliveryManAreaJPanel(fmDelivery);
             jSplitPane1.setRightComponent(yoyo);
         }
+        else if(auth.getRole()==Role.DirectDelivery){
+            DirectDelivery dirDelivery = (DirectDelivery)auth.getUser();
+            Delivery del=dirDelivery.getDeliveryByID();// getDelivery();
+            DirectDeliveryManAreaJPanel yoyo = new DirectDeliveryManAreaJPanel(dirDelivery);
+            jSplitPane1.setRightComponent(yoyo);
+        }
+        else if(auth.getRole()==Role.DirectDeliveryManager){
+            ManagerDirectDeliveryMenAdmin dirDeliveryMan = (ManagerDirectDeliveryMenAdmin)auth.getUser();
+            //Delivery del=dirDeliveryMan.getDeliveryByID();// getDelivery();
+            DirectDeliveryManagerAreaJPanel yoyo = new DirectDeliveryManagerAreaJPanel(dirDeliveryMan);
+            jSplitPane1.setRightComponent(yoyo);
+        }
         else if(auth.getRole()==Role.HubManager){
             HubMan hub = (HubMan)auth.getUser();
             HubAreaJPanel yoyo = new HubAreaJPanel(hub);
@@ -623,12 +641,13 @@ this.system = dB4OUtil.retrieveSystem();
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
         // TODO add your handling code here:
         try {
-            // TODO add your handling code here:
-            Desktop.getDesktop().open(new File("src\\Images\\vid1.mp4"));
-        } catch (IOException ex) {
-            //Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
+             //TODO add your handling code here:
+            Desktop.getDesktop().open(new File("src\\Images\\supplychainfuture.mp4"));
+        } 
+        catch (IOException ex) {
             System.out.print("Video not present");
         }
+
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
@@ -642,23 +661,25 @@ this.system = dB4OUtil.retrieveSystem();
     }//GEN-LAST:event_jLabel3MouseEntered
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+
         try {
-            // TODO add your handling code here:
-            Desktop.getDesktop().open(new File("src\\Images\\vid2.mp4"));
-        } catch (IOException ex) {
-            //Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
+             //TODO add your handling code here:
+            Desktop.getDesktop().open(new File("src\\Images\\one.mp4"));
+        } 
+        catch (IOException ex) {
+        
             System.out.print("Video not present");
         }
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
+
         try {
-            // TODO add your handling code here:
-            Desktop.getDesktop().open(new File("src\\Images\\vid3.mp4"));
-        } catch (IOException ex) {
-            //Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.print("Video not present");
+             //TODO add your handling code here:
+            Desktop.getDesktop().open(new File("src\\Images\\smartwarehouse.mp4"));
+        } 
+        catch (IOException ex) {
         }
     }//GEN-LAST:event_jLabel12MouseClicked
 

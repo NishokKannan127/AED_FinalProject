@@ -65,8 +65,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
         enterpriseNameTextField1.setText(enterprise.getName());
         popOrganizationComboBox();
-        userJTable.getTableHeader().setDefaultRenderer(new TableFormat());
-        popData();
+//        userJTable.getTableHeader().setDefaultRenderer(new TableFormat());
+//        popData();
     }
 
     public void popOrganizationComboBox() {
@@ -121,22 +121,22 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         
     }
 
-    public void popData() {
+//    public void popData() {
 
-        DefaultTableModel model = (DefaultTableModel) userJTable.getModel();
+//        DefaultTableModel model = (DefaultTableModel) userJTable.getModel();
 
-        model.setRowCount(0);
+//        model.setRowCount(0);
 
-        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
-            for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
-                Object row[] = new Object[3];
-                row[1] = ua.getRole();
-                row[2] = ua;
-            //    row[2] = ua.getUsername();
-                ((DefaultTableModel) userJTable.getModel()).addRow(row);
-            }
-        }
-    }
+//        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+//            for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
+//                Object row[] = new Object[3];
+//                row[1] = ua.getRole();
+//                row[2] = ua;
+//            //    row[2] = ua.getUsername();
+//                ((DefaultTableModel) userJTable.getModel()).addRow(row);
+//            }
+//        }
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -172,8 +172,6 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         nameSeparator4 = new javax.swing.JSeparator();
         enterpriseNameTextField1 = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        userJTable = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
@@ -358,35 +356,6 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         });
         add(enterpriseNameTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 190, 230, 30));
 
-        userJTable.setBackground(new java.awt.Color(0, 0, 0));
-        userJTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 255, 204)));
-        userJTable.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        userJTable.setForeground(new java.awt.Color(255, 255, 255));
-        userJTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Employee", "Role", "User Name"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        userJTable.setFocusable(false);
-        userJTable.setGridColor(new java.awt.Color(0, 0, 0));
-        userJTable.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        userJTable.setRowHeight(30);
-        userJTable.setShowVerticalLines(false);
-        jScrollPane2.setViewportView(userJTable);
-
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 970, 450));
-
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/login.png"))); // NOI18N
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 110, 130, 130));
     }// </editor-fold>//GEN-END:initComponents
@@ -534,7 +503,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
   
         
         
-        popData();
+//        popData();
         
         JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>User Account</I><font color='green'> created </font><I>successfully!/I<></h2></html>") );//, "Error", JOptionPane.ERROR_MESSAGE);
                    
@@ -560,6 +529,7 @@ private boolean checkUserIdExists(String userName) {
                 for (Network network : system.getNetworkList()) {
                     for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
                         if (enterprise.getUserAccountDirectory().checkIfUsernameIsUnique(userName)) {
+                               //if(authenticateUser(userName)){
                             if (enterprise.getOrganizationDirectory().getOrganizationList().size() > 0) {
                                 for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
                                     if (organization.getUserAccountDirectory().checkIfUsernameIsUnique(userName)) {
@@ -606,9 +576,9 @@ private boolean checkUserIdExists(String userName) {
         // TODO add your handling code here:
         
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
-        DefaultTableModel model = (DefaultTableModel) userJTable.getModel();
+//        DefaultTableModel model = (DefaultTableModel) userJTable.getModel();
 
-        model.setRowCount(0);
+//        model.setRowCount(0);
 
         
         for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
@@ -617,7 +587,7 @@ private boolean checkUserIdExists(String userName) {
                 row[1] = ua.getRole();
                 row[2] = ua;
             //    row[2] = ua.getUsername();
-                ((DefaultTableModel) userJTable.getModel()).addRow(row);
+//                ((DefaultTableModel) userJTable.getModel()).addRow(row);
             }
     }//GEN-LAST:event_organizationJComboBoxItemStateChanged
 
@@ -647,7 +617,6 @@ private boolean checkUserIdExists(String userName) {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField lastNameJTextField;
     private javax.swing.JTextField nameJTextField1;
@@ -657,6 +626,5 @@ private boolean checkUserIdExists(String userName) {
     private javax.swing.JComboBox organizationJComboBox;
     private javax.swing.JPasswordField passwordJTextField;
     private javax.swing.JComboBox roleJComboBox;
-    private javax.swing.JTable userJTable;
     // End of variables declaration//GEN-END:variables
 }

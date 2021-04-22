@@ -27,6 +27,9 @@ public class VendorAdminDirectory {
     public VendorAdminDirectory(){
         this.vendorAdminList=new ArrayList<VendorAdmin>();
     }
+    public ArrayList<VendorAdmin> returnAllVendordmins(){
+        return this.vendorAdminList;
+    }
     public VendorAdmin createVendorAdmin(int id, Enterprise ent){
         VendorAdmin temp = new VendorAdmin(id);
         temp.setVendor((Vendor) ent);
