@@ -109,7 +109,7 @@ private void populateFCComboBox() {
 
         setBackground(new java.awt.Color(139, 216, 189));
 
-        jPanel2.setBackground(new java.awt.Color(208, 93, 2));
+        jPanel2.setBackground(new java.awt.Color(255, 102, 102));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
         jPanel2.setForeground(new java.awt.Color(204, 255, 204));
         jPanel2.setPreferredSize(new java.awt.Dimension(250, 400));
@@ -130,7 +130,6 @@ private void populateFCComboBox() {
         jLabel1.setText("Associated FC:");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
 
-        fcJComboBox.setBackground(new java.awt.Color(0, 0, 0));
         fcJComboBox.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         fcJComboBox.setForeground(new java.awt.Color(255, 255, 255));
         fcJComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -138,24 +137,22 @@ private void populateFCComboBox() {
                 fcJComboBoxActionPerformed(evt);
             }
         });
-        jPanel2.add(fcJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 163, -1));
+        jPanel2.add(fcJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 163, 20));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Name:");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
 
-        txtName.setBackground(new java.awt.Color(0, 0, 0));
         txtName.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         txtName.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 163, -1));
+        jPanel2.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 163, 20));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Contact:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
 
-        txtContact.setBackground(new java.awt.Color(0, 0, 0));
         txtContact.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         txtContact.setForeground(new java.awt.Color(255, 255, 255));
         txtContact.addActionListener(new java.awt.event.ActionListener() {
@@ -163,24 +160,22 @@ private void populateFCComboBox() {
                 txtContactActionPerformed(evt);
             }
         });
-        jPanel2.add(txtContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, 163, -1));
+        jPanel2.add(txtContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 163, 20));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Zipcode:");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, -1, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
 
-        txtZipCode.setBackground(new java.awt.Color(0, 0, 0));
         txtZipCode.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         txtZipCode.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.add(txtZipCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 163, -1));
+        jPanel2.add(txtZipCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 163, 20));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Location:");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
 
-        txtLocation.setBackground(new java.awt.Color(0, 0, 0));
         txtLocation.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         txtLocation.setForeground(new java.awt.Color(255, 255, 255));
         txtLocation.addActionListener(new java.awt.event.ActionListener() {
@@ -188,46 +183,43 @@ private void populateFCComboBox() {
                 txtLocationActionPerformed(evt);
             }
         });
-        jPanel2.add(txtLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, 163, -1));
+        jPanel2.add(txtLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 163, 20));
 
-        btnCreateEnterprise.setBackground(new java.awt.Color(31, 31, 31));
-        btnCreateEnterprise.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnCreateEnterprise.setBackground(new java.awt.Color(36, 54, 101));
+        btnCreateEnterprise.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnCreateEnterprise.setForeground(new java.awt.Color(255, 255, 255));
         btnCreateEnterprise.setText("Create Hub and Last mile");
-        btnCreateEnterprise.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnCreateEnterprise.setBorder(null);
         btnCreateEnterprise.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateEnterpriseActionPerformed(evt);
             }
         });
-        jPanel2.add(btnCreateEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 280, 33));
+        jPanel2.add(btnCreateEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 180, 30));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Email:");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("City:");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Area:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, -1, -1));
 
-        txtEmail.setBackground(new java.awt.Color(0, 0, 0));
         txtEmail.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         txtEmail.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 163, -1));
+        jPanel2.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 163, 20));
 
-        txtCity.setBackground(new java.awt.Color(0, 0, 0));
         txtCity.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         txtCity.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, 163, -1));
+        jPanel2.add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 163, 20));
 
-        txtArea.setBackground(new java.awt.Color(0, 0, 0));
         txtArea.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         txtArea.setForeground(new java.awt.Color(255, 255, 255));
         txtArea.addActionListener(new java.awt.event.ActionListener() {
@@ -235,14 +227,13 @@ private void populateFCComboBox() {
                 txtAreaActionPerformed(evt);
             }
         });
-        jPanel2.add(txtArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 163, -1));
+        jPanel2.add(txtArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 163, 20));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Network:");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
 
-        networkJComboBox.setBackground(new java.awt.Color(0, 0, 0));
         networkJComboBox.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         networkJComboBox.setForeground(new java.awt.Color(255, 255, 255));
         networkJComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -250,7 +241,7 @@ private void populateFCComboBox() {
                 networkJComboBoxActionPerformed(evt);
             }
         });
-        jPanel2.add(networkJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 163, -1));
+        jPanel2.add(networkJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 163, 20));
 
         jPanel3.setBackground(new java.awt.Color(36, 54, 101));
         jPanel3.setPreferredSize(new java.awt.Dimension(926, 70));
@@ -288,9 +279,9 @@ private void populateFCComboBox() {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(30, 30, 30)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addContainerGap(162, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
