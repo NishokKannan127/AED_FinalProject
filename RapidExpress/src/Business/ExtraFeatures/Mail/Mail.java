@@ -89,7 +89,7 @@ public class Mail {
             messageBodyPart3.setContent(body2, "text/html");
             multipart.addBodyPart(messageBodyPart3);
             
-            DataSource fds = new FileDataSource("F:\\AED_Final\\AED_FinalProject\\RapidExpress\\src\\Images\\imageProj.jpg");////src//Images//imageProj.jpg");
+            DataSource fds = new FileDataSource("F:\\AED_Final\\AED_FinalProject\\RapidExpress\\src\\Images\\imageProj.jpeg");////src//Images//imageProj.jpg");
             BodyPart messageBodyPart4=new MimeBodyPart();
             messageBodyPart4.setDataHandler(new DataHandler(fds));
             messageBodyPart4.setHeader("Content-ID", "<image>");

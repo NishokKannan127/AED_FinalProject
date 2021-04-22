@@ -423,6 +423,7 @@ private void populateFCComboBox() {
                 String name = txtName.getText();
                 Long contact = Long.parseLong(txtContact.getText());
                 //state, String city, String area, String location
+                //String state=txtState.getText();
                 String city=txtCity.getText();
                 String area=txtArea.getText();
                 String location=txtLocation.getText();

@@ -98,7 +98,7 @@ public class ShipmentPanel extends javax.swing.JPanel {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("My Shipments");
         jLabel4.setOpaque(true);
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 380, 40));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 380, 40));
 
         add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 202, 69, 30));
 
@@ -171,7 +171,7 @@ public class ShipmentPanel extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 380, 120));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 380, 120));
     }// </editor-fold>//GEN-END:initComponents
 
     private void refreshShipments(){
