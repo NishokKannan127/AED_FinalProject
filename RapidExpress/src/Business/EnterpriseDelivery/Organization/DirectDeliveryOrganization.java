@@ -16,6 +16,7 @@ import Business.Role.ManagerDirectDeliveryMenAdmin;
 import Business.Role.ManagerFMDeliveryMenAdmin;
 import Business.UserAccount.User;
 import static Business.UserAccount.User.Role.DirectDelivery;
+import static Business.UserAccount.User.Role.DirectDeliveryManager;
 import java.util.ArrayList;
 
 /**
@@ -52,6 +53,7 @@ public class DirectDeliveryOrganization extends Organization{
     public ArrayList<User.Role> getSupportedRole() {
         ArrayList<User.Role> roles = new ArrayList();
         roles.add(DirectDelivery);
+        roles.add(DirectDeliveryManager);
         return roles;
     }
     public void addDirectDeliveryMent(DirectDelivery fmMan){
