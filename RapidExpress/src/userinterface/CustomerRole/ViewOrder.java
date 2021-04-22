@@ -94,7 +94,7 @@ public class ViewOrder extends javax.swing.JPanel {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("My Orders");
         jLabel4.setOpaque(true);
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 460, 40));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 460, 50));
 
         FullDetailsButton.setBackground(new java.awt.Color(255, 87, 87));
         FullDetailsButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
