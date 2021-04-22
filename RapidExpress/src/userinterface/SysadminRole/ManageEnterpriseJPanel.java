@@ -145,13 +145,11 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(208, 93, 2));
+        setBackground(new java.awt.Color(139, 216, 189));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        enterpriseJTable.setBackground(new java.awt.Color(0, 0, 0));
         enterpriseJTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 255, 204)));
-        enterpriseJTable.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        enterpriseJTable.setForeground(new java.awt.Color(255, 255, 255));
+        enterpriseJTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -184,7 +182,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, 760, 380));
 
-        jPanel2.setBackground(new java.awt.Color(208, 93, 2));
+        jPanel2.setBackground(new java.awt.Color(255, 102, 102));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
         jPanel2.setForeground(new java.awt.Color(204, 255, 204));
         jPanel2.setPreferredSize(new java.awt.Dimension(250, 400));
@@ -320,8 +318,8 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 1546, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 1195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(365, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

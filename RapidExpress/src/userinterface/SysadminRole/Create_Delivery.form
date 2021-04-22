@@ -24,24 +24,24 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel2" min="-2" pref="410" max="-2" attributes="0"/>
-              <EmptySpace pref="1170" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="1500" max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Component id="jPanel3" alignment="0" pref="1590" max="32767" attributes="0"/>
+              <Component id="jPanel3" alignment="0" pref="1920" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="90" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
               <Component id="jPanel2" min="-2" pref="450" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="183" max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="jPanel3" min="-2" pref="74" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="506" max="32767" attributes="0"/>
+                  <Component id="jPanel3" min="-2" pref="64" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="642" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -80,7 +80,7 @@
               <Color blue="65" green="36" red="24" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="24" style="0"/>
+              <Font name="Tahoma" size="18" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -114,10 +114,7 @@
         <Component class="javax.swing.JComboBox" name="fcJComboBox">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="20" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Font name="Tahoma" size="12" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="0"/>
@@ -154,10 +151,7 @@
         <Component class="javax.swing.JTextField" name="txtName">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="20" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Font name="Tahoma" size="12" style="0"/>
             </Property>
           </Properties>
           <Constraints>
@@ -185,10 +179,7 @@
         <Component class="javax.swing.JTextField" name="txtContact">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="20" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Font name="Tahoma" size="12" style="0"/>
             </Property>
           </Properties>
           <Events>
@@ -219,10 +210,7 @@
         <Component class="javax.swing.JTextField" name="txtZipCode">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="20" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Font name="Tahoma" size="12" style="0"/>
             </Property>
           </Properties>
           <Constraints>
@@ -250,10 +238,7 @@
         <Component class="javax.swing.JTextField" name="txtLocation">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="20" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Font name="Tahoma" size="12" style="0"/>
             </Property>
           </Properties>
           <Events>
@@ -341,10 +326,7 @@
         <Component class="javax.swing.JTextField" name="txtEmail">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="20" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Font name="Tahoma" size="12" style="0"/>
             </Property>
           </Properties>
           <Constraints>
@@ -356,10 +338,7 @@
         <Component class="javax.swing.JTextField" name="txtCity">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="20" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Font name="Tahoma" size="12" style="0"/>
             </Property>
           </Properties>
           <Constraints>
@@ -371,10 +350,7 @@
         <Component class="javax.swing.JTextField" name="txtArea">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="20" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Font name="Tahoma" size="12" style="0"/>
             </Property>
           </Properties>
           <Events>
@@ -405,10 +381,7 @@
         <Component class="javax.swing.JComboBox" name="networkJComboBox">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="20" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Font name="Tahoma" size="12" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="0"/>
@@ -445,18 +418,16 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel13" min="-2" pref="983" max="-2" attributes="0"/>
-                  <EmptySpace pref="597" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="937" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel13" pref="54" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel13" min="-2" pref="54" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

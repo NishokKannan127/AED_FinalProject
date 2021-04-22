@@ -232,7 +232,6 @@ private boolean checkUserIdExists(String userName) {
         jLabel5.setText("Enterprise:");
 
         txtName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtName.setForeground(new java.awt.Color(255, 255, 255));
         txtName.setEnabled(false);
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,7 +244,6 @@ private boolean checkUserIdExists(String userName) {
         jLabel6.setText("Admin Name:");
 
         txtAdminName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtAdminName.setForeground(new java.awt.Color(255, 255, 255));
         txtAdminName.setEnabled(false);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -253,7 +251,6 @@ private boolean checkUserIdExists(String userName) {
         jLabel2.setText("Username:");
 
         txtUserName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtUserName.setForeground(new java.awt.Color(255, 255, 255));
         txtUserName.setEnabled(false);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -261,7 +258,6 @@ private boolean checkUserIdExists(String userName) {
         jLabel4.setText("Password:");
 
         txtPassword.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtPassword.setForeground(new java.awt.Color(255, 255, 255));
         txtPassword.setEnabled(false);
 
         btnCreateAdmin.setBackground(new java.awt.Color(36, 54, 101));
@@ -332,10 +328,7 @@ private boolean checkUserIdExists(String userName) {
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 380, 400));
 
-        enterpriseJTable.setBackground(new java.awt.Color(0, 0, 0));
-        enterpriseJTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 255, 204)));
         enterpriseJTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        enterpriseJTable.setForeground(new java.awt.Color(255, 255, 255));
         enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

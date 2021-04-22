@@ -119,7 +119,7 @@ private void populateFCComboBox() {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setBackground(new java.awt.Color(36, 54, 101));
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Create Delivery");
@@ -131,8 +131,7 @@ private void populateFCComboBox() {
         jLabel1.setText("Network:");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
 
-        fcJComboBox.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        fcJComboBox.setForeground(new java.awt.Color(255, 255, 255));
+        fcJComboBox.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         fcJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fcJComboBoxActionPerformed(evt);
@@ -145,8 +144,7 @@ private void populateFCComboBox() {
         jLabel2.setText("Name:");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
 
-        txtName.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        txtName.setForeground(new java.awt.Color(255, 255, 255));
+        txtName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jPanel2.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 163, 20));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -154,8 +152,7 @@ private void populateFCComboBox() {
         jLabel4.setText("Contact:");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
 
-        txtContact.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        txtContact.setForeground(new java.awt.Color(255, 255, 255));
+        txtContact.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtContact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtContactActionPerformed(evt);
@@ -168,8 +165,7 @@ private void populateFCComboBox() {
         jLabel5.setText("Zipcode:");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
 
-        txtZipCode.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        txtZipCode.setForeground(new java.awt.Color(255, 255, 255));
+        txtZipCode.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jPanel2.add(txtZipCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 163, 20));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -177,8 +173,7 @@ private void populateFCComboBox() {
         jLabel6.setText("Location:");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
 
-        txtLocation.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        txtLocation.setForeground(new java.awt.Color(255, 255, 255));
+        txtLocation.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtLocation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLocationActionPerformed(evt);
@@ -213,16 +208,13 @@ private void populateFCComboBox() {
         jLabel10.setText("Area:");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, -1, -1));
 
-        txtEmail.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        txtEmail.setForeground(new java.awt.Color(255, 255, 255));
+        txtEmail.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jPanel2.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 163, 20));
 
-        txtCity.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        txtCity.setForeground(new java.awt.Color(255, 255, 255));
+        txtCity.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jPanel2.add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 163, 20));
 
-        txtArea.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        txtArea.setForeground(new java.awt.Color(255, 255, 255));
+        txtArea.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAreaActionPerformed(evt);
@@ -235,8 +227,7 @@ private void populateFCComboBox() {
         jLabel3.setText("Associated FC:");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
-        networkJComboBox.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        networkJComboBox.setForeground(new java.awt.Color(255, 255, 255));
+        networkJComboBox.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         networkJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 networkJComboBoxActionPerformed(evt);
@@ -258,16 +249,14 @@ private void populateFCComboBox() {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 983, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(597, Short.MAX_VALUE))
+                .addGap(0, 937, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -277,20 +266,20 @@ private void populateFCComboBox() {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1170, Short.MAX_VALUE))
+                .addGap(1500, 1500, 1500))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1590, Short.MAX_VALUE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1920, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(90, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(73, 73, 73)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
+                .addGap(183, 183, 183))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 506, Short.MAX_VALUE)))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 642, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 

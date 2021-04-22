@@ -74,10 +74,12 @@ public class viewJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         resultText = new javax.swing.JTextArea();
 
-        setBackground(new java.awt.Color(255, 51, 102));
+        setBackground(new java.awt.Color(139, 216, 189));
+        setMinimumSize(new java.awt.Dimension(1500, 1000));
 
         resultText.setEditable(false);
         resultText.setColumns(20);
+        resultText.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         resultText.setRows(5);
         jScrollPane1.setViewportView(resultText);
 
@@ -87,15 +89,15 @@ public class viewJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1050, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(730, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

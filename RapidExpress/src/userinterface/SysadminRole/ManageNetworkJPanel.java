@@ -84,15 +84,14 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(208, 93, 2));
+        setBackground(new java.awt.Color(139, 216, 189));
+        setMinimumSize(new java.awt.Dimension(1500, 1000));
+        setPreferredSize(new java.awt.Dimension(1500, 1000));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollPane1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
 
-        networkJTable.setBackground(new java.awt.Color(0, 0, 0));
-        networkJTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 255, 204)));
-        networkJTable.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        networkJTable.setForeground(new java.awt.Color(255, 255, 255));
+        networkJTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         networkJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -122,74 +121,71 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             networkJTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 510, 360));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 450, 360));
 
-        jPanel2.setBackground(new java.awt.Color(208, 93, 2));
+        jPanel2.setBackground(new java.awt.Color(255, 102, 102));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
         jPanel2.setPreferredSize(new java.awt.Dimension(250, 400));
         jPanel2.setRequestFocusEnabled(false);
         jPanel2.setVerifyInputWhenFocusTarget(false);
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Name:");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 103, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("State:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 152, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
-        txtNetWorkName.setBackground(new java.awt.Color(0, 0, 0));
-        txtNetWorkName.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        txtNetWorkName.setForeground(new java.awt.Color(255, 255, 255));
+        txtNetWorkName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtNetWorkName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNetWorkNameActionPerformed(evt);
             }
         });
-        jPanel2.add(txtNetWorkName, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 100, 141, -1));
+        jPanel2.add(txtNetWorkName, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 141, -1));
 
-        txtState.setBackground(new java.awt.Color(0, 0, 0));
-        txtState.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        txtState.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 149, 141, -1));
+        txtState.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jPanel2.add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 141, -1));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Country:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 200, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
 
-        txtCountry.setBackground(new java.awt.Color(0, 0, 0));
-        txtCountry.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        txtCountry.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.add(txtCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 197, 141, -1));
+        txtCountry.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jPanel2.add(txtCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 141, -1));
 
-        btnCreateNetwork.setBackground(new java.awt.Color(31, 31, 31));
-        btnCreateNetwork.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        btnCreateNetwork.setBackground(new java.awt.Color(36, 54, 101));
+        btnCreateNetwork.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnCreateNetwork.setForeground(new java.awt.Color(255, 255, 255));
         btnCreateNetwork.setText("Create Network");
-        btnCreateNetwork.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnCreateNetwork.setBorder(null);
         btnCreateNetwork.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateNetworkActionPerformed(evt);
             }
         });
-        jPanel2.add(btnCreateNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 180, 35));
+        jPanel2.add(btnCreateNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 110, 30));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setBackground(new java.awt.Color(36, 54, 101));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Create Network");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 326, 36));
+        jLabel4.setOpaque(true);
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 50));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 380, 440));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 380, 360));
 
-        jPanel3.setBackground(new java.awt.Color(31, 31, 31));
+        jPanel3.setBackground(new java.awt.Color(36, 54, 101));
         jPanel3.setPreferredSize(new java.awt.Dimension(926, 70));
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel12.setBackground(new java.awt.Color(36, 54, 101));
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Manage Network");
@@ -200,8 +196,8 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 1476, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 851, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(639, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -276,7 +276,6 @@ public class Create_DeliveryAdmin extends javax.swing.JPanel {
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
         organizationJComboBox.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        organizationJComboBox.setForeground(new java.awt.Color(255, 255, 255));
         organizationJComboBox.setBorder(null);
         organizationJComboBox.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -296,7 +295,6 @@ public class Create_DeliveryAdmin extends javax.swing.JPanel {
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, 20));
 
         roleJComboBox.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        roleJComboBox.setForeground(new java.awt.Color(255, 255, 255));
         roleJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 roleJComboBoxActionPerformed(evt);
@@ -304,7 +302,7 @@ public class Create_DeliveryAdmin extends javax.swing.JPanel {
         });
         jPanel2.add(roleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 160, 20));
 
-        createUserJButton.setBackground(new java.awt.Color(31, 31, 31));
+        createUserJButton.setBackground(new java.awt.Color(36, 54, 101));
         createUserJButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         createUserJButton.setForeground(new java.awt.Color(255, 255, 255));
         createUserJButton.setText("Create");
@@ -317,12 +315,10 @@ public class Create_DeliveryAdmin extends javax.swing.JPanel {
         jPanel2.add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 110, 35));
 
         lastNameJTextField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lastNameJTextField.setForeground(new java.awt.Color(255, 255, 255));
         lastNameJTextField.setBorder(null);
         jPanel2.add(lastNameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 160, 20));
 
         passwordJTextField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        passwordJTextField.setForeground(new java.awt.Color(255, 255, 255));
         passwordJTextField.setBorder(null);
         jPanel2.add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 160, 20));
 
@@ -332,7 +328,6 @@ public class Create_DeliveryAdmin extends javax.swing.JPanel {
         jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 70, 21));
 
         nameJTextField1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        nameJTextField1.setForeground(new java.awt.Color(255, 255, 255));
         nameJTextField1.setBorder(null);
         jPanel2.add(nameJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 160, 20));
 
@@ -342,7 +337,6 @@ public class Create_DeliveryAdmin extends javax.swing.JPanel {
         jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, 21));
 
         firstNameJTextField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        firstNameJTextField.setForeground(new java.awt.Color(255, 255, 255));
         firstNameJTextField.setBorder(null);
         jPanel2.add(firstNameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 160, 20));
 
@@ -358,7 +352,6 @@ public class Create_DeliveryAdmin extends javax.swing.JPanel {
 
         enterpriseNameTextField1.setBackground(new java.awt.Color(139, 216, 189));
         enterpriseNameTextField1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        enterpriseNameTextField1.setForeground(new java.awt.Color(255, 255, 255));
         enterpriseNameTextField1.setBorder(null);
         enterpriseNameTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
