@@ -45,7 +45,7 @@ public class DirectDeliveryManAreaJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("LM Delivery Man Dashboard");
+        jLabel1.setText("Dir Delivery Man Dashboard");
         jLabel1.setOpaque(true);
 
         jButton1.setBackground(new java.awt.Color(255, 102, 102));
