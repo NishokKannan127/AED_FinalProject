@@ -2,6 +2,7 @@ package Business;
 
 import Business.EnterpriseDelivery.Delivery;
 import Business.EnterpriseDelivery.DeliveryDirectory;
+import Business.EnterpriseDelivery.Organization.DirectDeliveryOrganization;
 import Business.EnterpriseDelivery.Organization.FirstMileDeliveryOrganization;
 import Business.EnterpriseDelivery.Organization.LastMileDeliveryOrganization;
 import Business.EnterpriseFulfillmentCenter.FulfillmentCenter;
@@ -24,13 +25,16 @@ import Business.POJO.Address;
 import Business.POJO.Product;
 import Business.People.CustomerDirectory;
 import Business.People.DeliveryAdminDirectory;
+import Business.People.DirectDeliveryMenDirectory;
 import Business.People.DockMenDirectory;
 import Business.People.FCManagerDirectory;
 import Business.People.FirstMileDeliveryMenDirectory;
 import Business.People.FulfillmentCenterAdminDirectory;
+import Business.People.HubAndLastMileAdminDirectory;
 import Business.People.HubManDirectory;
 import Business.People.LastMileDeliveryMenDirectory;
 import Business.People.LastMileManDirectory;
+import Business.People.ManagerDirDeliveryMenDirectory;
 import Business.People.ManagerFMDeliveryMenDirectory;
 import Business.People.ManagerLMDeliveryMenDirectory;
 import Business.People.PickAndPackDirectory;
@@ -41,12 +45,16 @@ import Business.People.VendorAdminDirectory;
 import Business.People.VendorManagerDirectory;
 import Business.Role.Customer;
 import Business.Role.DeliveryAdmin;
+import Business.Role.DirectDelivery;
 import Business.Role.Dock;
 import Business.Role.FCManager;
 import Business.Role.FirstMileDelivery;
+import Business.Role.FulfillmentCenterAdmin;
+import Business.Role.HubAndLastMileAdmin;
 import Business.Role.HubMan;
 import Business.Role.LastMileDelivery;
 import Business.Role.LastMileMan;
+import Business.Role.ManagerDirectDeliveryMenAdmin;
 import Business.Role.ManagerFMDeliveryMenAdmin;
 import Business.Role.ManagerLMDeliveryMenAdmin;
 import Business.Role.PickAndPack;
@@ -56,8 +64,10 @@ import Business.Role.VendorAdmin;
 import Business.Role.VendorManager;
 import Business.UserAccount.User;
 import static Business.UserAccount.User.Role.Customer;
+import static Business.UserAccount.User.Role.DirectDelivery;
 import static Business.UserAccount.User.Role.FCAdmin;
 import static Business.UserAccount.User.Role.FCManager;
+import static Business.UserAccount.User.Role.HubAndLastMileAdmin;
 import static Business.UserAccount.User.Role.Recieve;
 import Business.UserAccount.UserAccount;
 import EnterpriseVendor.Organization.MerchantFulfillmentOrganization;
@@ -81,10 +91,12 @@ public class ConfigureASystem {
         system.setVendorAdminDirectory(new VendorAdminDirectory());
         system.setFmDeliveryMenDirectory(new FirstMileDeliveryMenDirectory());
         system.setLmDeliveryMenDirectory(new LastMileDeliveryMenDirectory());
+        system.setDirManDir(new DirectDeliveryMenDirectory());
         system.setFcDirectory(new FulfillmentCenterDirectory());
         system.setDeliveryDirectory(new DeliveryDirectory());
         system.setFMManagerDeliveryMenDirectory(new ManagerFMDeliveryMenDirectory());
         system.setLMManagerDeliveryMenDirectory(new ManagerLMDeliveryMenDirectory());
+        system.setManagerDirDeliveryMenDirectory(new ManagerDirDeliveryMenDirectory());
         system.sethAndLmDir(new HubAndLastMileDirectory());
         system.setVendorManagerDirectory(new VendorManagerDirectory());
         system.setDelAdminDirectory(new DeliveryAdminDirectory());
@@ -94,6 +106,7 @@ public class ConfigureASystem {
         system.setRecieveDirectory(new RecieveDirectory());
         system.setStowMenDirectory(new StowMenDirectory());
         system.setPickAndPackDirectory(new PickAndPackDirectory());
+        system.sethAndLMAdminDir(new HubAndLastMileAdminDirectory());
         system.setDockPeopleDirectory(new DockMenDirectory());
         system.setHubManDir(new HubManDirectory());
         system.setLmManDir(new LastMileManDirectory());
@@ -113,8 +126,10 @@ public class ConfigureASystem {
         //Org
         FirstMileDeliveryOrganization fmDelOrg;
         LastMileDeliveryOrganization lmDelOrg;
+        DirectDeliveryOrganization dirDelOrg;
         fmDelOrg=del.addFMDeliveryOrgToDir("FM Delivery Org", del);
         lmDelOrg=del.addLMDeliveryOrgToDir("LM Delivery Org", del);
+        dirDelOrg=del.addDirDeliveryOrgToDir("Direct Delivery Org",del);
         
         Address ad = new Address("ca","ca","ca","ca");        
         //Enterprise
@@ -181,6 +196,14 @@ public class ConfigureASystem {
         UserAccount vManager2 = system.getUserAccountDirectory().createUserAccount("SamsungAccMan", "C1", "samManager", "a", User.Role.VendorManager);
         ((VendorManager)(vManager2.getUser())).setVendor(v2);
         suppChainOrg2.addVendorManager((VendorManager)vManager2.getUser());
+        
+        
+        UserAccount hlmAdm1 = system.getUserAccountDirectory().createUserAccount("hlmAcc", "C1", "hlmdmin", "a", User.Role.HubAndLastMileAdmin,hubAndLastMile);
+        ((HubAndLastMileAdmin)(hlmAdm1.getUser())).setHubAndLastMile(hubAndLastMile);// setVendor(v1);
+        
+        UserAccount fcAdm1 = system.getUserAccountDirectory().createUserAccount("fcAcc", "C1", "fcadmin", "a", User.Role.FCAdmin,fc);
+        ((FulfillmentCenterAdmin)(fcAdm1.getUser())).setFC(fc);// setHubAndLastMile(hubAndLastMile);// setVendor(v1);
+        
         //nishikori
 //        UserAccount managerDel1 = system.getUserAccountDirectory().createUserAccount(firstName, lastName, userName, password, User.Role.FMDeliveryManager);
 //            User qq = managerDel1.getUser();
@@ -208,6 +231,14 @@ public class ConfigureASystem {
         ((LastMileDelivery)(del4.getUser())).setDelivery(del);             
         lmDelOrg.addLMDeliveryMent((LastMileDelivery)del4.getUser());
         
+        UserAccount del5 = system.getUserAccountDirectory().createUserAccount("Del5", "d5", "d5", "d5", User.Role.DirectDelivery);
+        ((DirectDelivery)(del5.getUser())).setDelivery(del);             
+        dirDelOrg.addDirectDeliveryMent((DirectDelivery)del5.getUser());
+        
+        UserAccount del6 = system.getUserAccountDirectory().createUserAccount("Del6", "d6", "d6", "d6", User.Role.DirectDelivery);
+        ((DirectDelivery)(del6.getUser())).setDelivery(del);             
+        dirDelOrg.addDirectDeliveryMent((DirectDelivery)del6.getUser());
+        
         UserAccount managerDel1 = system.getUserAccountDirectory().createUserAccount("ManDel1", "d4", "dm", "dm", User.Role.FMDeliveryManager);
         User qq = managerDel1.getUser();
        ManagerFMDeliveryMenAdmin temp=((ManagerFMDeliveryMenAdmin)(qq));
@@ -220,7 +251,13 @@ public class ConfigureASystem {
        temp2.setDelivery(del);
        lmDelOrg.addLMDeliveryManager(temp2);
        
-       UserAccount fcAdm1 = system.getUserAccountDirectory().createUserAccount("FCAcc", "C1", "fcAdmin", "s", User.Role.FCAdmin,fc );
+       UserAccount managerDel3 = system.getUserAccountDirectory().createUserAccount("ManDel3", "d4", "dm3", "dm", User.Role.DirectDeliveryManager);
+        User rr = managerDel3.getUser();
+       ManagerDirectDeliveryMenAdmin temp3=((ManagerDirectDeliveryMenAdmin)(rr));
+       temp3.setDelivery(del);
+       dirDelOrg.addDirDeliveryManager(temp3);
+       
+       //UserAccount fcAdm1 = system.getUserAccountDirectory().createUserAccount("FCAcc", "C1", "fcAdmin", "s", User.Role.FCAdmin,fc );
        UserAccount fcManager1 = system.getUserAccountDirectory().createUserAccount("FCManager", "C1", "fcManager", "a", User.Role.FCManager);
        FCManager fcm =((FCManager)fcManager1.getUser());
        fcm.setFC(fc);

@@ -34,6 +34,14 @@ public class Vendor extends Enterprise{
     ArrayList<Product> listOfProductOrders;
     private static int ctr = 0;
     SupplyChainOrganizationDirectory suppChOrgDir;
+
+    public SupplyChainOrganizationDirectory getSuppChOrgDir() {
+        return suppChOrgDir;
+    }
+
+    public void setSuppChOrgDir(SupplyChainOrganizationDirectory suppChOrgDir) {
+        this.suppChOrgDir = suppChOrgDir;
+    }
     SupplyChainOrganization suppTemp;
 
     public Vendor(String name, Address address, Long phoneNumber){

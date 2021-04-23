@@ -7,7 +7,10 @@ package userinterface.CustomerRole;
 
 import Business.POJO.Order;
 import Business.Role.Customer;
+import java.awt.Image;
+import java.io.File;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -94,7 +97,7 @@ public class ViewOrder extends javax.swing.JPanel {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("My Orders");
         jLabel4.setOpaque(true);
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 460, 40));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 460, 50));
 
         FullDetailsButton.setBackground(new java.awt.Color(255, 87, 87));
         FullDetailsButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -138,4 +141,6 @@ public class ViewOrder extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+
 }

@@ -17,9 +17,18 @@ public abstract class Enterprise extends Organization{
     
     private EnterpriseType enterpriseType;
     private OrganizationDirectory organizationDirectory;
-    private int contact;
+    private Long contact;
     private String email;
     private Address address;
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public Address getEntAddress() {
         return address;
@@ -65,7 +74,8 @@ public abstract class Enterprise extends Organization{
     }
     
     public Enterprise(String name,EnterpriseType type, Address address){
-        super(name);
+        //super(name);
+        this.name=name;
         this.enterpriseType=type;
         this.address=address;
         organizationDirectory=new OrganizationDirectory();
@@ -74,11 +84,11 @@ public abstract class Enterprise extends Organization{
         
     }
 
-    public int getContact() {
+    public Long getContact() {
         return contact;
     }
 
-    public void setContact(int contact) {
+    public void setContact(Long contact) {
         this.contact = contact;
     }
 

@@ -8,6 +8,7 @@ package Business.Organizations;
 import Business.EnterpriseDelivery.Delivery;
 import Business.EnterpriseDelivery.Organization.DirectDeliveryOrganization;
 import Business.EnterpriseDelivery.Organization.FirstMileDeliveryOrganization;
+import Business.EnterpriseDelivery.Organization.LastMileDeliveryOrganization;
 import java.util.ArrayList;
 
 /**
@@ -22,12 +23,20 @@ public class DirectDeliveryOrganizationDirectory {
         directDeliveryOrganizationList = new ArrayList();
     }
 
-    public ArrayList<DirectDeliveryOrganization> geDirectDeliveryOrganizationList() {
+    public ArrayList<DirectDeliveryOrganization> geDirDeliveryOrganizationList() {
         return directDeliveryOrganizationList;
     }
     
-    public void createOrganization(String realName){
+    public DirectDeliveryOrganization createOrganization(String realName, Delivery del){
         DirectDeliveryOrganization temp = new DirectDeliveryOrganization(realName, del);
         directDeliveryOrganizationList.add(temp);        
+        return temp;
     }
+    
+    
+    
+    
+    
+    
+    
 }

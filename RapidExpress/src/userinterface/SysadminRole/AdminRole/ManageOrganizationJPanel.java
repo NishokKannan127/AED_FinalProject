@@ -149,6 +149,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         organizationJTable = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
         panel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -158,7 +159,6 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         addJButton = new javax.swing.JButton();
         nameSeparator1 = new javax.swing.JSeparator();
-        jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -171,7 +171,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
         organizationJTable.setBackground(new java.awt.Color(0, 0, 0));
         organizationJTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 255, 204)));
-        organizationJTable.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        organizationJTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         organizationJTable.setForeground(new java.awt.Color(255, 255, 255));
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -202,7 +202,18 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         organizationJTable.setShowVerticalLines(false);
         jScrollPane1.setViewportView(organizationJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 400, 370));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 160, 410, 410));
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/back.png"))); // NOI18N
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 690, -1, 46));
 
         panel1.setBackground(new java.awt.Color(255, 87, 87));
         panel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
@@ -217,15 +228,15 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Create Organization");
         jLabel3.setOpaque(true);
-        panel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
+        panel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 328, 60));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Name of Organization");
-        panel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, 26));
+        panel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, 26));
 
         txtOrgRealName.setBackground(new java.awt.Color(0, 0, 0));
-        txtOrgRealName.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        txtOrgRealName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtOrgRealName.setForeground(new java.awt.Color(255, 255, 255));
         txtOrgRealName.setBorder(null);
         txtOrgRealName.setCaretColor(new java.awt.Color(30, 59, 92));
@@ -240,28 +251,26 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 txtOrgRealNameActionPerformed(evt);
             }
         });
-        panel1.add(txtOrgRealName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 330, 30));
+        panel1.add(txtOrgRealName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 310, 30));
 
         nameSeparator.setForeground(new java.awt.Color(0, 0, 0));
-        panel1.add(nameSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 330, 10));
+        panel1.add(nameSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 310, 10));
 
-        organizationJComboBox.setBackground(new java.awt.Color(0, 0, 0));
         organizationJComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        organizationJComboBox.setForeground(new java.awt.Color(255, 255, 255));
         organizationJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 organizationJComboBoxActionPerformed(evt);
             }
         });
-        panel1.add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 330, 30));
+        panel1.add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 260, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Select Organization Type ");
-        panel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 250, -1));
+        panel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 250, -1));
 
         addJButton.setBackground(new java.awt.Color(36, 54, 101));
-        addJButton.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        addJButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         addJButton.setForeground(new java.awt.Color(255, 255, 255));
         addJButton.setText("Add Organization");
         addJButton.setBorder(null);
@@ -270,29 +279,17 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 addJButtonActionPerformed(evt);
             }
         });
-        panel1.add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 190, 40));
+        panel1.add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 140, 40));
 
         nameSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        panel1.add(nameSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 330, 10));
+        panel1.add(nameSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 310, 10));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/back.png"))); // NOI18N
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
-            }
-        });
-        panel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, 46));
-
-        add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 400, 460));
+        add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 330, 460));
 
         jPanel3.setBackground(new java.awt.Color(36, 54, 101));
         jPanel3.setPreferredSize(new java.awt.Dimension(926, 70));
 
-        jLabel5.setBackground(new java.awt.Color(36, 54, 101));
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Manage Organization");
@@ -303,8 +300,8 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 1656, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 1086, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(584, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -319,24 +316,23 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Enterprise:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, -1, -1));
 
         nameSeparator4.setForeground(new java.awt.Color(0, 0, 0));
-        add(nameSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 150, 270, 10));
+        add(nameSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 240, 10));
 
-        enterpriseNameTextField1.setBackground(new java.awt.Color(255, 87, 87));
-        enterpriseNameTextField1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        enterpriseNameTextField1.setForeground(new java.awt.Color(255, 255, 255));
+        enterpriseNameTextField1.setBackground(new java.awt.Color(139, 216, 189));
+        enterpriseNameTextField1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         enterpriseNameTextField1.setBorder(null);
         enterpriseNameTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enterpriseNameTextField1ActionPerformed(evt);
             }
         });
-        add(enterpriseNameTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 110, 260, 30));
+        add(enterpriseNameTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, 230, 30));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/organization.png"))); // NOI18N
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 80, 120, 130));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 80, 130, 120));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed

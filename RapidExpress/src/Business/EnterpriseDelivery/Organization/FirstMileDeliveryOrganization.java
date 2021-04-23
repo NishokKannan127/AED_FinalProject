@@ -32,6 +32,14 @@ public class FirstMileDeliveryOrganization extends Organization{
     FirstMileDeliveryMenDirectory firstMileDeliveryDirectory;
     Delivery del;
     String nameFirstMileDelieryOrganization;
+
+    public String getNameFirstMileDelieryOrganization() {
+        return nameFirstMileDelieryOrganization;
+    }
+
+    public void setNameFirstMileDelieryOrganization(String nameFirstMileDelieryOrganization) {
+        this.nameFirstMileDelieryOrganization = nameFirstMileDelieryOrganization;
+    }
     private static int ctr = 0;
     int fmDelOrgId;
     ArrayList<DeliveryMen> deliveryMenList;

@@ -113,11 +113,12 @@ public class HubAndLastMile extends Enterprise{
     LastMileOrganization templm;
     ArrayList<FCShipment>listOfShipmentsOfThisHAndLM;
     ArrayList<Order>listOfOrdersOfThisHAndLM;
-    
+    String hAndLMName;
    
     public HubAndLastMile(String nameOfCompany, Address address){
         super(nameOfCompany,EnterpriseType.HubAndLastMile, address);
         this.hubAndLastMileId=++ctr;
+        this.hAndLMName=nameOfCompany;
         this.ordersToSendToLMStation=new ArrayList<Order>();
         //this.name=nameOfCompany;
         this.listOfShipmentsOfThisHAndLM=new ArrayList<FCShipment>();
@@ -156,5 +157,9 @@ public class HubAndLastMile extends Enterprise{
     public LastMileOrganization addLastMileOrgToDir(String lmOrg, HubAndLastMile hAndLM){
         templm=this.lmOrgDir.createOrganization(lmOrg, hAndLM);
         return templm;
+    }
+    @Override
+    public String toString(){
+        return this.hAndLMName;
     }
 }

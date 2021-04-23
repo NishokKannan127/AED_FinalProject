@@ -65,6 +65,7 @@ public abstract class User {
         
         FMDeliveryManager("FMDeliveryManager"),
         LMDeliveryManager("LMDeliveryManager"),
+        DirectDeliveryManager("DirectDeliveryManager"),
         FCManager("FCManager"),
         VendorManager("VendorManager"),
         HubAndLastMileManager("HubAndLastMileManager"),
@@ -76,6 +77,7 @@ public abstract class User {
         HubManager("HubManager"),       
         LMManager("LMManager"),
         LMDelivery("LMDelivery"),
+        DirectDelivery("DirectDelivery"),
         PickAndPack("PickAndPack"),
         Recieve("Recieve"),
         Stow("Stow");

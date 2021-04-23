@@ -16,7 +16,7 @@ import java.util.List;
  * @author nisho
  */
 public class DirectDeliveryMenDirectory {
-    private List<DirectDelivery> deliveryManList = new ArrayList();
+    private List<DirectDelivery> deliveryManList = new ArrayList<DirectDelivery>();
     
     public List<DirectDelivery> getDirectDeliveryManList(){
         return this.deliveryManList;

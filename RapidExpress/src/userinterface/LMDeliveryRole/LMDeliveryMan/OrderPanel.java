@@ -91,12 +91,12 @@ public class OrderPanel extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(139, 216, 189));
-        setMaximumSize(new java.awt.Dimension(2000, 1500));
-        setPreferredSize(new java.awt.Dimension(1569, 1063));
+        setMinimumSize(new java.awt.Dimension(1594, 1081));
+        setPreferredSize(new java.awt.Dimension(1520, 1000));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         FullDetailsButton.setBackground(new java.awt.Color(255, 87, 87));
-        FullDetailsButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        FullDetailsButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         FullDetailsButton.setForeground(new java.awt.Color(255, 255, 255));
         FullDetailsButton.setText("Full Order Details");
         FullDetailsButton.setBorder(null);
@@ -105,7 +105,7 @@ public class OrderPanel extends javax.swing.JPanel {
                 FullDetailsButtonActionPerformed(evt);
             }
         });
-        add(FullDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 67, 140, 30));
+        add(FullDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, 140, 30));
 
         jLabel4.setBackground(new java.awt.Color(36, 54, 101));
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -113,26 +113,24 @@ public class OrderPanel extends javax.swing.JPanel {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("My Orders");
         jLabel4.setOpaque(true);
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 350, 40));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 350, 50));
 
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 212, 69, 30));
+        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 69, 30));
 
-        jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 252, 68, 30));
+        add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 68, 30));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Deliver Order ID");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Activate Order ID");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 130, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(255, 87, 87));
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Deliver");
         jButton1.setBorder(null);
@@ -141,10 +139,10 @@ public class OrderPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 110, 30));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 120, 30));
 
         jButton2.setBackground(new java.awt.Color(255, 87, 87));
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Activate");
         jButton2.setBorder(null);
@@ -153,9 +151,8 @@ public class OrderPanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 110, 30));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 120, 30));
 
-        jTable1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -189,7 +186,7 @@ public class OrderPanel extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 350, 120));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 350, 120));
     }// </editor-fold>//GEN-END:initComponents
 
     private void refreshOrders(){

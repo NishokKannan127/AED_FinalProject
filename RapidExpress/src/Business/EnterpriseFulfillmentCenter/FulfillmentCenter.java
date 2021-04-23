@@ -98,7 +98,7 @@ public class FulfillmentCenter extends Enterprise{
     //Address address;
     int fulfillmentCenterId;
     private static int counter=0;
-    String name;
+    String fcName;
     ArrayList<Order> ordersToShipToCustomers;
     FCManager fcManager;
 
@@ -132,7 +132,7 @@ public class FulfillmentCenter extends Enterprise{
         super(name,EnterpriseType.FulfillmentCenter,  address);
         fulfillmentCenterId=++counter;
 //        this.address=address;
-        this.name=name;
+        this.fcName=name;
         this.inOrgDir=new InboundOrganizationDirectory();
         this.outOrgDir=new OutboundOrganizationDirectory();
         this.orderListToSend=new ArrayList<Order>();
@@ -263,12 +263,16 @@ public class FulfillmentCenter extends Enterprise{
         FulfillmentCenter.counter = counter;
     }
 
-    public String getName() {
-        return name;
-    }
+   // public String getName() {
+   //     return name;
+   // }
 
-    public void setName(String name) {
-        this.name = name;
+    //public void setName(String name) {
+    //    this.name = name;
+    //}
+    @Override
+    public String toString(){
+        return this.fcName;
     }
     
 }

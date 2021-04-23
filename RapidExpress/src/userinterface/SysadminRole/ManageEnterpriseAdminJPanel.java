@@ -43,7 +43,6 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     private EcoSystem system;
     private Enterprise enterprise;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
-
     /**
      * Creates new form ManageEnterpriseJPanel
      */
@@ -52,19 +51,19 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
         //this.userProcessContainer = userProcessContainer;
         this.system = system;
-        this.system = EcoSystem.getInstance();
+        this.system=EcoSystem.getInstance();
         enterpriseJTable.getTableHeader().setDefaultRenderer(new TableFormat());
-        tblAdminUserName.getTableHeader().setDefaultRenderer(new TableFormat());
+        //tblAdminUserName.getTableHeader().setDefaultRenderer(new TableFormat());
+        
         populateTable();
-
+       
     }
-
-    private boolean checkUserIdExists(String userName) {
+private boolean checkUserIdExists(String userName) {
         if (system.getUserAccountDirectory().checkIfUsernameIsUnique(userName)) {
             if (system.getUserAccountDirectory().checkIfUsernameIsUnique(userName)) {
                 for (Network network : system.getNetworkList()) {
                     for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
-                        if (enterprise.getUserAccountDirectory().checkIfUsernameIsUnique(userName)) {
+                        if(this.system.getUserAccountDirectory().checkIfUsernameIsUnique(userName)){//if (enterprise.getUserAccountDirectory().checkIfUsernameIsUnique(userName)) {
                             if (enterprise.getOrganizationDirectory().getOrganizationList().size() > 0) {
                                 for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
                                     if (organization.getUserAccountDirectory().checkIfUsernameIsUnique(userName)) {
@@ -78,10 +77,11 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                             } else {
                                 return true;
                             }
-                        } else {
-                            return false;
-
                         }
+                       else {
+                           return false;
+
+                      }
                     }
                 }
             } else {
@@ -92,43 +92,57 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         }
         return false;
     }
-
     private void populateTable() {
         DefaultTableModel model = (DefaultTableModel) enterpriseJTable.getModel();
 
         model.setRowCount(0);
         for (Network network : system.getNetworkList()) {
             for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
-
+                
                 Object[] row = new Object[6];
                 row[0] = enterprise;
                 row[1] = enterprise.getEnterpriseType().getValue();
                 row[2] = network.getName();
                 row[5] = enterprise.getEmail();
-                row[3] = enterprise.getContact();
+  //              row[3] = enterprise.getContact();
                 //row[4] = enterprise.getZipcode();
-
+             
                 model.addRow(row);
-
+                
             }
         }
     }
 
-    private void populateAdminTable(Enterprise enterprise1) {
+//        private void populateAdminTable(Enterprise enterprise1) {
+     
+//            DefaultTableModel model = (DefaultTableModel) tblAdminUserName.getModel();
 
-        DefaultTableModel model = (DefaultTableModel) tblAdminUserName.getModel();
+//            model.setRowCount(0);
+            
+            
+//            int row2 = enterpriseJTable.getSelectedRow();
+//        Enterprise enterprise2 = (Enterprise) enterpriseJTable.getValueAt(row2, 0);
+//        EnterpriseType x=enterprise2.getEnterpriseType();
+       
+            //for (UserAccount user : enterprise1.getUserAccountDirectory().getUserAccountList()) {
+//            for(UserAccount user: system.getUserAccountDirectory().getUserAccountList()){
+                //if(user.){
+               // if(enterprise1.getEnterpriseType()==EnterpriseType.FulfillmentCenter){
+                 //   if(()enterprise.)
+                
 
-        model.setRowCount(0);
-
-        for (UserAccount user : enterprise1.getUserAccountDirectory().getUserAccountList()) {
-            Object[] row = new Object[3];
-            row[0] = enterprise;
-            //               row[1] = user.getEmployee().getName();
-            row[2] = user.getUsername();
-            model.addRow(row);
-        }
-    }
-
+//                enterprise1.
+//                Object[] row = new Object[3];
+//                row[0] = enterprise;
+ //               row[1] = user.getEmployee().getName();
+//                row[2] = user.getUsername();
+//                model.addRow(row);
+                
+                
+                //}
+//            }
+//        }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -142,8 +156,6 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tblAdminUserName = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -172,9 +184,8 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(jTable1);
 
         setBackground(new java.awt.Color(139, 216, 189));
-        setMaximumSize(new java.awt.Dimension(2100, 2100));
-        setMinimumSize(new java.awt.Dimension(1520, 1020));
-        setPreferredSize(new java.awt.Dimension(1550, 1000));
+        setMinimumSize(new java.awt.Dimension(2000, 1000));
+        setPreferredSize(new java.awt.Dimension(2000, 1000));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(36, 54, 101));
@@ -190,52 +201,20 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 888, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 632, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 1510, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1520, -1));
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1520, 70));
 
-        tblAdminUserName.setBackground(new java.awt.Color(255,255, 255));
-        tblAdminUserName.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        tblAdminUserName.setFont(new java.awt.Font("Tahoma", 0, 12));
-        tblAdminUserName.setForeground(new java.awt.Color(0, 0, 0));
-        tblAdminUserName.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Enterprise Name", "Admin Name", "UserName"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblAdminUserName.setGridColor(new java.awt.Color(0, 0, 0));
-        tblAdminUserName.setRowHeight(30);
-        tblAdminUserName.setShowVerticalLines(false);
-        jScrollPane3.setViewportView(tblAdminUserName);
-        if (tblAdminUserName.getColumnModel().getColumnCount() > 0) {
-            tblAdminUserName.getColumnModel().getColumn(0).setResizable(false);
-            tblAdminUserName.getColumnModel().getColumn(1).setResizable(false);
-            tblAdminUserName.getColumnModel().getColumn(2).setResizable(false);
-        }
-
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 360, 190));
-
-        jPanel2.setBackground(new java.awt.Color(255, 87, 87));
+        jPanel2.setBackground(new java.awt.Color(255, 102, 102));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
         jPanel2.setPreferredSize(new java.awt.Dimension(250, 400));
         jPanel2.setRequestFocusEnabled(false);
@@ -252,7 +231,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Enterprise:");
 
-        txtName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtName.setEnabled(false);
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -264,21 +243,21 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Admin Name:");
 
-        txtAdminName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtAdminName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtAdminName.setEnabled(false);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Username:");
 
-        txtUserName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtUserName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtUserName.setEnabled(false);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Password:");
 
-        txtPassword.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtPassword.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtPassword.setEnabled(false);
 
         btnCreateAdmin.setBackground(new java.awt.Color(36, 54, 101));
@@ -298,76 +277,64 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel4)
+                        .addComponent(jLabel2)))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel5)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addGap(4, 4, 4))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel2)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtAdminName, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-                            .addComponent(txtUserName, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
-                            .addComponent(txtName)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addComponent(btnCreateAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                    .addComponent(btnCreateAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(88, 88, 88))
         );
-
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtAdminName, txtPassword, txtUserName});
-
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(9, 9, 9)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(txtAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnCreateAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addComponent(btnCreateAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(179, Short.MAX_VALUE))
         );
 
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtAdminName, txtName, txtPassword, txtUserName});
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 380, 400));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 350, 300));
-
-        enterpriseJTable.setBackground(new java.awt.Color(255,255, 255));
         enterpriseJTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        enterpriseJTable.setForeground(new java.awt.Color(0, 0, 0));
         enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Enterprise Name", "Enterprise Type", "Network", "Contact", "Zipcode", "Email"
+                "Enterprise Name", "Enterprise Type", "Network", "Zipcode", "Email"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -385,91 +352,114 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(enterpriseJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 530, 300));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 900, 280));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateAdminActionPerformed
-
+        
         int selectedRow = enterpriseJTable.getSelectedRow();
-
-        if (txtAdminName.getText().isEmpty()) {
-            txtAdminName.setBorder(BorderFactory.createLineBorder(Color.RED));
-            txtAdminName.setForeground(Color.red);
-        }
-
-        if (txtUserName.getText().isEmpty()) {
-            txtUserName.setBorder(BorderFactory.createLineBorder(Color.RED));
-            txtUserName.setForeground(Color.red);
-        }
-
-        if (txtPassword.getText().isEmpty()) {
-            txtPassword.setBorder(BorderFactory.createLineBorder(Color.RED));
-            txtPassword.setForeground(Color.red);
-        }
-
-        if (selectedRow < 0) {
+        
+        if(txtAdminName.getText().isEmpty())
+        {
+        txtAdminName.setBorder(BorderFactory.createLineBorder(Color.RED));
+        txtAdminName.setForeground(Color.red);
+        } 
+        
+        if(txtUserName.getText().isEmpty())
+        {
+        txtUserName.setBorder(BorderFactory.createLineBorder(Color.RED));
+        txtUserName.setForeground(Color.red);
+        } 
+        
+        if(txtPassword.getText().isEmpty())
+        {
+        txtPassword.setBorder(BorderFactory.createLineBorder(Color.RED));
+        txtPassword.setForeground(Color.red);
+        } 
+        
+        
+        if (selectedRow < 0){
             //JOptionPane.showMessageDialog(null, "Please select a row to Process" ,"Warning" , JOptionPane.WARNING_MESSAGE);
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>Please select<font color='red'> a row</font> to process! </I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
-
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> to process! </I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            
+            
             return;
-        } else if (txtUserName.getText().isEmpty() || txtAdminName.getText().isEmpty() || txtPassword.getText().isEmpty()) {
-            //JOptionPane.showMessageDialog(null, "All fields are mandatory!","Warning",JOptionPane.WARNING_MESSAGE);
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>All fields are</I><font color='red'> mandatory</font>!</h2></html>"), "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        } else if (!checkUserIdExists(txtUserName.getText())) {
+        }
+        
+        else if (txtUserName.getText().isEmpty() || txtAdminName.getText().isEmpty() || txtPassword.getText().isEmpty()    )
+        {
+           //JOptionPane.showMessageDialog(null, "All fields are mandatory!","Warning",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,new JLabel(  "<html><h2><I>All fields are</I><font color='red'> mandatory</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+           return;
+        }
+        
+        
+        else if (!checkUserIdExists(txtUserName.getText())){
             txtUserName.setBorder(BorderFactory.createLineBorder(Color.RED));
             txtUserName.setForeground(Color.red);
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>User name</I><font color='red'> already</font> present!</h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,new JLabel(  "<html><h2><I>User name</I><font color='red'> already</font> present!</h2></html>"),"Warning",JOptionPane.WARNING_MESSAGE);
             return;
-        } else if (txtPassword.getText().length() < 4) {
+            }
+         
+        else if (txtPassword.getText().length() < 4 ){
             txtPassword.setBorder(BorderFactory.createLineBorder(Color.RED));
             txtPassword.setForeground(Color.red);
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Password</I></font> should be<font color='green'> more than 4 digit!</font>!</h2></html>"), "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Password</I></font> should be<font color='green'> more than 4 digit!</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
             //JOptionPane.showMessageDialog(null, "Password should be more than 4 characters","Warning",JOptionPane.WARNING_MESSAGE);
             return;
-        } else {
-
-            String username = txtUserName.getText();
-            String password = String.valueOf(txtPassword.getPassword());
-
-            //Employee employee = enterprise.getEmployeeDirectory().createEmployee(txtAdminName.getText()); 
-            int row = enterpriseJTable.getSelectedRow();
-            Enterprise enterprise2 = (Enterprise) enterpriseJTable.getValueAt(row, 0);
-            EnterpriseType x = enterprise2.getEnterpriseType();
+            }
+        
+        
+        
+        else    
+        {
+        
+        String username = txtUserName.getText();
+        String password = String.valueOf(txtPassword.getPassword());
+       
+        //Employee employee = enterprise.getEmployeeDirectory().createEmployee(txtAdminName.getText()); 
+        int row = enterpriseJTable.getSelectedRow();
+        Enterprise enterprise2 = (Enterprise) enterpriseJTable.getValueAt(row, 0);
+        EnterpriseType x=enterprise2.getEnterpriseType();
 //        Delivery("Delivery"),
 //        FulfillmentCenter("FulfillmentCenter"),
 //        HubAndLastMile("HubAndLastMile"),
 //        Vendor("Vendor");
-            UserAccount account;
-            if (x == EnterpriseType.Vendor) {
-                //account = enterprise.getUserAccountDirectory().createUserAccount(username,username,username, password, User.Role.Vendor);
-                system.getUserAccountDirectory().createUserAccount(username, username, username, password, User.Role.VendorAdmin, enterprise2);
-
-            } else if (x == EnterpriseType.Delivery) {
-                //account = enterprise.getUserAccountDirectory().createUserAccount(username,username,username, password, DeliveryManager);
-                system.getUserAccountDirectory().createUserAccount(username, username, username, password, User.Role.DeliveryAdmin, enterprise2);
-            } else if (x == EnterpriseType.FulfillmentCenter) {
-                //account = enterprise.getUserAccountDirectory().createUserAccount(username,username,username, password, FCAdmin);
-                system.getUserAccountDirectory().createUserAccount(username, username, username, password, User.Role.FCAdmin, enterprise2);
-            } else if (x == EnterpriseType.HubAndLastMile) {
-                //account = enterprise.getUserAccountDirectory().createUserAccount(username,username,username, password, HubAndLastMileAdmin);
-                system.getUserAccountDirectory().createUserAccount(username, username, username, password, User.Role.HubAndLastMileAdmin, enterprise2);
-            }
-
-            //Customer("Customer"),
-            //Vendor("Vendor"),
-            //Dock("Dock"),
-            //FCAdmin("FCAdmin"),
-            //FMDelivery("FMDelivery"),
-            //HubAdmin("HubAdmin"),       
-            //LMAdmin("LMAdmin"),
-            //LMDelivery("LMDelivery"),
-            //PickAndPack("PickAndPack"),
-            //Recieve("Recieve"),
-            //Stow("Stow"),
-            //SysAdmin("SysAdmin"),
-            //DeliveryManager("DeliveryManager");
-            //UserAccount c2 = system.getUserAccountDirectory().createUserAccount("Customer", "C2", "c2", "c", User.Role.Customer);
+        UserAccount account=null;
+        if(x==EnterpriseType.Vendor){
+            //account = enterprise.getUserAccountDirectory().createUserAccount(username,username,username, password, User.Role.Vendor);
+            account=system.getUserAccountDirectory().createUserAccount(username, username,username, password,User.Role.VendorAdmin, enterprise2);
+            
+        }
+        else if(x==EnterpriseType.Delivery){
+            //account = enterprise.getUserAccountDirectory().createUserAccount(username,username,username, password, DeliveryManager);
+            account=system.getUserAccountDirectory().createUserAccount(username, username,username, password,User.Role.DeliveryAdmin,enterprise2);
+        }
+        else if(x==EnterpriseType.FulfillmentCenter){
+            //account = enterprise.getUserAccountDirectory().createUserAccount(username,username,username, password, FCAdmin);
+            account=system.getUserAccountDirectory().createUserAccount(username, username,username, password,User.Role.FCAdmin,enterprise2);
+        }
+        else if(x==EnterpriseType.HubAndLastMile){
+            //account = enterprise.getUserAccountDirectory().createUserAccount(username,username,username, password, HubAndLastMileAdmin);
+            account=system.getUserAccountDirectory().createUserAccount(username, username,username, password,User.Role.HubAndLastMileAdmin,enterprise2);
+        }
+        
+        //Customer("Customer"),
+        //Vendor("Vendor"),
+        //Dock("Dock"),
+        //FCAdmin("FCAdmin"),
+        //FMDelivery("FMDelivery"),
+        //HubAdmin("HubAdmin"),       
+        //LMAdmin("LMAdmin"),
+        //LMDelivery("LMDelivery"),
+        //PickAndPack("PickAndPack"),
+        //Recieve("Recieve"),
+        //Stow("Stow"),
+        //SysAdmin("SysAdmin"),
+        //DeliveryManager("DeliveryManager");
+        
+        
+        //UserAccount c2 = system.getUserAccountDirectory().createUserAccount("Customer", "C2", "c2", "c", User.Role.Customer);
 //        ((Customer)(c2.getUser())).setAddress(add2);
 //        UserAccount vAdm1 = system.getUserAccountDirectory().createUserAccount("AppleAcc", "C1", "ap", "a", User.Role.Vendor);
 //        ((VendorAdmin)(vAdm1.getUser())).setVendor(v1);
@@ -487,46 +477,49 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 //        User qq = managerDel1.getUser();
 //        ManagerFMDeliveryMenAdmin temp=((ManagerFMDeliveryMenAdmin)(qq));
 //        temp.setDelivery(del);
-            populateAdminTable(enterprise);
-
-            populateAdminTable(enterprise);
-
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2>New Admin<font color='green'><I> credentials</I></font> created!</h2></html>"));
-
-            dB4OUtil.storeSystem(system);
-
-            txtAdminName.setText("");
-            txtUserName.setText("");
-            txtPassword.setText("");
-            txtName.setText("");
-            txtAdminName.setEnabled(false);
-            txtUserName.setEnabled(false);
-            txtPassword.setEnabled(false);
-            txtName.setEnabled(false);
+        
+        
+        //populateAdminTable(enterprise);
+        
+        //populateAdminTable(enterprise);
+          
+        JOptionPane.showMessageDialog(null, new JLabel("<html><h2>New Admin<font color='green'><I> credentials</I></font> created!</h2></html>"));
+        
+        dB4OUtil.storeSystem(system);
+        
+          txtAdminName.setText("");
+          txtUserName.setText(account.getUsername());
+          txtPassword.setText(account.getPassword());
+          txtName.setText("");  
+          txtAdminName.setEnabled(false);
+          txtUserName.setEnabled(false);
+          txtPassword.setEnabled(false);
+          txtName.setEnabled(false);  
         }
-
-
+             
+        
     }//GEN-LAST:event_btnCreateAdminActionPerformed
 
     private void enterpriseJTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enterpriseJTableMouseClicked
         // TODO add your handling code here:
         int row = enterpriseJTable.getSelectedRow();
         if (row < 0) {
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>Please select<font color='red'> a row</font> from the<font color='green'> Table</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
-
+             JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> from the<font color='green'> Table</I></font></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            
+            
             //JOptionPane.showMessageDialog(null, "Please select a row from the table first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         Enterprise enterprise2 = (Enterprise) enterpriseJTable.getValueAt(row, 0);
-        enterprise = enterprise2;
+        enterprise = enterprise2 ;
 
-        txtName.setText(enterprise2.getName());
-        txtAdminName.setEnabled(true);
-        txtUserName.setEnabled(true);
-        txtPassword.setEnabled(true);
-
-        populateAdminTable(enterprise2);
-
+       txtName.setText(enterprise2.getName());
+       txtAdminName.setEnabled(true);
+       txtUserName.setEnabled(true);
+       txtPassword.setEnabled(true);
+       
+       //populateAdminTable(enterprise2);
+        
     }//GEN-LAST:event_enterpriseJTableMouseClicked
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
@@ -546,9 +539,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable tblAdminUserName;
     private javax.swing.JTextField txtAdminName;
     private javax.swing.JTextField txtName;
     private javax.swing.JPasswordField txtPassword;

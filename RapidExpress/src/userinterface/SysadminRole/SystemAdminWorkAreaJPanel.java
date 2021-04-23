@@ -98,23 +98,28 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         BtnManageNetwork = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         BtnManageEnterprise = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        BtnManageEnterprise2 = new javax.swing.JLabel();
         BtnManageAuthentication = new javax.swing.JLabel();
+        jPanel13 = new javax.swing.JPanel();
+        BtnManageEnterprise5 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        BtnManageEnterprise4 = new javax.swing.JLabel();
         panelSysadminWorkContainer = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(36, 54, 101));
-        setForeground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(2100, 2100));
-        setPreferredSize(new java.awt.Dimension(1500, 1000));
+        setMinimumSize(new java.awt.Dimension(2000, 1000));
+        setPreferredSize(new java.awt.Dimension(2000, 1000));
+        setLayout(new java.awt.BorderLayout());
 
-        menu.setPreferredSize(new java.awt.Dimension(270, 500));
+        menu.setPreferredSize(new java.awt.Dimension(180, 500));
+        menu.setLayout(new java.awt.BorderLayout());
 
         panelSysadminControl.setBackground(new java.awt.Color(36, 54, 101));
-        panelSysadminControl.setMinimumSize(new java.awt.Dimension(120, 270));
-        panelSysadminControl.setPreferredSize(new java.awt.Dimension(100, 270));
+        panelSysadminControl.setMinimumSize(new java.awt.Dimension(180, 408));
+        panelSysadminControl.setPreferredSize(new java.awt.Dimension(180, 408));
         panelSysadminControl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel8.setBackground(new java.awt.Color(255, 87, 87));
+        jPanel8.setBackground(new java.awt.Color(255, 102, 102));
 
         BtnManageNetwork.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         BtnManageNetwork.setForeground(new java.awt.Color(255, 255, 255));
@@ -131,23 +136,32 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addComponent(BtnManageNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 10, Short.MAX_VALUE))
+            .addGap(0, 150, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel8Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(BtnManageNetwork, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BtnManageNetwork, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 35, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel8Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(BtnManageNetwork, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
 
-        panelSysadminControl.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 130, 30));
+        panelSysadminControl.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 150, 30));
 
-        jPanel9.setBackground(new java.awt.Color(255, 87, 87));
+        jPanel9.setBackground(new java.awt.Color(255, 102, 102));
+        jPanel9.setForeground(new java.awt.Color(255, 255, 255));
 
         BtnManageEnterprise.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         BtnManageEnterprise.setForeground(new java.awt.Color(255, 255, 255));
         BtnManageEnterprise.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BtnManageEnterprise.setText("Manage Enterprise");
+        BtnManageEnterprise.setText("Manage Delivery");
         BtnManageEnterprise.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnManageEnterprise.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -159,81 +173,140 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(BtnManageEnterprise)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 150, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel9Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(BtnManageEnterprise, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BtnManageEnterprise, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+            .addGap(0, 35, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel9Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(BtnManageEnterprise, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
 
-        panelSysadminControl.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 130, 30));
+        panelSysadminControl.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 30));
 
-        jPanel10.setBackground(new java.awt.Color(255, 87, 87));
+        jPanel12.setBackground(new java.awt.Color(255, 102, 102));
 
+        BtnManageEnterprise2.setBackground(java.awt.Color.red);
+        BtnManageEnterprise2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        BtnManageEnterprise2.setForeground(new java.awt.Color(255, 255, 255));
+        BtnManageEnterprise2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BtnManageEnterprise2.setText("Manage Vendor");
+        BtnManageEnterprise2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnManageEnterprise2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnManageEnterprise2MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(BtnManageEnterprise2, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(BtnManageEnterprise2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        panelSysadminControl.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 150, 30));
+
+        BtnManageAuthentication.setBackground(new java.awt.Color(255, 102, 102));
         BtnManageAuthentication.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         BtnManageAuthentication.setForeground(new java.awt.Color(255, 255, 255));
         BtnManageAuthentication.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         BtnManageAuthentication.setText("Manage Authentication");
         BtnManageAuthentication.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnManageAuthentication.setOpaque(true);
         BtnManageAuthentication.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BtnManageAuthenticationMouseClicked(evt);
             }
         });
+        panelSysadminControl.add(BtnManageAuthentication, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 150, 28));
 
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+        jPanel13.setBackground(new java.awt.Color(255, 102, 102));
+
+        BtnManageEnterprise5.setBackground(java.awt.Color.red);
+        BtnManageEnterprise5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        BtnManageEnterprise5.setForeground(new java.awt.Color(255, 255, 255));
+        BtnManageEnterprise5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BtnManageEnterprise5.setText("Manage Hub and Last mile");
+        BtnManageEnterprise5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnManageEnterprise5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnManageEnterprise5MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addComponent(BtnManageEnterprise5)
+                .addGap(0, 9, Short.MAX_VALUE))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(BtnManageAuthentication, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(BtnManageEnterprise5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+
+        panelSysadminControl.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 150, 30));
+
+        jPanel11.setBackground(new java.awt.Color(255, 102, 102));
+
+        BtnManageEnterprise4.setBackground(new java.awt.Color(255, 102, 102));
+        BtnManageEnterprise4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        BtnManageEnterprise4.setForeground(new java.awt.Color(255, 255, 255));
+        BtnManageEnterprise4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BtnManageEnterprise4.setText("Manage FC");
+        BtnManageEnterprise4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnManageEnterprise4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnManageEnterprise4MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(BtnManageEnterprise4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(BtnManageAuthentication, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(BtnManageEnterprise4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        panelSysadminControl.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 130, 30));
+        panelSysadminControl.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 150, 30));
 
-        javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
-        menu.setLayout(menuLayout);
-        menuLayout.setHorizontalGroup(
-            menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelSysadminControl, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        menuLayout.setVerticalGroup(
-            menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
-                .addComponent(panelSysadminControl, javax.swing.GroupLayout.PREFERRED_SIZE, 521, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        menu.add(panelSysadminControl, java.awt.BorderLayout.LINE_START);
+
+        add(menu, java.awt.BorderLayout.LINE_START);
 
         panelSysadminWorkContainer.setBackground(new java.awt.Color(139, 216, 189));
-        panelSysadminWorkContainer.setForeground(new java.awt.Color(255, 255, 255));
+        panelSysadminWorkContainer.setMinimumSize(new java.awt.Dimension(1500, 1000));
+        panelSysadminWorkContainer.setPreferredSize(new java.awt.Dimension(1500, 1000));
         panelSysadminWorkContainer.setLayout(new java.awt.CardLayout());
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1357, Short.MAX_VALUE)
-                .addComponent(panelSysadminWorkContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 521, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(479, Short.MAX_VALUE))
-            .addComponent(panelSysadminWorkContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        add(panelSysadminWorkContainer, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnManageNetworkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnManageNetworkMouseClicked
@@ -255,17 +328,50 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     private void BtnManageEnterpriseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnManageEnterpriseMouseClicked
         // TODO add your handling code here:
         ManageEnterpriseJPanel manageEnterprise = new ManageEnterpriseJPanel(ecosystem);
-        panelSysadminWorkContainer.add("ManageEnterpriseJPanel",manageEnterprise);
+        Create_Delivery createDel = new Create_Delivery(ecosystem);
+        panelSysadminWorkContainer.add("ManageEnterpriseJPanel",createDel);
         CardLayout layout = (CardLayout) panelSysadminWorkContainer.getLayout();
         layout.next(panelSysadminWorkContainer);
     }//GEN-LAST:event_BtnManageEnterpriseMouseClicked
+
+    private void BtnManageEnterprise2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnManageEnterprise2MouseClicked
+        // TODO add your handling code here:
+        ManageEnterpriseJPanel manageEnterprise = new ManageEnterpriseJPanel(ecosystem);
+        Create_Vendor createDel = new Create_Vendor(ecosystem);
+        panelSysadminWorkContainer.add("ManageEnterpriseJPanel",createDel);
+        CardLayout layout = (CardLayout) panelSysadminWorkContainer.getLayout();
+        layout.next(panelSysadminWorkContainer);
+    }//GEN-LAST:event_BtnManageEnterprise2MouseClicked
+
+    private void BtnManageEnterprise4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnManageEnterprise4MouseClicked
+        // TODO add your handling code here:
+        ManageEnterpriseJPanel manageEnterprise = new ManageEnterpriseJPanel(ecosystem);
+        Create_FC createDel = new Create_FC(ecosystem);
+        panelSysadminWorkContainer.add("ManageEnterpriseJPanel",createDel);
+        CardLayout layout = (CardLayout) panelSysadminWorkContainer.getLayout();
+        layout.next(panelSysadminWorkContainer);
+    }//GEN-LAST:event_BtnManageEnterprise4MouseClicked
+
+    private void BtnManageEnterprise5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnManageEnterprise5MouseClicked
+        // TODO add your handling code here:
+        ManageEnterpriseJPanel manageEnterprise = new ManageEnterpriseJPanel(ecosystem);
+        Create_HubAndLM createDel = new Create_HubAndLM(ecosystem);
+        panelSysadminWorkContainer.add("ManageEnterpriseJPanel",createDel);
+        CardLayout layout = (CardLayout) panelSysadminWorkContainer.getLayout();
+        layout.next(panelSysadminWorkContainer);
+    }//GEN-LAST:event_BtnManageEnterprise5MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BtnManageAuthentication;
     private javax.swing.JLabel BtnManageEnterprise;
+    private javax.swing.JLabel BtnManageEnterprise2;
+    private javax.swing.JLabel BtnManageEnterprise4;
+    private javax.swing.JLabel BtnManageEnterprise5;
     private javax.swing.JLabel BtnManageNetwork;
-    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel menu;

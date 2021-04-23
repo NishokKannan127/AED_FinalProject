@@ -21,7 +21,7 @@ public class LastMileDeliveryOrganizationDirectory {
         lmDeliveryOrganizationList = new ArrayList();
     }
 
-    public ArrayList<LastMileDeliveryOrganization> geFMDeliverytOrganizationList() {
+    public ArrayList<LastMileDeliveryOrganization> geLMDeliverytOrganizationList() {
         return lmDeliveryOrganizationList;
     }
     

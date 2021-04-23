@@ -38,6 +38,13 @@ public class UserAccountDirectory {
             }
         return null;
     }
+    public boolean authenticateUser(String username){
+        for (UserAccount ua : userAccountList)
+            if (ua.getUsername().equals(username)){
+                return false;
+            }
+        return true;
+    }
     
     public UserAccount createUserAccount(String firstName, String lastName, String username, String password, Role role){
         if(!checkIfUsernameIsUnique(username)) return null;

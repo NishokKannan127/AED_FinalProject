@@ -65,8 +65,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
         enterpriseNameTextField1.setText(enterprise.getName());
         popOrganizationComboBox();
-        userJTable.getTableHeader().setDefaultRenderer(new TableFormat());
-        popData();
+//        userJTable.getTableHeader().setDefaultRenderer(new TableFormat());
+//        popData();
     }
 
     public void popOrganizationComboBox() {
@@ -121,22 +121,22 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         
     }
 
-    public void popData() {
+//    public void popData() {
 
-        DefaultTableModel model = (DefaultTableModel) userJTable.getModel();
+//        DefaultTableModel model = (DefaultTableModel) userJTable.getModel();
 
-        model.setRowCount(0);
+//        model.setRowCount(0);
 
-        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
-            for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
-                Object row[] = new Object[3];
-                row[1] = ua.getRole();
-                row[2] = ua;
-            //    row[2] = ua.getUsername();
-                ((DefaultTableModel) userJTable.getModel()).addRow(row);
-            }
-        }
-    }
+//        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+//            for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
+//                Object row[] = new Object[3];
+//                row[1] = ua.getRole();
+//                row[2] = ua;
+//            //    row[2] = ua.getUsername();
+//                ((DefaultTableModel) userJTable.getModel()).addRow(row);
+//            }
+//        }
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -172,8 +172,6 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         nameSeparator4 = new javax.swing.JSeparator();
         enterpriseNameTextField1 = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        userJTable = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
@@ -200,6 +198,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 670, 70, 50));
 
         jPanel3.setBackground(new java.awt.Color(36, 54, 101));
+        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.setPreferredSize(new java.awt.Dimension(926, 70));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -212,9 +211,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 919, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(901, Short.MAX_VALUE))
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 1084, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 746, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,35 +232,35 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setBackground(new java.awt.Color(36, 54, 101));
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Employee Credentials");
         jLabel8.setOpaque(true);
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 60));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 60));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Last Name");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 80, 21));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 150, 21));
 
         nameSeparator.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel2.add(nameSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 430, 10));
+        jPanel2.add(nameSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 360, 20));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Password");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 70, 26));
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 100, 26));
 
         nameSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel2.add(nameSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 430, 10));
+        jPanel2.add(nameSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 360, 10));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Organization");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
-        organizationJComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        organizationJComboBox.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         organizationJComboBox.setBorder(null);
         organizationJComboBox.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -274,23 +272,23 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                 organizationJComboBoxActionPerformed(evt);
             }
         });
-        jPanel2.add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 260, -1));
+        jPanel2.add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 160, 20));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Role");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, 40));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, 40));
 
-        roleJComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        roleJComboBox.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         roleJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 roleJComboBoxActionPerformed(evt);
             }
         });
-        jPanel2.add(roleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 260, 20));
+        jPanel2.add(roleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 160, 20));
 
         createUserJButton.setBackground(new java.awt.Color(36, 54, 101));
-        createUserJButton.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        createUserJButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         createUserJButton.setForeground(new java.awt.Color(255, 255, 255));
         createUserJButton.setText("Create");
         createUserJButton.setBorder(null);
@@ -299,88 +297,56 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                 createUserJButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 380, 110, 35));
+        jPanel2.add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 110, 35));
 
-        lastNameJTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lastNameJTextField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lastNameJTextField.setBorder(null);
-        jPanel2.add(lastNameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 260, 20));
+        jPanel2.add(lastNameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 160, 20));
 
-        passwordJTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        passwordJTextField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         passwordJTextField.setBorder(null);
-        jPanel2.add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 260, 20));
+        jPanel2.add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 160, 20));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Username");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 80, 21));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 100, 21));
 
-        nameJTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        nameJTextField1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         nameJTextField1.setBorder(null);
-        jPanel2.add(nameJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 260, 20));
+        jPanel2.add(nameJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 160, 20));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("First Name");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 80, 21));
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, 21));
 
-        firstNameJTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        firstNameJTextField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         firstNameJTextField.setBorder(null);
-        jPanel2.add(firstNameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 260, 20));
+        jPanel2.add(firstNameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 160, 20));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 470, 470));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 380, 470));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Enterprise:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, -1, 30));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, -1, 30));
 
         nameSeparator4.setForeground(new java.awt.Color(0, 0, 0));
-        add(nameSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 140, 280, 10));
+        add(nameSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, 230, 10));
 
         enterpriseNameTextField1.setBackground(new java.awt.Color(139, 216, 189));
-        enterpriseNameTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        enterpriseNameTextField1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         enterpriseNameTextField1.setBorder(null);
         enterpriseNameTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enterpriseNameTextField1ActionPerformed(evt);
             }
         });
-        add(enterpriseNameTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 100, 280, 30));
-
-        jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane2.setBorder(null);
-        jScrollPane2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-
-        userJTable.setBackground(new java.awt.Color(0, 0, 0));
-        userJTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        userJTable.setForeground(new java.awt.Color(255, 255, 255));
-        userJTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Employee", "Role", "User Name"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        userJTable.setFocusable(false);
-        userJTable.setGridColor(new java.awt.Color(0, 0, 0));
-        userJTable.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        userJTable.setRowHeight(30);
-        userJTable.setShowVerticalLines(false);
-        jScrollPane2.setViewportView(userJTable);
-
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, 450, 450));
+        add(enterpriseNameTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 230, 30));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/login.png"))); // NOI18N
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 70, -1, 130));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 80, 130, 130));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
@@ -526,7 +492,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
   
         
         
-        popData();
+//        popData();
         
         JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>User Account</I><font color='green'> created </font><I>successfully!/I<></h2></html>") );//, "Error", JOptionPane.ERROR_MESSAGE);
                    
@@ -552,6 +518,7 @@ private boolean checkUserIdExists(String userName) {
                 for (Network network : system.getNetworkList()) {
                     for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
                         if (enterprise.getUserAccountDirectory().checkIfUsernameIsUnique(userName)) {
+                               //if(authenticateUser(userName)){
                             if (enterprise.getOrganizationDirectory().getOrganizationList().size() > 0) {
                                 for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
                                     if (organization.getUserAccountDirectory().checkIfUsernameIsUnique(userName)) {
@@ -598,9 +565,9 @@ private boolean checkUserIdExists(String userName) {
         // TODO add your handling code here:
         
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
-        DefaultTableModel model = (DefaultTableModel) userJTable.getModel();
+//        DefaultTableModel model = (DefaultTableModel) userJTable.getModel();
 
-        model.setRowCount(0);
+//        model.setRowCount(0);
 
         
         for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
@@ -609,7 +576,7 @@ private boolean checkUserIdExists(String userName) {
                 row[1] = ua.getRole();
                 row[2] = ua;
             //    row[2] = ua.getUsername();
-                ((DefaultTableModel) userJTable.getModel()).addRow(row);
+//                ((DefaultTableModel) userJTable.getModel()).addRow(row);
             }
     }//GEN-LAST:event_organizationJComboBoxItemStateChanged
 
@@ -639,7 +606,6 @@ private boolean checkUserIdExists(String userName) {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField lastNameJTextField;
     private javax.swing.JTextField nameJTextField1;
@@ -649,6 +615,5 @@ private boolean checkUserIdExists(String userName) {
     private javax.swing.JComboBox organizationJComboBox;
     private javax.swing.JPasswordField passwordJTextField;
     private javax.swing.JComboBox roleJComboBox;
-    private javax.swing.JTable userJTable;
     // End of variables declaration//GEN-END:variables
 }

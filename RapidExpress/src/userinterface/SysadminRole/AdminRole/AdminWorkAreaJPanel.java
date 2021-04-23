@@ -125,60 +125,25 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
         menu = new javax.swing.JPanel();
         menuhide = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         userProcessContainer = new javax.swing.JPanel();
 
-        setMinimumSize(new java.awt.Dimension(1200, 1000));
+        setMinimumSize(new java.awt.Dimension(1500, 1090));
         setPreferredSize(new java.awt.Dimension(1500, 1000));
         setLayout(new java.awt.BorderLayout());
 
-        menu.setPreferredSize(new java.awt.Dimension(270, 450));
+        menu.setPreferredSize(new java.awt.Dimension(170, 450));
         menu.setLayout(new java.awt.BorderLayout());
 
         menuhide.setBackground(new java.awt.Color(36, 54, 101));
-        menuhide.setMaximumSize(new java.awt.Dimension(150, 460));
-        menuhide.setMinimumSize(new java.awt.Dimension(150, 460));
-        menuhide.setPreferredSize(new java.awt.Dimension(150, 460));
+        menuhide.setMinimumSize(new java.awt.Dimension(170, 460));
+        menuhide.setPreferredSize(new java.awt.Dimension(170, 460));
         menuhide.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setOpaque(false);
+        jPanel3.setBackground(new java.awt.Color(255, 87, 87));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 42, Short.MAX_VALUE)
-        );
-
-        menuhide.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 200, -1));
-
-        jPanel3.setOpaque(false);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 140, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 64, Short.MAX_VALUE)
-        );
-
-        menuhide.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 140, -1));
-
-        jPanel4.setBackground(new java.awt.Color(255, 87, 87));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Manage Users");
@@ -189,47 +154,22 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        menuhide.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 200, 40));
+        menuhide.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 140, 30));
 
-        jLabel1.setBackground(new java.awt.Color(255, 87, 87));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Manage Oranganization");
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel1.setOpaque(true);
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
-        menuhide.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 200, 42));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/back.png"))); // NOI18N
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
-            }
-        });
-        menuhide.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
-
-        menu.add(menuhide, java.awt.BorderLayout.CENTER);
+        menu.add(menuhide, java.awt.BorderLayout.LINE_START);
 
         add(menu, java.awt.BorderLayout.LINE_START);
 
@@ -238,40 +178,40 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         add(userProcessContainer, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        // TODO add your handling code here:
-        
-        ManageOrganizationJPanel manageOrganizationJPanel = new ManageOrganizationJPanel(userProcessContainer, enterprise.getOrganizationDirectory(), enterprise, system);
-        userProcessContainer.add("manageOrganizationJPanel", manageOrganizationJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_jLabel1MouseClicked
-
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
         
-        ManageUserAccountJPanel muajp = new ManageUserAccountJPanel(userProcessContainer, enterprise, system);
-        userProcessContainer.add("ManageUserAccountJPanel", muajp);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+//        ManageUserAccountJPanel muajp = new ManageUserAccountJPanel(userProcessContainer, enterprise, system);
+        if(enterprise.getEnterpriseType()==Enterprise.EnterpriseType.Vendor){
+            Create_VendorAdmin muajp = new Create_VendorAdmin(userProcessContainer, enterprise, system);
+            userProcessContainer.add("ManageUserAccountJPanel", muajp);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        else if(enterprise.getEnterpriseType()==Enterprise.EnterpriseType.FulfillmentCenter){
+            Create_FCAdmin muajp = new Create_FCAdmin(userProcessContainer, enterprise, system);
+            userProcessContainer.add("ManageUserAccountJPanel", muajp);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        else if(enterprise.getEnterpriseType()==Enterprise.EnterpriseType.Delivery){
+            Create_DeliveryAdmin muajp = new Create_DeliveryAdmin(userProcessContainer, enterprise, system);
+            userProcessContainer.add("ManageUserAccountJPanel", muajp);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        else if(enterprise.getEnterpriseType()==Enterprise.EnterpriseType.HubAndLastMile){
+            Create_HubAndLMAdmin muajp = new Create_HubAndLMAdmin(userProcessContainer, enterprise, system);
+            userProcessContainer.add("ManageUserAccountJPanel", muajp);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
     }//GEN-LAST:event_jLabel3MouseClicked
-
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
-        
-        JFrame frame = (JFrame) getWindowAncestor(this);
-        frame.dispose();
-        dB4OUtil.storeSystem(system);
-    }//GEN-LAST:event_jLabel4MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel menu;
     private javax.swing.JPanel menuhide;
     private javax.swing.JPanel userProcessContainer;

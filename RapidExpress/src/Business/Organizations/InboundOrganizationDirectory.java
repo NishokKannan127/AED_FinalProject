@@ -28,7 +28,7 @@ public class InboundOrganizationDirectory {
         inboundOrganizationList = new ArrayList();
     }
 
-    public ArrayList<InboundOrganization> geDirectDeliveryOrganizationList() {
+    public ArrayList<InboundOrganization> geInboundOrganizationList() {
         return inboundOrganizationList;
     }
     
