@@ -113,7 +113,7 @@ public class ConfigureASystem {
         
         system.getUserAccountDirectory().createUserAccount("a", "A1","a", "a",User.Role.SysAdmin);
         //Network
-        Network network = system.createAndAddNetwork(new Network("Network1", "MA", "USA"));
+        Network network = system.createAndAddNetwork(new Network("Network1", "CA", "USA"));
         
         //Address
         Address add1=new Address("ca","ca","ca","here");

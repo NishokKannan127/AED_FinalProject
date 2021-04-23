@@ -103,7 +103,7 @@ private boolean checkUserIdExists(String userName) {
                 row[0] = enterprise;
                 row[1] = enterprise.getEnterpriseType().getValue();
                 row[2] = network.getName();
-                row[5] = enterprise.getEmail();
+                //row[5] = enterprise.getEmail();
   //              row[3] = enterprise.getContact();
                 //row[4] = enterprise.getZipcode();
              
@@ -330,11 +330,11 @@ private boolean checkUserIdExists(String userName) {
 
             },
             new String [] {
-                "Enterprise Name", "Enterprise Type", "Network", "Zipcode", "Email"
+                "Enterprise Name", "Enterprise Type", "Network"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -352,7 +352,7 @@ private boolean checkUserIdExists(String userName) {
         });
         jScrollPane1.setViewportView(enterpriseJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 900, 280));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 740, 280));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateAdminActionPerformed

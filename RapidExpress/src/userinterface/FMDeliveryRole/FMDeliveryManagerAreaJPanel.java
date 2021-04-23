@@ -46,7 +46,9 @@ public class FMDeliveryManagerAreaJPanel extends javax.swing.JPanel {
         this.del=del;
         //this.fc=shipments.get(0).getFc();
         shipments=del.getVendorShipmentList();// getShipmentList();
-        this.fc=shipments.get(0).getFc();
+        if(shipments!=null){
+            this.fc=shipments.get(0).getFc();
+        }
         refreshShipments();
         refreshDeliveryMen();
     }
