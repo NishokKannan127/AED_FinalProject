@@ -103,7 +103,7 @@ private boolean checkUserIdExists(String userName) {
                 row[0] = enterprise;
                 row[1] = enterprise.getEnterpriseType().getValue();
                 row[2] = network.getName();
-                row[5] = enterprise.getEmail();
+                //row[5] = enterprise.getEmail();
   //              row[3] = enterprise.getContact();
                 //row[4] = enterprise.getZipcode();
              
@@ -324,17 +324,18 @@ private boolean checkUserIdExists(String userName) {
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 380, 400));
 
+        enterpriseJTable.setBackground(new java.awt.Color(139, 216, 189));
         enterpriseJTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Enterprise Name", "Enterprise Type", "Network", "Zipcode", "Email"
+                "Enterprise Name", "Enterprise Type", "Network"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -352,7 +353,7 @@ private boolean checkUserIdExists(String userName) {
         });
         jScrollPane1.setViewportView(enterpriseJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 900, 280));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 740, 280));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateAdminActionPerformed
@@ -380,7 +381,7 @@ private boolean checkUserIdExists(String userName) {
         
         if (selectedRow < 0){
             //JOptionPane.showMessageDialog(null, "Please select a row to Process" ,"Warning" , JOptionPane.WARNING_MESSAGE);
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> to process! </I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> to continue </I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
             
             
             return;
@@ -389,7 +390,7 @@ private boolean checkUserIdExists(String userName) {
         else if (txtUserName.getText().isEmpty() || txtAdminName.getText().isEmpty() || txtPassword.getText().isEmpty()    )
         {
            //JOptionPane.showMessageDialog(null, "All fields are mandatory!","Warning",JOptionPane.WARNING_MESSAGE);
-            JOptionPane.showMessageDialog(null,new JLabel(  "<html><h2><I>All fields are</I><font color='red'> mandatory</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,new JLabel(  "<html><h2><I>All fields are</I><font color='red'> compulsary</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
            return;
         }
         

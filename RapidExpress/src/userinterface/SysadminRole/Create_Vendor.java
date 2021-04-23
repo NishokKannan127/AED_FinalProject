@@ -87,10 +87,8 @@ private void populateNetworkComboBox() {
         jLabel6 = new javax.swing.JLabel();
         txtLocation = new javax.swing.JTextField();
         btnCreateEnterprise = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        txtEmail = new javax.swing.JTextField();
         txtCity = new javax.swing.JTextField();
         txtArea = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
@@ -161,7 +159,7 @@ private void populateNetworkComboBox() {
         jLabel6.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Location:");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
 
         txtLocation.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtLocation.addActionListener(new java.awt.event.ActionListener() {
@@ -169,7 +167,7 @@ private void populateNetworkComboBox() {
                 txtLocationActionPerformed(evt);
             }
         });
-        jPanel2.add(txtLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 163, 20));
+        jPanel2.add(txtLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 163, 20));
 
         btnCreateEnterprise.setBackground(new java.awt.Color(36, 54, 101));
         btnCreateEnterprise.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -183,26 +181,18 @@ private void populateNetworkComboBox() {
         });
         jPanel2.add(btnCreateEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 120, 30));
 
-        jLabel8.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Email:");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
-
         jLabel9.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("City:");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Area:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, -1, -1));
-
-        txtEmail.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jPanel2.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 163, 20));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, -1, -1));
 
         txtCity.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jPanel2.add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 163, 20));
+        jPanel2.add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 163, 20));
 
         txtArea.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtArea.addActionListener(new java.awt.event.ActionListener() {
@@ -210,7 +200,7 @@ private void populateNetworkComboBox() {
                 txtAreaActionPerformed(evt);
             }
         });
-        jPanel2.add(txtArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 163, 20));
+        jPanel2.add(txtArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 163, 20));
 
         jPanel3.setBackground(new java.awt.Color(36, 54, 101));
         jPanel3.setPreferredSize(new java.awt.Dimension(926, 70));
@@ -218,13 +208,16 @@ private void populateNetworkComboBox() {
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("Manage Enterprise");
+        jLabel13.setText("Vendor");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1570, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(397, 397, 397)
+                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                .addGap(1025, 1025, 1025))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,21 +228,21 @@ private void populateNetworkComboBox() {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 1570, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(1571, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 1570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(462, Short.MAX_VALUE))
+                .addContainerGap(468, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -308,7 +301,7 @@ Enterprise.EnterpriseType type = Enterprise.EnterpriseType.Vendor;
         if(txtName.getText().isEmpty() || txtContact.getText().isEmpty() || txtLocation.getText().isEmpty() || txtZipCode.getText().isEmpty()
             || network == null ){
             //JOptionPane.showMessageDialog(null, "All fields are mandatory!");
-            JOptionPane.showMessageDialog(null,new JLabel(  "<html><h2><I>All fields are</I><font color='red'> mandatory</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,new JLabel(  "<html><h2><I>All fields are</I><font color='red'> compulsary</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
 
             check1 = "no";
             //return;
@@ -336,22 +329,22 @@ Enterprise.EnterpriseType type = Enterprise.EnterpriseType.Vendor;
             //  return;
         }
 
-        else   if ( !emailValidator(txtEmail.getText()) ){
+     //   else   if ( !emailValidator(txtEmail.getText()) ){
             //JOptionPane.showMessageDialog(null, "Email ID must be in correct format!" , "Error", JOptionPane.ERROR_MESSAGE);
-            check1 = "no";
-            txtLocation.setBorder(BorderFactory.createLineBorder(Color.RED));
-            txtLocation.setForeground(Color.red);
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Email ID</I></font> must be in<font color='green'> correct format</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+     //       check1 = "no";
+     //       txtLocation.setBorder(BorderFactory.createLineBorder(Color.RED));
+     //       txtLocation.setForeground(Color.red);
+     //       JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Email ID</I></font> must be in<font color='green'> correct format</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
 
             //return;
-        }
+     //   }
 
         else {
 
             for (Enterprise ent : network.getEnterpriseDirectory().getEnterpriseList()) {
 
                 if (ent.getName().equals(txtName.getText())) {
-                    JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Enterprise Name</I></font> can not be<font color='red'> same</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Enterprise Name</I></font><font color='red'> already exists</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
                     check1 = "no";
                     txtName.setBorder(BorderFactory.createLineBorder(Color.RED));
                     txtName.setForeground(Color.red);
@@ -412,7 +405,6 @@ Enterprise.EnterpriseType type = Enterprise.EnterpriseType.Vendor;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -420,7 +412,6 @@ Enterprise.EnterpriseType type = Enterprise.EnterpriseType.Vendor;
     private javax.swing.JTextField txtArea;
     private javax.swing.JTextField txtCity;
     private javax.swing.JTextField txtContact;
-    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtLocation;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtZipCode;

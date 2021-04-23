@@ -113,7 +113,7 @@ public class DirectDeliveryManagerAreaJPanel extends javax.swing.JPanel {
         jLabel1.setText("Delivery Dashboard");
         jLabel1.setOpaque(true);
 
-        CartTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        CartTable.setBackground(new java.awt.Color(139, 216, 189));
         CartTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -285,7 +285,7 @@ public class DirectDeliveryManagerAreaJPanel extends javax.swing.JPanel {
             
 
         try {
-            Mail.sendMail("nishok217@gmail.com",htmlCode,"Order assigned to delivery man",s,ending);         
+            Mail.sendMail("youshop.teams@gmail.com",htmlCode,"Order assigned to delivery man",s,ending);         
         } catch (MessagingException ex) {
             Logger.getLogger(OrderPanel.class.getName()).log(Level.SEVERE, null, ex);
         }

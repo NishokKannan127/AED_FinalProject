@@ -117,6 +117,7 @@ public class VendorAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        CartTable.setBackground(new java.awt.Color(139, 216, 189));
         CartTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -179,13 +180,10 @@ public class VendorAreaJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(AddButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(AddButton, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE))
+                        .addGap(212, 212, 212)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(212, 212, 212)
-                                .addComponent(AddButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(212, 212, 212)
-                                .addComponent(AddButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(AddButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AddButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(51, 51, 51))
         );
 
@@ -228,7 +226,7 @@ public class VendorAreaJPanel extends javax.swing.JPanel {
             
             int row = CartTable.getSelectedRow();
             int selectedId = (Integer)CartTable.getModel().getValueAt(row, column);
-            if(o.getId()==selectedId){
+            if(o.getId()==selectedId && o.getStatus()!=Status.Completed){
                 temp2 = o;
                 temp2.setStatus(Status.Active);// Rejected);
                 break;
@@ -250,7 +248,7 @@ public class VendorAreaJPanel extends javax.swing.JPanel {
             int column = 0;
             int row = CartTable.getSelectedRow();
             int selectedId = (Integer)CartTable.getModel().getValueAt(row, column);
-            if(o.getId()==selectedId){
+            if(o.getId()==selectedId && o.getStatus()!=Status.Completed){
                 temp2 = o;
                 temp2.setStatus(Status.Rejected);
                 break;
@@ -276,10 +274,18 @@ public class VendorAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         ArrayList<Order> orders = (ArrayList<Order>) vendor.getOrders();
         for(int i=0;i<orders.size();i++){
-            orders.get(i).setStatus(Status.OrderSentToShipmentFromVendor);
+            if(orders.get(i).getStatus()!=Order.Status.Completed){
+                orders.get(i).setStatus(Status.OrderSentToShipmentFromVendor);
+            }
         }
-        ship = new VendorShipment(orders,vendor.getEntAddress(), orders.get(0).getFc().getEntAddress(), orders.get(0).getTimePlaced(),orders.get(0).getTimePlaced());
-        ship.setFc(orders.get(0).getFc());
+        Order x=null;
+        for(int i=0;i<orders.size();i++){
+            if(orders.get(i).getStatus()!=Status.Completed){
+                x=orders.get(i);
+            }
+            }
+        ship = new VendorShipment(orders,vendor.getEntAddress(), x.getFc().getEntAddress(), x.getTimePlaced(),x.getTimePlaced());
+        ship.setFc(x.getFc());
         ship.setStatus(Shipment.Status.Pending);
         
         //
@@ -287,7 +293,7 @@ public class VendorAreaJPanel extends javax.swing.JPanel {
         Delivery deli =new Delivery();//, address);//= EcoSystem.getInstance().getFcDirectory().getFCById(1);
         DeliveryDirectory deliDir = EcoSystem.getInstance().getDeliveryDirectory();
             for(int i=0; i<deliDir.getDeliveryList().size();i++){
-                if(deliDir.getDeliveryList().get(i).getEntAddress().getState()==orders.get(0).getFc().getEntAddress().getState()){
+                if(deliDir.getDeliveryList().get(i).getEntAddress().getState()==x.getFc().getEntAddress().getState()){
                     deli=deliDir.getDeliveryList().get(i);
                 }
             }
@@ -314,18 +320,26 @@ public class VendorAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         ArrayList<Order> orders = (ArrayList<Order>) vendor.getOrders();
         for(int i=0;i<orders.size();i++){
-            orders.get(i).setStatus(Status.OrderSentToDirectShipmentFromVendor);
+            if(orders.get(i).getStatus()!=Status.Completed){
+                orders.get(i).setStatus(Status.OrderSentToDirectShipmentFromVendor);
+            }
         }
    //     ship = new VendorShipment(orders,vendor.getEntAddress(), orders.get(0).getFc().getEntAddress(), orders.get(0).getTimePlaced(),orders.get(0).getTimePlaced());
    //     ship.setFc(orders.get(0).getFc());
    //     ship.setStatus(Shipment.Status.Pending);
         
         //
+        Order x=null;
+        for(int i=0;i<orders.size();i++){
+            if(orders.get(i).getStatus()!=Status.Completed){
+                x=orders.get(i);
+            }
+            }
         
         Delivery deli =new Delivery();//, address);//= EcoSystem.getInstance().getFcDirectory().getFCById(1);
         DeliveryDirectory deliDir = EcoSystem.getInstance().getDeliveryDirectory();
             for(int i=0; i<deliDir.getDeliveryList().size();i++){
-                if(deliDir.getDeliveryList().get(i).getEntAddress().getState()==orders.get(0).getFc().getEntAddress().getState()){
+                if(deliDir.getDeliveryList().get(i).getEntAddress().getState()==x.getFc().getEntAddress().getState()){
                     deli=deliDir.getDeliveryList().get(i);
                 }
             }

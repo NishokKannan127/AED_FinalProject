@@ -158,6 +158,7 @@ public class OrderPanel extends javax.swing.JPanel {
         });
         add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 110, 30));
 
+        jTable1.setBackground(new java.awt.Color(139, 216, 189));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -202,7 +203,7 @@ public class OrderPanel extends javax.swing.JPanel {
         jComboBox2.removeAllItems();
         model.setRowCount(0);
         for(Order o :orders){
-            if(o.getDirectDeliveryMan()!=null && o.getDirectDeliveryMan().equals(this.lmDeliveryMan))
+            if(o.getDirectDeliveryMan()!=null && o.getDirectDeliveryMan().equals(this.lmDeliveryMan) && o.getStatus()!=Order.Status.Completed)
                 model.addRow(new Object[]{o.getId(), o.getCustomer().getId(),o.getStatus()});
             else continue;
             if(o.getStatus()==Order.Status.AssignedToDirectDeliveryMan)jComboBox2.addItem(o);
@@ -271,7 +272,7 @@ public class OrderPanel extends javax.swing.JPanel {
             
 
         try {
-            Mail.sendMail("nishok217@gmail.com",htmlCode,"Order Placed",s,ending);         
+            Mail.sendMail("youshop.teams@gmail.com",htmlCode,"Order Placed",s,ending);         
         } catch (MessagingException ex) {
             Logger.getLogger(userinterface.CustomerRole.OrderPanel.class.getName()).log(Level.SEVERE, null, ex);
         }

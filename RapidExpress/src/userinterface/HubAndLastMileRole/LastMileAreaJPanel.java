@@ -71,20 +71,20 @@ public class LastMileAreaJPanel extends javax.swing.JPanel {
         jLabel1.setText("Last Mile");
         jLabel1.setOpaque(true);
 
-        CartTable.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        CartTable.setBackground(new java.awt.Color(139, 216, 189));
         CartTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Order ID", "Product", "CustomerID", "Order Date", "Status", "Stock Quantity"
+                "Order ID", "Product", "CustomerID", "Order Date", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class VendorShipment extends Shipment{
     Vendor vendor;
     ArrayList<Product> productListInShipment;//this is used to deliver from vendor to FC
-    ArrayList<Order> orderListInShipment;//this is used to deliver from vendor to FC updated
+    ArrayList<Order> orderListInShipment=new ArrayList<Order>();//this is used to deliver from vendor to FC updated
     int shipmentId;//- shipment contains the list of orders ordered by folks in the nearby region
     //dock makes shipments based on location
     //pick and pack combines orders
@@ -33,7 +33,11 @@ public class VendorShipment extends Shipment{
     //}
     public VendorShipment(ArrayList<Order>orderListInShipment, Address srcAddress, Address destAddress, String shipmentCreatedTime, String shipmentDeliveredTime){
         super(srcAddress,destAddress,shipmentCreatedTime,shipmentDeliveredTime);
-        this.orderListInShipment=orderListInShipment;
+        for(Order o:orderListInShipment){
+            if(o.getStatus()!=Order.Status.Completed){
+                this.orderListInShipment.add(o);//orderListInShipment;
+            }
+        }
         this.productListInShipment=new ArrayList<Product>();
     }
     public int getFCId(){

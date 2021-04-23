@@ -425,7 +425,7 @@ displayPicture();
             
 
         try {
-            Mail.sendMail("nishok217@gmail.com",htmlCode,"Order Placed",s,ending);         
+            Mail.sendMail("youshop.teams@gmail.com",htmlCode,"Order Placed",s,ending);         
         } catch (MessagingException ex) {
             Logger.getLogger(OrderPanel.class.getName()).log(Level.SEVERE, null, ex);
         }

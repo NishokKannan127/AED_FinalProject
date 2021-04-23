@@ -55,6 +55,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
@@ -306,7 +307,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Smart Warehouses");
+        jLabel4.setText("Smart Inventory Manageement");
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -326,7 +327,7 @@ public class MainJFrame extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(72, 72, 72)
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(43, 43, 43))
         );
         jPanel4Layout.setVerticalGroup(
@@ -480,7 +481,8 @@ public class MainJFrame extends javax.swing.JFrame {
         UserAccount auth = system.getUserAccountDirectory().authenticateUser(userNameField.getText(), passwordField.getText());// getUserAccountList() authenticateUser(userNameJTextField,passwordField);
         if(auth==null){
             System.out.println("Enter correct credentials");
-            JOptionPane.showMessageDialog(this,"Enter correct credentials");
+            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'>Enter correct credentials</font></h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            //JOptionPane.showMessageDialog(this,"Enter correct credentials");
             
             //ask if you are a customer and want to create an account
             //create account page
@@ -654,7 +656,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         try {
              //TODO add your handling code here:
-            Desktop.getDesktop().open(new File("src\\Images\\one.mp4"));
+            Desktop.getDesktop().open(new File("src\\Images\\SupplyChainFuture.mp4"));
         } 
         catch (IOException ex) {
         
@@ -672,6 +674,14 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
+        try {
+             //TODO add your handling code here:
+            Desktop.getDesktop().open(new File("src\\Images\\InventoryManagement.mp4"));
+        } 
+        catch (IOException ex) {
+        
+            System.out.print("Video not present");
+        }
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
@@ -688,6 +698,14 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
+        try {
+             //TODO add your handling code here:
+            Desktop.getDesktop().open(new File("src\\Images\\DronesOnShippingIndustry.mp4"));
+        } 
+        catch (IOException ex) {
+        
+            System.out.print("Video not present");
+        }
     }//GEN-LAST:event_jLabel5MouseClicked
 
     /**

@@ -61,6 +61,7 @@ public class ViewOrder extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1500, 1000));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTable1.setBackground(new java.awt.Color(139, 216, 189));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

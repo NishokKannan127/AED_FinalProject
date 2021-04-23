@@ -87,6 +87,9 @@ public class Customer extends User{
     public void setGender(String gender) {        this.gender = gender;    }
     public void setAddress(Address address){this.address=address;}
     public Address getAddress(){return address;}
+    public String getAddressInString(){
+        return this.address.getState()+", "+this.address.getCity()+", "+this.address.getArea()+", "+this.address.getLocation();
+    }
     public String getEmailID() {return emailID;}
     public void setEmailID(String emailID) {this.emailID = emailID;}
     public void setHasPaidAmount(boolean hasPaid){this.hasPaidTheAmount=hasPaid;}
