@@ -137,6 +137,7 @@ public class StowAreaJPanel extends javax.swing.JPanel {
         AddButton2.setBackground(new java.awt.Color(255, 87, 87));
         AddButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         AddButton2.setForeground(new java.awt.Color(255, 255, 255));
+        AddButton2.setText("Sent products to Picker and Packers");
         AddButton2.setBorder(null);
         AddButton2.setMaximumSize(new java.awt.Dimension(243, 17));
         AddButton2.setMinimumSize(new java.awt.Dimension(243, 17));
@@ -149,6 +150,7 @@ public class StowAreaJPanel extends javax.swing.JPanel {
         AddButton3.setBackground(new java.awt.Color(255, 87, 87));
         AddButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         AddButton3.setForeground(new java.awt.Color(255, 255, 255));
+        AddButton3.setText("Get product quantity");
         AddButton3.setBorder(null);
         AddButton3.setMaximumSize(new java.awt.Dimension(243, 17));
         AddButton3.setMinimumSize(new java.awt.Dimension(243, 17));
