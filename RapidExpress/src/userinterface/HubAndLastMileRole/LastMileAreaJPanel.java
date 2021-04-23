@@ -72,7 +72,6 @@ public class LastMileAreaJPanel extends javax.swing.JPanel {
         jLabel1.setOpaque(true);
 
         CartTable.setBackground(new java.awt.Color(139, 216, 189));
-        CartTable.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         CartTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
