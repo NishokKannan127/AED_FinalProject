@@ -106,6 +106,7 @@ public class StowAreaJPanel extends javax.swing.JPanel {
         jLabel1.setText("Stow");
         jLabel1.setOpaque(true);
 
+        jTable1.setBackground(new java.awt.Color(139, 216, 189));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

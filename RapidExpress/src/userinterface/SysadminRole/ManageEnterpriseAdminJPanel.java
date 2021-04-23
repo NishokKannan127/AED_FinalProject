@@ -324,6 +324,7 @@ private boolean checkUserIdExists(String userName) {
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 380, 400));
 
+        enterpriseJTable.setBackground(new java.awt.Color(139, 216, 189));
         enterpriseJTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

@@ -75,7 +75,7 @@ public class RecieveAreaJPanel extends javax.swing.JPanel {
         jLabel1.setText("Reciever");
         jLabel1.setOpaque(true);
 
-        jTable1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTable1.setBackground(new java.awt.Color(139, 216, 189));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

@@ -153,6 +153,7 @@ public class OrderPanel extends javax.swing.JPanel {
         });
         add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 120, 30));
 
+        jTable1.setBackground(new java.awt.Color(139, 216, 189));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
