@@ -283,7 +283,7 @@ public class LMDeliveryManagerAreaJPanel extends javax.swing.JPanel {
             
 
         try {
-            Mail.sendMail("nishok217@gmail.com",htmlCode,"Order assigned to delivery man",s,ending);         
+            Mail.sendMail("youshop.teams@gmail.com",htmlCode,"Order assigned to delivery man",s,ending);         
         } catch (MessagingException ex) {
             Logger.getLogger(OrderPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
