@@ -272,7 +272,7 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
             
         //}
     }
-        if(orderidAndProductListForPick.get(o.getId()).size()==getUniqueProductCountInOrder(o)){//o.getProductListInOrder().size()){
+        if(orderidAndProductListForPick.get(o.getId()).size()==o.getProductListInOrder().size()){//o.getProductListInOrder().size()){
                     o.setStatus(Order.Status.Picked);
                     //break;
                 }
@@ -300,18 +300,18 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
         //        refreshDeliveryMen();
         //
     }//GEN-LAST:event_AddButton2ActionPerformed
-    private int getUniqueProductCountInOrder(Order o){
-        for(Product p:o.getProductListInOrder()){
-            if(!getUniqueProducts.contains(p)){
-                    getUniqueProducts.add(p);
-                    }
-        }
-        return getUniqueProducts.size();
+   // private int getUniqueProductCountInOrder(Order o){
+   //     for(Product p:o.getProductListInOrder()){
+   //         if(!getUniqueProducts.contains(p)){
+   //                 getUniqueProducts.add(p);
+   //                 }
+   //     }
+   //     return getUniqueProducts.size();
 //                if(orderidAndProductListForPick.get(o.getId()).size()==o.getProductListInOrder().size()){
 //                    o.setStatus(Order.Status.Picked);
                     //break;
  //               }
-    }
+    //}
     private void AddButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButton3ActionPerformed
 //set status to PACK
         List<VendorShipment> shipments = delivery.getVendorShipmentList(); 
@@ -352,7 +352,7 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
             
         }
     //}
-        if(orderidAndProductListForPack.get(o.getId()).size()==getUniqueProductCountInOrder(o)){//o.getProductListInOrder().size()){
+        if(orderidAndProductListForPack.get(o.getId()).size()==o.getProductListInOrder().size()){//o.getProductListInOrder().size()){
                     o.setStatus(Order.Status.Packed);
                 }
         
