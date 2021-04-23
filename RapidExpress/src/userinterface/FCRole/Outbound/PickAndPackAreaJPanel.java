@@ -92,6 +92,7 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
         //jComboBox1.removeAllItems();
         model.setRowCount(0);
         for(Order order: orderList){
+            if(order.getStatus()!=Order.Status.Completed){
             for(int i=0; i<order.getProductListInOrder().size();i++){
 //                if(order.getStatus()!=Order.Status.Packed || order.getStatus()!=Order.Status.SentToDock){
 //                    order.setStatus(Order.Status.Picked);
@@ -99,6 +100,7 @@ public class PickAndPackAreaJPanel extends javax.swing.JPanel {
                 model.addRow(new Object[]{order.getOrderId(),order.getProductListInOrder().get(i).getProductId(),order.getProductListInOrder().get(i),1,this.fc.getQuantityOfProduct(order.getProductListInOrder().get(i)),order.getStatus()});
                 //if(order.getStatus()==Order.Status.OrderSentToShipmentFromVendor)jComboBox1.addItem(order);
             }
+        }
         }
     }
     

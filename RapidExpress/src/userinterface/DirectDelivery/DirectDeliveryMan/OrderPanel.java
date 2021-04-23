@@ -202,7 +202,7 @@ public class OrderPanel extends javax.swing.JPanel {
         jComboBox2.removeAllItems();
         model.setRowCount(0);
         for(Order o :orders){
-            if(o.getDirectDeliveryMan()!=null && o.getDirectDeliveryMan().equals(this.lmDeliveryMan))
+            if(o.getDirectDeliveryMan()!=null && o.getDirectDeliveryMan().equals(this.lmDeliveryMan) && o.getStatus()!=Order.Status.Completed)
                 model.addRow(new Object[]{o.getId(), o.getCustomer().getId(),o.getStatus()});
             else continue;
             if(o.getStatus()==Order.Status.AssignedToDirectDeliveryMan)jComboBox2.addItem(o);

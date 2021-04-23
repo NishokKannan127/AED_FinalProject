@@ -276,7 +276,7 @@ public class VendorAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         ArrayList<Order> orders = (ArrayList<Order>) vendor.getOrders();
         for(int i=0;i<orders.size();i++){
-            if(orders.get(i).getStatus()!=Status.Completed){
+            if(orders.get(i).getStatus()!=Order.Status.Completed){
                 orders.get(i).setStatus(Status.OrderSentToShipmentFromVendor);
             }
         }
