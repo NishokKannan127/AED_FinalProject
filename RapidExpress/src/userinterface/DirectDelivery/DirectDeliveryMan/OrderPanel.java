@@ -18,6 +18,8 @@ import Business.Role.FirstMileDelivery;
 import Business.Role.LastMileDelivery;
 import java.awt.CardLayout;
 import java.awt.Component;
+import java.awt.Image;
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -25,6 +27,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.mail.MessagingException;
+import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -66,7 +69,7 @@ public class OrderPanel extends javax.swing.JPanel {
         this.orders = delivery.getDirectDeliveryOrderList();// OrderList();
         refreshOrders();
         
-        
+        displayPicture();
         
 //        initComponents();
 //        this.delivery = d.getDeliveryByID();// getRestaurant();
@@ -91,6 +94,7 @@ public class OrderPanel extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(139, 216, 189));
         setMinimumSize(new java.awt.Dimension(394, 281));
@@ -106,7 +110,7 @@ public class OrderPanel extends javax.swing.JPanel {
                 FullDetailsButtonActionPerformed(evt);
             }
         });
-        add(FullDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 140, 30));
+        add(FullDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 150, 30));
 
         jLabel4.setBackground(new java.awt.Color(36, 54, 101));
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -188,6 +192,7 @@ public class OrderPanel extends javax.swing.JPanel {
         }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 350, 120));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 150, 120));
     }// </editor-fold>//GEN-END:initComponents
 
     private void refreshOrders(){
@@ -294,7 +299,25 @@ public class OrderPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+private void displayPicture(){
+
+        scaleIcon(219, 164, "F:\\AED_Final\\AED_FinalProject\\RapidExpress\\src\\uimages\\cartimg1.jpg", jLabel6);
+    }
+   
+    public void scaleIcon(int Width, int height, String imgPath, javax.swing.JLabel iconimg){
+        File file = new File(imgPath);
+        String absolutePath = file.getAbsolutePath();
+        ImageIcon image = new ImageIcon(absolutePath);
+        System.out.println(absolutePath);
+        Image icon = image.getImage();
+        icon = icon.getScaledInstance(Width, height, Image.SCALE_SMOOTH);
+        image = new ImageIcon(icon);
+        jLabel6.setIcon(image);
+        jLabel6.setText("");
+    }
+
 }

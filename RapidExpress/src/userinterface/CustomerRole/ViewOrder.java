@@ -7,7 +7,10 @@ package userinterface.CustomerRole;
 
 import Business.POJO.Order;
 import Business.Role.Customer;
+import java.awt.Image;
+import java.io.File;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -138,4 +141,6 @@ public class ViewOrder extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+
 }
