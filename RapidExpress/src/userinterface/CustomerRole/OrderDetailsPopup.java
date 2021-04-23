@@ -22,7 +22,7 @@ public class OrderDetailsPopup extends javax.swing.JPanel {
         initComponents();
         jTextField1.setText(""+order.getId());
         jTextField2.setText(""+order.getCustomer().getLastName());
-        jTextField9.setText(""+order.getCustomer().getAddress());
+        jTextField9.setText(""+order.getCustomer().getAddressInString());
         jTextField3.setText(""+order.getStatus());
 //        if(order.getDeliveryMan()!=null)
 //            jTextField4.setText(""+order.getDeliveryMan().getLastName());
