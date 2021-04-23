@@ -77,14 +77,14 @@ public class LastMileAreaJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Order ID", "Product", "CustomerID", "Order Date", "Status", "Stock Quantity"
+                "Order ID", "Product", "CustomerID", "Order Date", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
