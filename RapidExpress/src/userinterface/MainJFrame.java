@@ -55,6 +55,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
@@ -480,7 +481,8 @@ public class MainJFrame extends javax.swing.JFrame {
         UserAccount auth = system.getUserAccountDirectory().authenticateUser(userNameField.getText(), passwordField.getText());// getUserAccountList() authenticateUser(userNameJTextField,passwordField);
         if(auth==null){
             System.out.println("Enter correct credentials");
-            JOptionPane.showMessageDialog(this,"Enter correct credentials");
+            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'>Enter correct credentials</font></h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            //JOptionPane.showMessageDialog(this,"Enter correct credentials");
             
             //ask if you are a customer and want to create an account
             //create account page
