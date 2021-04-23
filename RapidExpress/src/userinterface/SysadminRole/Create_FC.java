@@ -86,10 +86,8 @@ private void populateNetworkComboBox() {
         jLabel6 = new javax.swing.JLabel();
         txtLocation = new javax.swing.JTextField();
         btnCreateEnterprise = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        txtEmail = new javax.swing.JTextField();
         txtCity = new javax.swing.JTextField();
         txtArea = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
@@ -161,7 +159,7 @@ private void populateNetworkComboBox() {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Location:");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, 30));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, 30));
 
         txtLocation.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtLocation.addActionListener(new java.awt.event.ActionListener() {
@@ -169,7 +167,7 @@ private void populateNetworkComboBox() {
                 txtLocationActionPerformed(evt);
             }
         });
-        jPanel2.add(txtLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 163, 20));
+        jPanel2.add(txtLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 163, 20));
 
         btnCreateEnterprise.setBackground(new java.awt.Color(36, 54, 101));
         btnCreateEnterprise.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -183,26 +181,18 @@ private void populateNetworkComboBox() {
         });
         jPanel2.add(btnCreateEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 170, 40));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Email:");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, 30));
-
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("City:");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, -1, 30));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, 30));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Area:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, 30));
-
-        txtEmail.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jPanel2.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 163, 20));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, -1, 30));
 
         txtCity.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jPanel2.add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 163, 20));
+        jPanel2.add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 163, 20));
 
         txtArea.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtArea.addActionListener(new java.awt.event.ActionListener() {
@@ -210,7 +200,7 @@ private void populateNetworkComboBox() {
                 txtAreaActionPerformed(evt);
             }
         });
-        jPanel2.add(txtArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 163, 20));
+        jPanel2.add(txtArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 163, 20));
 
         jPanel3.setBackground(new java.awt.Color(36, 54, 101));
         jPanel3.setPreferredSize(new java.awt.Dimension(926, 70));
@@ -343,15 +333,15 @@ private void populateNetworkComboBox() {
             //  return;
         }
 
-        else   if ( !emailValidator(txtEmail.getText()) ){
+       // else   if ( !emailValidator(txtEmail.getText()) ){
             //JOptionPane.showMessageDialog(null, "Email ID must be in correct format!" , "Error", JOptionPane.ERROR_MESSAGE);
-            check1 = "no";
-            txtLocation.setBorder(BorderFactory.createLineBorder(Color.RED));
-            txtLocation.setForeground(Color.red);
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Email ID</I></font> must be in<font color='green'> correct format</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+       //     check1 = "no";
+       //     txtLocation.setBorder(BorderFactory.createLineBorder(Color.RED));
+       //     txtLocation.setForeground(Color.red);
+       //     JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Email ID</I></font> must be in<font color='green'> correct format</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
 
             //return;
-        }
+        //}
 
         else {
 
@@ -426,7 +416,6 @@ private void populateNetworkComboBox() {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -434,7 +423,6 @@ private void populateNetworkComboBox() {
     private javax.swing.JTextField txtArea;
     private javax.swing.JTextField txtCity;
     private javax.swing.JTextField txtContact;
-    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtLocation;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtZipCode;
