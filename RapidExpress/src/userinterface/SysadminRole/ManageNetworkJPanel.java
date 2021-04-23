@@ -232,14 +232,14 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         
         if (txtNetWorkName.getText().isEmpty() || txtState.getText().isEmpty() || txtCountry.getText().isEmpty() ){
             //JOptionPane.showMessageDialog(null, "All fields are mandatory!" , "Error", JOptionPane.ERROR_MESSAGE);
-            JOptionPane.showMessageDialog(null,new JLabel(  "<html><h2><I>All fields are</I><font color='red'> mandatory</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,new JLabel(  "<html><h2><I>All fields are</I><font color='red'> compulsary</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
             
             return;
         }
         else{
         for ( Network network :system.getNetworkList()){
         if( network.getName().equals(txtNetWorkName.getText())) {
-        JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Network Name</I></font> can not be <font color='red'>same</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Network Name</I></font><font color='red'> already exists</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
                     
         //JOptionPane.showMessageDialog(null, "Network name cannot be same!" , "Error", JOptionPane.ERROR_MESSAGE);
         check1 = "no";

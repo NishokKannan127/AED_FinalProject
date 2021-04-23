@@ -380,7 +380,7 @@ private boolean checkUserIdExists(String userName) {
         
         if (selectedRow < 0){
             //JOptionPane.showMessageDialog(null, "Please select a row to Process" ,"Warning" , JOptionPane.WARNING_MESSAGE);
-            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> to process! </I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel(  "<html><h2><I>Please select<font color='red'> a row</font> to continue </I></h2></html>"), "Warning", JOptionPane.WARNING_MESSAGE);
             
             
             return;
@@ -389,7 +389,7 @@ private boolean checkUserIdExists(String userName) {
         else if (txtUserName.getText().isEmpty() || txtAdminName.getText().isEmpty() || txtPassword.getText().isEmpty()    )
         {
            //JOptionPane.showMessageDialog(null, "All fields are mandatory!","Warning",JOptionPane.WARNING_MESSAGE);
-            JOptionPane.showMessageDialog(null,new JLabel(  "<html><h2><I>All fields are</I><font color='red'> mandatory</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,new JLabel(  "<html><h2><I>All fields are</I><font color='red'> compulsary</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
            return;
         }
         

@@ -373,7 +373,7 @@ public class Create_FCAdmin extends javax.swing.JPanel {
              lastNameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED));
             lastNameJTextField.setForeground(Color.red);
             
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>User Name</I><font color='red'> can not </font><I>be empty!</I></h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><h2>User Name<font color='red'> can not </font>be empty!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
                    
             //JOptionPane.showMessageDialog(null, "Username cannot be empty");
             //return;
@@ -383,7 +383,7 @@ public class Create_FCAdmin extends javax.swing.JPanel {
             passwordJTextField.setBorder(BorderFactory.createLineBorder(Color.RED));
             passwordJTextField.setForeground(Color.red);
             
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'> Password</font><I> must be atleast 4 digits!</I></h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'> Password</font> must be atleast 4 digits!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
                    
             //JOptionPane.showMessageDialog(null, "Password should be more than 4 Digit");
             //return;
@@ -391,7 +391,7 @@ public class Create_FCAdmin extends javax.swing.JPanel {
         }
          else if (!checkUserIdExists(nameJTextField1.getText())){
             
-            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>User Name</I><font color='red'> already </font><I>present!</I></h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, new JLabel("<html><h2>User Name<font color='red'> already </font>present!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
                    
              //JOptionPane.showMessageDialog(null, "UserName Already Present","Warning",JOptionPane.WARNING_MESSAGE);
             //return;
@@ -450,7 +450,7 @@ public class Create_FCAdmin extends javax.swing.JPanel {
         
 //        popData();
         
-        JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I>User Account</I><font color='green'> created </font><I>successfully!/I<></h2></html>") );//, "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, new JLabel("<html><h2>User Account<font color='green'> created </font>successfully!</h2></html>") );//, "Error", JOptionPane.ERROR_MESSAGE);
                    
         //JOptionPane.showMessageDialog(null, "User account for " + userName + " created Successfully");
 

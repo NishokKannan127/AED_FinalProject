@@ -298,7 +298,7 @@ Enterprise.EnterpriseType type = Enterprise.EnterpriseType.Vendor;
         if(txtName.getText().isEmpty() || txtContact.getText().isEmpty() || txtLocation.getText().isEmpty() || txtZipCode.getText().isEmpty()
             || network == null ){
             //JOptionPane.showMessageDialog(null, "All fields are mandatory!");
-            JOptionPane.showMessageDialog(null,new JLabel(  "<html><h2><I>All fields are</I><font color='red'> mandatory</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,new JLabel(  "<html><h2><I>All fields are</I><font color='red'> compulsary</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
 
             check1 = "no";
             //return;
@@ -341,7 +341,7 @@ Enterprise.EnterpriseType type = Enterprise.EnterpriseType.Vendor;
             for (Enterprise ent : network.getEnterpriseDirectory().getEnterpriseList()) {
 
                 if (ent.getName().equals(txtName.getText())) {
-                    JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Enterprise Name</I></font> can not be<font color='red'> same</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, new JLabel("<html><h2><font color='red'><I>Enterprise Name</I></font><font color='red'> already exists</font>!</h2></html>") , "Error", JOptionPane.ERROR_MESSAGE);
                     check1 = "no";
                     txtName.setBorder(BorderFactory.createLineBorder(Color.RED));
                     txtName.setForeground(Color.red);
