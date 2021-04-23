@@ -211,9 +211,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 1806, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 1084, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 746, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -326,7 +325,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         firstNameJTextField.setBorder(null);
         jPanel2.add(firstNameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 160, 20));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 380, 470));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 380, 470));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));

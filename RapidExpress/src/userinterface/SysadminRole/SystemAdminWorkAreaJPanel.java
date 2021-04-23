@@ -107,7 +107,8 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         BtnManageEnterprise4 = new javax.swing.JLabel();
         panelSysadminWorkContainer = new javax.swing.JPanel();
 
-        setPreferredSize(new java.awt.Dimension(1200, 900));
+        setMinimumSize(new java.awt.Dimension(2000, 1000));
+        setPreferredSize(new java.awt.Dimension(2000, 1000));
         setLayout(new java.awt.BorderLayout());
 
         menu.setPreferredSize(new java.awt.Dimension(180, 500));

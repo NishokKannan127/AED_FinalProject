@@ -144,8 +144,36 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         txtArea = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        enterpriseJTable1 = new javax.swing.JTable();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        networkJComboBox1 = new javax.swing.JComboBox();
+        jLabel14 = new javax.swing.JLabel();
+        enterpriseTypeJComboBox1 = new javax.swing.JComboBox();
+        jLabel15 = new javax.swing.JLabel();
+        txtName1 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        txtContact1 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        txtZipCode1 = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        txtLocation1 = new javax.swing.JTextField();
+        btnCreateEnterprise1 = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        txtEmail1 = new javax.swing.JTextField();
+        txtCity1 = new javax.swing.JTextField();
+        txtArea1 = new javax.swing.JTextField();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(139, 216, 189));
+        setMinimumSize(new java.awt.Dimension(2000, 1000));
+        setPreferredSize(new java.awt.Dimension(2000, 1000));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         enterpriseJTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 255, 204)));
@@ -180,7 +208,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             enterpriseJTable.getColumnModel().getColumn(5).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, 760, 380));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 760, 450));
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 102));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
@@ -302,7 +330,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(txtArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 163, -1));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 410, 450));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 410, 450));
 
         jPanel3.setBackground(new java.awt.Color(36, 54, 101));
         jPanel3.setPreferredSize(new java.awt.Dimension(926, 70));
@@ -330,6 +358,194 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         );
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1570, -1));
+
+        jPanel1.setBackground(new java.awt.Color(139, 216, 189));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        enterpriseJTable1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 255, 204)));
+        enterpriseJTable1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        enterpriseJTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Enterprise Name", "Enterprise Type", "Network", "Contact", "Zipcode", "Email"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        enterpriseJTable1.setGridColor(new java.awt.Color(0, 0, 0));
+        enterpriseJTable1.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        enterpriseJTable1.setRowHeight(30);
+        enterpriseJTable1.setShowVerticalLines(false);
+        jScrollPane2.setViewportView(enterpriseJTable1);
+        if (enterpriseJTable1.getColumnModel().getColumnCount() > 0) {
+            enterpriseJTable1.getColumnModel().getColumn(0).setResizable(false);
+            enterpriseJTable1.getColumnModel().getColumn(1).setResizable(false);
+            enterpriseJTable1.getColumnModel().getColumn(2).setResizable(false);
+            enterpriseJTable1.getColumnModel().getColumn(3).setResizable(false);
+            enterpriseJTable1.getColumnModel().getColumn(4).setResizable(false);
+            enterpriseJTable1.getColumnModel().getColumn(5).setResizable(false);
+        }
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 760, 450));
+
+        jPanel4.setBackground(new java.awt.Color(255, 102, 102));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
+        jPanel4.setForeground(new java.awt.Color(204, 255, 204));
+        jPanel4.setPreferredSize(new java.awt.Dimension(250, 400));
+        jPanel4.setRequestFocusEnabled(false);
+        jPanel4.setVerifyInputWhenFocusTarget(false);
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel11.setBackground(new java.awt.Color(36, 54, 101));
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("Create Enterprise");
+        jLabel11.setOpaque(true);
+        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, 408, 50));
+
+        jLabel12.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Network:");
+        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
+
+        networkJComboBox1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        networkJComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                networkJComboBox1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(networkJComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 163, -1));
+
+        jLabel14.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("Enterprise Type:");
+        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+
+        enterpriseTypeJComboBox1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jPanel4.add(enterpriseTypeJComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 160, -1));
+
+        jLabel15.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Name:");
+        jPanel4.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, 20));
+
+        txtName1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jPanel4.add(txtName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 163, -1));
+
+        jLabel16.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Contact:");
+        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
+
+        txtContact1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtContact1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtContact1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(txtContact1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 163, -1));
+
+        jLabel17.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("Zipcode:");
+        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
+
+        txtZipCode1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jPanel4.add(txtZipCode1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 163, -1));
+
+        jLabel18.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("Location:");
+        jPanel4.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
+
+        txtLocation1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtLocation1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLocation1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(txtLocation1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 163, -1));
+
+        btnCreateEnterprise1.setBackground(new java.awt.Color(36, 54, 101));
+        btnCreateEnterprise1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnCreateEnterprise1.setForeground(new java.awt.Color(255, 255, 255));
+        btnCreateEnterprise1.setText("Create Enterprise");
+        btnCreateEnterprise1.setBorder(null);
+        btnCreateEnterprise1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateEnterprise1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnCreateEnterprise1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 160, 30));
+
+        jLabel19.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("Email:");
+        jPanel4.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
+
+        jLabel20.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("City:");
+        jPanel4.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, -1, -1));
+
+        jLabel21.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("Area:");
+        jPanel4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
+
+        txtEmail1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jPanel4.add(txtEmail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 163, -1));
+
+        txtCity1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jPanel4.add(txtCity1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 163, -1));
+
+        txtArea1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtArea1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtArea1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(txtArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 163, -1));
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 410, 450));
+
+        jPanel5.setBackground(new java.awt.Color(36, 54, 101));
+        jPanel5.setPreferredSize(new java.awt.Dimension(926, 70));
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("Manage Enterprise");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 1195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(365, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1570, -1));
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateEnterpriseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateEnterpriseActionPerformed
@@ -534,14 +750,48 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_networkJComboBoxActionPerformed
 
+    private void networkJComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkJComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_networkJComboBox1ActionPerformed
+
+    private void txtContact1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContact1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtContact1ActionPerformed
+
+    private void txtLocation1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLocation1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLocation1ActionPerformed
+
+    private void btnCreateEnterprise1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateEnterprise1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCreateEnterprise1ActionPerformed
+
+    private void txtArea1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtArea1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtArea1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreateEnterprise;
+    private javax.swing.JButton btnCreateEnterprise1;
     private javax.swing.JTable enterpriseJTable;
+    private javax.swing.JTable enterpriseJTable1;
     private javax.swing.JComboBox enterpriseTypeJComboBox;
+    private javax.swing.JComboBox enterpriseTypeJComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -549,16 +799,28 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JComboBox networkJComboBox;
+    private javax.swing.JComboBox networkJComboBox1;
     private javax.swing.JTextField txtArea;
+    private javax.swing.JTextField txtArea1;
     private javax.swing.JTextField txtCity;
+    private javax.swing.JTextField txtCity1;
     private javax.swing.JTextField txtContact;
+    private javax.swing.JTextField txtContact1;
     private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtEmail1;
     private javax.swing.JTextField txtLocation;
+    private javax.swing.JTextField txtLocation1;
     private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtName1;
     private javax.swing.JTextField txtZipCode;
+    private javax.swing.JTextField txtZipCode1;
     // End of variables declaration//GEN-END:variables
 }

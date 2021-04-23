@@ -108,6 +108,8 @@ private void populateFCComboBox() {
         jLabel13 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(139, 216, 189));
+        setMinimumSize(new java.awt.Dimension(2000, 1000));
+        setPreferredSize(new java.awt.Dimension(2000, 1000));
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 102));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
@@ -131,7 +133,6 @@ private void populateFCComboBox() {
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
 
         fcJComboBox.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        fcJComboBox.setForeground(new java.awt.Color(255, 255, 255));
         fcJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fcJComboBoxActionPerformed(evt);
@@ -145,7 +146,6 @@ private void populateFCComboBox() {
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
 
         txtName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtName.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 163, 20));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -154,7 +154,6 @@ private void populateFCComboBox() {
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
 
         txtContact.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtContact.setForeground(new java.awt.Color(255, 255, 255));
         txtContact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtContactActionPerformed(evt);
@@ -168,7 +167,6 @@ private void populateFCComboBox() {
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
 
         txtZipCode.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtZipCode.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.add(txtZipCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 163, 20));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -177,7 +175,6 @@ private void populateFCComboBox() {
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
 
         txtLocation.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtLocation.setForeground(new java.awt.Color(255, 255, 255));
         txtLocation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLocationActionPerformed(evt);
@@ -213,15 +210,12 @@ private void populateFCComboBox() {
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, -1, -1));
 
         txtEmail.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtEmail.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 163, 20));
 
         txtCity.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtCity.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 163, 20));
 
         txtArea.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtArea.setForeground(new java.awt.Color(255, 255, 255));
         txtArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAreaActionPerformed(evt);
@@ -235,7 +229,6 @@ private void populateFCComboBox() {
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
 
         networkJComboBox.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        networkJComboBox.setForeground(new java.awt.Color(255, 255, 255));
         networkJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 networkJComboBoxActionPerformed(evt);
@@ -256,11 +249,15 @@ private void populateFCComboBox() {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 1570, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 1082, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 918, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -268,20 +265,18 @@ private void populateFCComboBox() {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 1570, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 2000, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(26, 26, 26)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addContainerGap(454, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

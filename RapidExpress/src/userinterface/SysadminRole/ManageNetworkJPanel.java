@@ -85,8 +85,8 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(139, 216, 189));
-        setMinimumSize(new java.awt.Dimension(1500, 1000));
-        setPreferredSize(new java.awt.Dimension(1500, 1000));
+        setMinimumSize(new java.awt.Dimension(2000, 1000));
+        setPreferredSize(new java.awt.Dimension(2000, 1000));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollPane1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
@@ -121,7 +121,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             networkJTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 450, 360));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 450, 360));
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 102));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 204)));
@@ -154,10 +154,10 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Country:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
         txtCountry.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jPanel2.add(txtCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 141, -1));
+        jPanel2.add(txtCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 141, -1));
 
         btnCreateNetwork.setBackground(new java.awt.Color(36, 54, 101));
         btnCreateNetwork.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -169,7 +169,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 btnCreateNetworkActionPerformed(evt);
             }
         });
-        jPanel2.add(btnCreateNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 110, 30));
+        jPanel2.add(btnCreateNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 110, 30));
 
         jLabel4.setBackground(new java.awt.Color(36, 54, 101));
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -179,7 +179,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         jLabel4.setOpaque(true);
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 50));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 380, 360));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 380, 360));
 
         jPanel3.setBackground(new java.awt.Color(36, 54, 101));
         jPanel3.setPreferredSize(new java.awt.Dimension(926, 70));

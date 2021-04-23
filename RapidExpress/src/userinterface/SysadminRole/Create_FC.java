@@ -122,7 +122,6 @@ private void populateNetworkComboBox() {
 
         networkJComboBox.setBackground(new java.awt.Color(0, 0, 0));
         networkJComboBox.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        networkJComboBox.setForeground(new java.awt.Color(255, 255, 255));
         networkJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 networkJComboBoxActionPerformed(evt);
@@ -136,7 +135,6 @@ private void populateNetworkComboBox() {
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 30));
 
         txtName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtName.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 163, 20));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -145,7 +143,6 @@ private void populateNetworkComboBox() {
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, 30));
 
         txtContact.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtContact.setForeground(new java.awt.Color(255, 255, 255));
         txtContact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtContactActionPerformed(evt);
@@ -159,7 +156,6 @@ private void populateNetworkComboBox() {
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, 30));
 
         txtZipCode.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtZipCode.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.add(txtZipCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 163, 20));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -168,7 +164,6 @@ private void populateNetworkComboBox() {
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, 30));
 
         txtLocation.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtLocation.setForeground(new java.awt.Color(255, 255, 255));
         txtLocation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLocationActionPerformed(evt);
@@ -204,15 +199,12 @@ private void populateNetworkComboBox() {
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, 30));
 
         txtEmail.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtEmail.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 163, 20));
 
         txtCity.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtCity.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.add(txtCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 163, 20));
 
         txtArea.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtArea.setForeground(new java.awt.Color(255, 255, 255));
         txtArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAreaActionPerformed(evt);
@@ -234,8 +226,8 @@ private void populateNetworkComboBox() {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 855, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(750, Short.MAX_VALUE))
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 1086, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(519, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
