@@ -5,6 +5,8 @@
  */
 package userinterface.VendorRole;
 
+import Business.DB4OUtil.DB4OUtil;
+import Business.EcoSystem;
 import Business.EnterpriseVendor.Vendor;
 import Business.POJO.Product;
 import Business.POJO.VendorShipment;
@@ -28,6 +30,7 @@ public class AddProductsToVendor extends javax.swing.JPanel {
      * Creates new form AddProductsToVendor
      */
     Vendor vendor;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     //List<Product> products = vendor.getProductsOffered();
     public AddProductsToVendor(Vendor vendor) {
         this.vendor=vendor;
@@ -236,6 +239,7 @@ public class AddProductsToVendor extends javax.swing.JPanel {
         //activePanel.setBounds(500, 500, 447, 440);
         //activePanel.setSize(547, 540);
 //        revalidate();
+dB4OUtil.storeSystem(EcoSystem.getInstance());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     //nis start
