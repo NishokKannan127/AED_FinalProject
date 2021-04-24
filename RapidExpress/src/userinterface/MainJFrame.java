@@ -108,9 +108,9 @@ public class MainJFrame extends javax.swing.JFrame {
         initComponents();
         displayPicture();
         //nishok
-  //      this.system = ConfigureASystem.configure();
+        this.system = ConfigureASystem.configure();
 //UNCOMMENT THIS AND COMMENT THE LAST LINE        
-system = dB4OUtil.retrieveSystem();
+//system = dB4OUtil.retrieveSystem();
         if(this.system==null){
             this.system=EcoSystem.getInstance();
             //this.system=ConfigureASystem.configure();
