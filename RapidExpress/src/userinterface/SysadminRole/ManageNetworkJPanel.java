@@ -81,6 +81,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         txtCountry = new javax.swing.JTextField();
         btnCreateNetwork = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
 
@@ -178,7 +179,12 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Create Network");
         jLabel4.setOpaque(true);
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 50));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 50));
+
+        jLabel5.setBackground(new java.awt.Color(36, 54, 101));
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\nisho\\Downloads\\icons8-hub-40.png")); // NOI18N
+        jLabel5.setOpaque(true);
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 90, 50));
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 380, 360));
 
@@ -300,6 +306,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;

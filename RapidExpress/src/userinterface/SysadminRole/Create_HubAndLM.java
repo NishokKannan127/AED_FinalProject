@@ -48,8 +48,10 @@ public class Create_HubAndLM extends javax.swing.JPanel {
      * Creates new form Create_HubAndLM
      */
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    private EcoSystem system = EcoSystem.getInstance(); 
     public Create_HubAndLM(EcoSystem system) {
         initComponents();
+        //this.system=dB4OUtil.retrieveSystem();
     populateNetworkComboBox();
         populateFCComboBox();
     }
@@ -104,6 +106,7 @@ private void populateFCComboBox() {
         networkJComboBox = new javax.swing.JComboBox();
         jPanel3 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(139, 216, 189));
         setMinimumSize(new java.awt.Dimension(2000, 1000));
@@ -246,9 +249,11 @@ private void populateFCComboBox() {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
                 .addContainerGap())
         );
+
+        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\nisho\\Downloads\\warehouse (1).png")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -257,6 +262,8 @@ private void populateFCComboBox() {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(jLabel11)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 2000, Short.MAX_VALUE)
         );
@@ -265,8 +272,10 @@ private void populateFCComboBox() {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(454, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(392, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -413,7 +422,7 @@ Enterprise.EnterpriseType type = Enterprise.EnterpriseType.HubAndLastMile;
 
                 //JOptionPane.showMessageDialog(null, "New Enterprise Created Successfully!");
 
-                dB4OUtil.storeSystem(EcoSystem.getInstance());
+                dB4OUtil.storeSystem(this.system);
 
                 txtName.setText("");
                 txtContact.setText("");
@@ -437,6 +446,7 @@ Enterprise.EnterpriseType type = Enterprise.EnterpriseType.HubAndLastMile;
     private javax.swing.JComboBox<FulfillmentCenter> fcJComboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -49,7 +49,7 @@ public class Create_Delivery extends javax.swing.JPanel {
      * Creates new form Create_Delivery
      */
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
-    
+   private EcoSystem system = EcoSystem.getInstance(); 
     public Create_Delivery(EcoSystem system) {
         initComponents();
         populateNetworkComboBox();
@@ -105,6 +105,7 @@ private void populateFCComboBox() {
         networkJComboBox = new javax.swing.JComboBox();
         jPanel3 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(139, 216, 189));
 
@@ -249,6 +250,8 @@ private void populateFCComboBox() {
                 .addGap(0, 8, Short.MAX_VALUE))
         );
 
+        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\nisho\\Downloads\\trolley.png")); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -256,7 +259,9 @@ private void populateFCComboBox() {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1500, 1500, 1500))
+                .addGap(28, 28, 28)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1920, Short.MAX_VALUE))
         );
@@ -264,8 +269,10 @@ private void populateFCComboBox() {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(85, 85, 85)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(109, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -430,7 +437,7 @@ private void populateFCComboBox() {
 
                 //JOptionPane.showMessageDialog(null, "New Enterprise Created Successfully!");
 
-                dB4OUtil.storeSystem(EcoSystem.getInstance());
+                dB4OUtil.storeSystem(this.system);
 
                 txtName.setText("");
                 txtContact.setText("");
@@ -461,6 +468,7 @@ private void populateFCComboBox() {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

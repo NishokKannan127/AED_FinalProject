@@ -40,9 +40,10 @@ import userinterface.HomePages.TableFormat;
 public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
     //private JPanel userProcessContainer;
-    private EcoSystem system;
+    //private EcoSystem system;
     private Enterprise enterprise;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    private EcoSystem system = EcoSystem.getInstance(); 
     /**
      * Creates new form ManageEnterpriseJPanel
      */
@@ -50,8 +51,9 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         initComponents();
 
         //this.userProcessContainer = userProcessContainer;
-        this.system = system;
-        this.system=EcoSystem.getInstance();
+//        this.system = system;
+//        this.system=EcoSystem.getInstance();
+        //this.system=dB4OUtil.retrieveSystem();
         enterpriseJTable.getTableHeader().setDefaultRenderer(new TableFormat());
         //tblAdminUserName.getTableHeader().setDefaultRenderer(new TableFormat());
         
@@ -169,6 +171,7 @@ private boolean checkUserIdExists(String userName) {
         btnCreateAdmin = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         enterpriseJTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -319,10 +322,10 @@ private boolean checkUserIdExists(String userName) {
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnCreateAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(179, Short.MAX_VALUE))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 380, 400));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 380, 420));
 
         enterpriseJTable.setBackground(new java.awt.Color(139, 216, 189));
         enterpriseJTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -353,7 +356,10 @@ private boolean checkUserIdExists(String userName) {
         });
         jScrollPane1.setViewportView(enterpriseJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 740, 280));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 500, 280));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\nisho\\Downloads\\settings (1).png")); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 90, 520, 550));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateAdminActionPerformed
@@ -530,6 +536,7 @@ private boolean checkUserIdExists(String userName) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreateAdmin;
     private javax.swing.JTable enterpriseJTable;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

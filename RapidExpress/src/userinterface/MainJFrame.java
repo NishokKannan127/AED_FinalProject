@@ -110,9 +110,10 @@ public class MainJFrame extends javax.swing.JFrame {
         //nishok
         this.system = ConfigureASystem.configure();
 //UNCOMMENT THIS AND COMMENT THE LAST LINE        
-//this.system = dB4OUtil.retrieveSystem();
+//system = dB4OUtil.retrieveSystem();
         if(this.system==null){
             this.system=EcoSystem.getInstance();
+            //this.system=ConfigureASystem.configure();
         }
         this.setSize(800, 500);
     }
@@ -631,7 +632,7 @@ public class MainJFrame extends javax.swing.JFrame {
         container.add("blank", blankJP);
         //CardLayout crdLyt = (CardLayout) container.getLayout();
         //crdLyt.next(container);
-        //dB4OUtil.storeSystem(system);
+        dB4OUtil.storeSystem(system);
         jSplitPane1.setRightComponent(container);
         //logoutJButton.setEnabled(true);
     }//GEN-LAST:event_logoutJButtonActionPerformed
@@ -774,7 +775,7 @@ public class MainJFrame extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
  private void displayPicture(){
 
-        scaleIcon(219, 164, "F:\\AED_Final\\AED_FinalProject\\RapidExpress\\src\\uimages\\imageProj.jpeg", iconimg);
+        scaleIcon(219, 164, "src\\uimages\\imageProj.jpeg", iconimg);
     }
    
     public void scaleIcon(int Width, int height, String imgPath, javax.swing.JLabel iconimg){
